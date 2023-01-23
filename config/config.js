@@ -16,7 +16,7 @@ export const navigation = {
 		},
 		{
 			title: "Expertise",
-			link: "#expertise",
+			link: "#projects",
 		},
 		{
 			title: "Contact",
@@ -76,7 +76,7 @@ export const work = {
 	],
 }
 
-export const expertise = {
+export const projects = {
 	title: "Expertise",
 	cards: [
 		{
