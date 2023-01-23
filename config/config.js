@@ -11,8 +11,12 @@ export const navigation = {
 			link: "#about",
 		},
 		{
-			title: "Projects",
-			link: "#projects",
+			title: "Professional Activity",
+			link: "#work",
+		},
+		{
+			title: "Expertise",
+			link: "#expertise",
 		},
 		{
 			title: "Contact",
@@ -25,8 +29,8 @@ export const navigation = {
 	],
 }
 export const intro = {
-	title: "Hey, I'm Hashir",
-	description: "A Computer Engineer creating mobile apps and static websites.",
+	title: "Maria Obedkova",
+	description: "NLP Engineer with expertise in ML and DL and experience working in the industry applying NLP methods to real-world problems.",
 	image: profile.src,
 	buttons: [
 		{
@@ -36,7 +40,7 @@ export const intro = {
 		},
 		{
 			title: "Resume",
-			link: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+			link: "https://maobedkova.github.io/",
 			isPrimary: false,
 		},
 	],
@@ -45,9 +49,9 @@ export const intro = {
 export const about = {
 	title: "Who I am",
 	description: [
-		"I graduated from National University of Sciences and Technology (NUST) in 2020 with a degree in Computer Engineering. I kick started my professional career as a mobile application developer working remotely for a UK based startup — Lessgo.",
-		"The tech industry is ever-evolving and I love being able to grow with it, while continually solidifying the fundamentals. I opensource my code from a place of empathy - for future developers, teammates, users, and with accessibility in mind. I also love joining communities, helping and mentoring new developers, and supporting organizations to promote diversity in tech. I’m sharing my programming journey on instagram, helping people who are just getting into the space of programming.",
-		"When I’m not programming, I focus on my hobbies which are: diary writing, doodling, meeting people and growing my network.",
+		"As an NLP Engineer, I am passionate about all aspects of Natural Language and Speech Processing. I have a diverse range of experience in various NLP fields, with an extensive knowledge in Machine Learning and Deep Learning.",
+		"At some point, I have transitioned to working in the industry, and am currently focused on Aspect-Based Sentiment Analysis. Still, I always keep an eye out for new and exciting developments in the field of NLP. I am a huge fan of open-source projects and try to contribute here and there.",
+		"Additionally, I am driven to educate others about NLP, through my blogs and even have begun to merge my love for illustration with my work in NLP. My ultimate goal is to improve the lives of people through human-computer interaction and make a transformative impact.",
 	],
 }
 
@@ -55,74 +59,55 @@ export const work = {
 	title: "What I do",
 	cards: [
 		{
-			title: "Mobile App Development",
-			description: "I create pixel perfect iOS and Andriod apps using Flutter.",
+			title: "NLP Engineer at TrustYou",
+			description: "I work as a Senior NLP Engineer at TrustYou devolping and maintaining an Aspect-Based Sentiment Analysis system.",
 			icons: null,
 		},
 		{
-			title: "Web Development",
-			description: "I create responsive static websites using Reactjs.",
+			title: "Writing about NLP",
+			description: "I write NLP blog posts on Medium and share my thoughts about NLP in Twitter.",
+			icons: null,
+		},
+		{
+			title: "NLP Advisor",
+			description: "I am open to consult you about NLP or help you with your NLP solution.",
 			icons: null,
 		}
 	],
 }
 
-export const projects = {
-	title: "Projects",
+export const expertise = {
+	title: "Expertise",
 	cards: [
 		{
-			title: "StarBook",
-			description: "A digital diary and mood tracking app that helps you in keeping track of your mood and productivity throughout the month/year.",
-			icons: [
-				{
-					icon: faAppStore,
-					link: "https://apps.apple.com/us/app/starbook-journal-ai-diary/id1552418289",
-				},
-				{
-					icon: faGithub,
-					link: "https://github.com/hashirshoaeb/star_book",
-				},
-			]
+			title: "Natural Language Pocessing",
+			description: "- Sentiment Analysis",
+			             "- Machine Translation",
+			             "- Topic Modelling",
+			             "- Named Entity Recognition",
+				     "- Text Classification, Clusterization and more"
 		},
 		{
-			title: "QuranTalk",
-			description: "An emotional well being and mental health app. The app helps people to navigate their emotions in the light of the Quran.",
-			icons: [
-				{
-					icon: faAppStore,
-					link: "https://apps.apple.com/us/app/qurantalk/id1563425149",
-				},
-				{
-					icon: faGooglePlay,
-					link: "https://play.google.com/store/apps/details?id=com.ayahemotion.quran_talk",
-				},
+			title: "Speech Recognition",
+			description: "- Speech-to-Text",
+			             "- Acoustic Embeddings",
+			             "- Pronunciation Modelling"
 			]
-		},
-		{
-			title: "Portfolio",
-			description: "A portfolio website template that helps you showcase your work, projects and skills as a software developer or freelancer.",
-			icons: [
-				{
-					icon: faGithub,
-					link: "https://github.com/hashirshoaeb/portfolio",
-				},
-			]
-		},
+		}
 	],
 }
 
 export const contact = {
-	title: "Get in touch",
-	description: "Coffee Chat! Please do not hesitate to schedule a meeting. Alternatively, feel free to reach out directly by email at hashirshoaeb@gmail.com.",
+	title: "Feel free to get in touch!",
 	buttons: [
 		{
 			title: "Email Me",
-			link: "mailto:hashirshoaeb@gmail.com",
+			link: "mailto:maryobedkova@gmail.com",
 			isPrimary: true,
 		},
 		{
-			title: "Schedule Meeting",
-			link: "",
+			title: "Reach me on LinkedIn",
+			link: "https://www.linkedin.com/in/mobedkova/",
 			isPrimary: false,
 		},
 	]
@@ -131,35 +116,40 @@ export const contact = {
 // SEARCH ENGINE 
 export const SEO = {
 	// 50 - 60 char  
-	title: "Hashir Shoaib | Computer Engineer | Flutter | Reactjs developer",
-	description: "I create mobile apps and static websites. I graduated from National University of Sciences and Technology (NUST) in 2020 with a degree in Computer Engineering.",
+	title: "Maria Obedkova | NLP Engineer | ASR Engineer | ML | DL",
+	description: "NLP Engineer with expertise in ML and DL and experience working in the industry applying NLP methods to real-world problems.",
 	image: profile.src,
 }
 
 export const links = {
 	image: profile.src,
-	title: "@hashirshoaeb",
-	description: "Computer Engineer | Flutter | Reactjs Developer",
+	title: "@maobedkova",
+	description: "NLP | ASR | AI | R&D | writing and illustrating as a hobby",
 	cards: [
 		{
-			title: "My website",
-			link: "https://hashirshoaeb.com/",
-		},
-		{
-			title: "QuranTalk App",
-			link: "https://www.qurantalk.app/",
-		},
-		{
-			title: "StarBook App",
-			link: "https://starbook.dev/",
-		},
-		{
-			title: "My GitHub",
-			link: "https://github.com/hashirshoaeb/",
+			title: "My Resume",
+			link: "https://maobedkova.github.io/",
 		},
 		{
 			title: "My LinkedIn",
-			link: "https://www.linkedin.com/in/hashirshoaeb/",
+			link: "https://www.linkedin.com/in/mobedkova/",
 		},
+		{
+			title: "My Twitter",
+			link: "https://mobile.twitter.com/maobedkova",
+		},
+		{
+			title: "My Medium",
+			link: "https://medium.com/@maobedkova",
+		},
+		{
+			title: "My GitHub",
+			link: "https://github.com/maobedkova",
+		},
+		{
+			title: "My HuggingFace Hub",
+			link: "https://huggingface.co/mobedkova",
+		},
+		
 	]
 }
