@@ -81,17 +81,11 @@ export const expertise = {
 	cards: [
 		{
 			title: "Natural Language Pocessing",
-			description: "- Sentiment Analysis",
-			             "- Machine Translation",
-			             "- Topic Modelling",
-			             "- Named Entity Recognition",
-				     "- Text Classification, Clusterization and more"
+			description: "Sentiment Analysis | Machine Translation | Topic Modelling | Named Entity Recognition | Text Classification, Clusterization and more"
 		},
 		{
 			title: "Speech Recognition",
-			description: "- Speech-to-Text",
-			             "- Acoustic Embeddings",
-			             "- Pronunciation Modelling"
+			description: "Speech-to-Text | Acoustic Embeddings | Pronunciation Modelling"
 			]
 		}
 	],
