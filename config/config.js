@@ -150,6 +150,9 @@ export const links = {
 			title: "My HuggingFace Hub",
 			link: "https://huggingface.co/mobedkova",
 		},
-		
+		{
+			title: "My Polywork",
+			link: "http://polywork.com/invite/maria_obedkova",
+		},
 	]
 }
