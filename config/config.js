@@ -86,7 +86,6 @@ export const expertise = {
 		{
 			title: "Speech Recognition",
 			description: "Speech-to-Text | Acoustic Embeddings | Pronunciation Modelling"
-			]
 		}
 	],
 }
