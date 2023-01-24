@@ -76,7 +76,7 @@ export const CardProject = ({ title, description, icons, items }) => {
 export const CardSkills = ({ image, title, description, icons }) => {
 	return (
 		<div className="card py-3 px-3 mx-sm-4 my-4 card-work" style={{ width: "22rem" }}>
-			//<img className="card-img-top my-1" src={publicRuntimeConfig.basePath + image} alt="Image Top" width="250" height="220"></img>
+		{/*<img className="card-img-top my-1" src={publicRuntimeConfig.basePath + image} alt="Image Top" width="250" height="220"></img>*/}
 			<div className="py-1" />
 			<h4 className="text-primary"><center>{title}</center></h4>
 			<p className="text-dark"><center>{description}</center></p>
