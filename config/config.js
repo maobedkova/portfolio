@@ -75,7 +75,7 @@ export const work = {
 			image: null,
 			icons: [
 				{
-					icon: faLinkedIn,
+					icon: faLinkedin,
 					link: "https://www.linkedin.com/in/mobedkova/",
 				},
 				{
