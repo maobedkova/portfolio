@@ -1,7 +1,7 @@
 
 import profile from './profile.png';
 import { faGithub, faTwitter, faMedium, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import { faBrowser, faFaceSmilingHands } from '@fortawesome/free-solid-svg-icons
+import { faBrowser, faFaceSmilingHands } from '@fortawesome/free-solid-svg-icons';
 import { } from '@fortawesome/free-solid-svg-icons';
 
 export const navigation = {
