@@ -1,7 +1,7 @@
 
 import profile from './profile.png';
 import { faGithub, faTwitter, faMedium, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import { faBrowser, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
+import { faEarthAmericas, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import { } from '@fortawesome/free-solid-svg-icons';
 
 export const navigation = {
@@ -64,7 +64,7 @@ export const work = {
 			image: null,
 			icons: [
 				{
-					icon: faBrowser,
+					icon: faEarthAmericas,
 					link: "https://www.trustyou.com/",
 				},
 			]
@@ -79,7 +79,7 @@ export const work = {
 					link: "https://www.linkedin.com/in/mobedkova/",
 				},
 				{
-					icon: faBrowser,
+					icon: faEarthAmericas,
 					link: "http://polywork.com/invite/maria_obedkova",
 				},
 			]
@@ -106,7 +106,7 @@ export const work = {
 			icons: [
 				{
 					icon: faGithub,
-					link: "https://huggingface.co/mobedkova",
+					link: "https://github.com/maobedkova",
 				},
 				{
 					icon: faFaceSmile,
