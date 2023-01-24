@@ -1,6 +1,7 @@
 
 import profile from './profile.png';
-import { faAppStore, faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faMedium, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import { faBrowser, faFaceSmilingHands } from '@fortawesome/free-solid-svg-icons
 import { } from '@fortawesome/free-solid-svg-icons';
 
 export const navigation = {
@@ -60,20 +61,58 @@ export const work = {
 		{
 			title: "NLP Engineer at TrustYou",
 			description: "I work as a Senior NLP Engineer at TrustYou devolping and maintaining an Aspect-Based Sentiment Analysis system.",
-			icons: null,
 			image: null,
-		},
-		{
-			title: "Writing about NLP",
-			description: "I write NLP blog posts on Medium and share my thoughts about NLP in Twitter.",
-			icons: null,
-			image: null,
+			icons: [
+				{
+					icon: faBrowser,
+					link: "https://www.trustyou.com/",
+				},
+			]
 		},
 		{
 			title: "NLP Advisor",
 			description: "I am open to consult you about NLP or help you with your NLP solution.",
-			icons: null,
 			image: null,
+			icons: [
+				{
+					icon: faLinkedIn,
+					link: "https://www.linkedin.com/in/mobedkova/",
+				},
+				{
+					icon: faBrowser,
+					link: "http://polywork.com/invite/maria_obedkova",
+				},
+			]
+		},
+		{
+			title: "Writing about NLP",
+			description: "I write NLP blog posts on Medium and share my thoughts about NLP in Twitter.",
+			image: null,
+			icons: [
+				{
+					icon: faMedium,
+					link: "https://medium.com/@maobedkova",
+				},
+				{
+					icon: faTwitter,
+					link: "https://mobile.twitter.com/maobedkova",
+				},
+			]
+		},
+		{
+			title: "Contributing to NLP projects",
+			description: "I take part in different hackathons and NLP-related open-source projects.",
+			image: null,
+			icons: [
+				{
+					icon: faGithub,
+					link: "https://huggingface.co/mobedkova",
+				},
+				{
+					icon: faFaceSmilingHands,
+					link: "https://huggingface.co/mobedkova",
+				},
+			]
 		}
 	],
 }
