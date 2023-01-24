@@ -109,7 +109,7 @@ export const work = {
 					link: "https://huggingface.co/mobedkova",
 				},
 				{
-					icon: faFaceSmilingHands,
+					icon: faFaceSmile,
 					link: "https://huggingface.co/mobedkova",
 				},
 			]
