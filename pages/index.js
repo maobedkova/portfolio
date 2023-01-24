@@ -11,7 +11,6 @@ export default function Home() {
     <Fragment>
       <Header seo={SEO} />
       <Nav
-        title={navigation.name}
         links={navigation.links}
       />
       <Intro
