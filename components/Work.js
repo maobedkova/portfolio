@@ -2,18 +2,22 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link'
 
-export const Skills = ({ title, cards }) => {
+
+export const Skills = ({ title, cards, image }) => {
 	return (
 		<div id="skills" className="bg-secondary py-5 px-5">
 			<div className="container">
 				<h1 className="text-primary fw-bold">{title}</h1>
 				<div className="d-flex flex-row flex-wrap justify-content-center">
 					{cards.map((value, index) => (
-						<Card
+						<CardSkills
+						        component="img"
 							key={index}
+							image={value.image}
 							title={value.title}
 							description={value.description}
-							link={value.link} />
+							link={value.link}
+							icons={value.icons} />
 					))}
 				</div>
 			</div>
@@ -23,31 +27,36 @@ export const Skills = ({ title, cards }) => {
 
 export const Projects = ({ title, cards }) => {
 	return (
-		<div id="projects" className="bg-primary py-5 px-5">
+		<div id="projects" className="bg-primary py-5 px-2">
 			<div className="container">
-				<h1 className="text-light fw-bold">{title}</h1>
+				<h1 className="text-light fw-bold">Projects</h1>
 				<div className="d-flex flex-row flex-wrap justify-content-center">
 					{cards.map((value, index) => (
-						<Card
+						<CardProject
 							key={index}
-							title={value.title}
+                                                        title={value.title}
 							description={value.description}
+                                                        items={value.items}
 							icons={value.icons} />
 					))}
 				</div>
-				{/* <div className="text-center">
-					<button type="button" className="btn btn-outline-light">See More</button>
-				</div> */}
 			</div>
 		</div>
 	);
 }
 
-export const Card = ({ title, description, icons }) => {
+export const CardProject = ({ title, description, icons, items }) => {
 	return (
-		<div className="card py-3 px-3 mx-sm-4 my-4 card-work" style={{ width: "20rem" }}>
+		<div className="card py-3 px-3 mx-sm-4 my-4 card-work" style={{ width: "22rem" }}>
 			<h4 className="text-primary">{title}</h4>
 			<p className="text-dark">{description}</p>
+			<ul>
+				{items && items.map((value) => (
+					<li key={value.toString()}>
+						{value.item}
+					</li>
+				))}
+			</ul>
 			<div className="text-end">
 				{icons && icons.map((value, index) => (
 					<Link key={index} href={value.link}>
@@ -60,3 +69,24 @@ export const Card = ({ title, description, icons }) => {
 		</div>
 	);
 }
+
+export const CardSkills = ({ image, title, description, icons }) => {
+	return (
+		<div className="card py-3 px-3 mx-sm-4 my-4 card-work" style={{ width: "22rem" }}>
+			<img className="card-img-top my-1" src={publicRuntimeConfig.basePath + image} alt="Image Top" width="250" height="220"></img>
+			<div className="py-1" />
+			<h4 className="text-primary">{title}</h4>
+			<p className="text-dark">{description}</p>
+			<span className="text-end">
+				{icons && icons.map((value, index) => (
+					<Link key={index} href={value.link}>
+						<a target="_blank" rel="noreferrer">
+							<FontAwesomeIcon className="icon-style mx-1" icon={value.icon} size="2x" />
+						</a>
+					</Link>
+				))}
+			</span>
+		</div>
+	);
+}
+	
