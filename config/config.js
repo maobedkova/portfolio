@@ -62,30 +62,63 @@ export const work = {
 			title: "NLP Engineer at TrustYou",
 			description: "I work as a Senior NLP Engineer at TrustYou devolping and maintaining an Aspect-Based Sentiment Analysis system.",
 			icons: null,
+			image: null,
 		},
 		{
 			title: "Writing about NLP",
 			description: "I write NLP blog posts on Medium and share my thoughts about NLP in Twitter.",
 			icons: null,
+			image: null,
 		},
 		{
 			title: "NLP Advisor",
 			description: "I am open to consult you about NLP or help you with your NLP solution.",
 			icons: null,
+			image: null,
 		}
 	],
 }
 
 export const projects = {
-	title: "Expertise",
+	title: "What I can",
 	cards: [
 		{
 			title: "Natural Language Pocessing",
-			description: "Sentiment Analysis | Machine Translation | Topic Modelling | Named Entity Recognition | Text Classification, Clusterization and more"
+			description: "I worked on various NLP tasks among which",
+			image: null,
+			items: [
+				{
+					item: "Sentiment Analysis",
+				},
+				{
+					item: "Machine Translation",
+				},
+				{
+					item: "Topic Modelling",
+				},
+				{
+					item: "Named Entity Recognition",
+				},
+		                {
+					item: "Text Classification and Clusterization",
+				}
+		               ]
 		},
 		{
 			title: "Speech Recognition",
-			description: "Speech-to-Text | Acoustic Embeddings | Pronunciation Modelling"
+			description: "I spent time working on",
+			image: null,
+			items: [
+				{
+					item: "Speech-to-Text",
+				},
+				{
+					item: "Acoustic Embeddings",
+				},
+				{
+					item: "Pronunciation Modelling",
+				}
+			]
 		}
 	],
 }
