@@ -1,6 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link'
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
 
 
 export const Skills = ({ title, cards, image }) => {
