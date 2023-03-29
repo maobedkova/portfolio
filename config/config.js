@@ -1,6 +1,6 @@
 
 import profile from './profile.png';
-import { faGithub, faTwitter, faMedium, faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter, faYoutube, faMedium, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import { faEarthAmericas, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import { } from '@fortawesome/free-solid-svg-icons';
 
@@ -85,8 +85,8 @@ export const work = {
 			]
 		},
 		{
-			title: "Writing about NLP",
-			description: "I write NLP blog posts on Medium and share my thoughts about NLP in Twitter.",
+			title: "Writing and Talking about NLP",
+			description: "I write NLP blog posts on Medium, share my thoughts about NLP on Twitter, and give talks about NLP and ML.",
 			image: null,
 			icons: [
 				{
@@ -96,6 +96,10 @@ export const work = {
 				{
 					icon: faTwitter,
 					link: "https://mobile.twitter.com/maobedkova",
+				},
+				{
+					icon: faYoutube,
+					link: "http://youtu.be/L9i0_cH-6b0",
 				},
 			]
 		},
@@ -205,6 +209,10 @@ export const links = {
 		{
 			title: "My Medium",
 			link: "https://medium.com/@maobedkova",
+		},
+	        {
+			title: "My Youtube",
+			link: "https://www.youtube.com/@mobedkova",
 		},
 		{
 			title: "My GitHub",
