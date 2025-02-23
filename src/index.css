@@ -37,7 +37,7 @@
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8;
+    @apply min-h-screen max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8 flex flex-col justify-center;
   }
 }
 
@@ -49,3 +49,15 @@
 .animate-on-scroll.active {
   animation: fade-up 0.5s ease-out forwards;
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
