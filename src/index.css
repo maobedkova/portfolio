@@ -37,13 +37,13 @@
   }
 
   .section-container {
-    @apply min-h-screen max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8 flex flex-col justify-center;
+    @apply min-h-screen max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8;
   }
 }
 
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1; /* Changed from 0 to 1 to make content visible by default */
+  transform: translateY(0); /* Reset initial transform */
 }
 
 .animate-on-scroll.active {
@@ -60,4 +60,3 @@
     transform: translateY(0);
   }
 }
-

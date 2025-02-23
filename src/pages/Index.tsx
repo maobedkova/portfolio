@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket } from 'lucide-react';
@@ -11,13 +10,17 @@ const Index = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
-          entry.target.classList.add('active');
+          // Only add the active class if the element isn't already animated
+          if (!entry.target.classList.contains('active')) {
+            entry.target.classList.add('active');
+          }
         }
       });
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.3,
+      threshold: 0.1, // Lower threshold to trigger earlier
+      rootMargin: '0px' // Adjust this if needed
     });
 
     document.querySelectorAll('section').forEach((section) => {
