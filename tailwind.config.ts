@@ -26,16 +26,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#90EE90", // Light green
-          dark: "#6B8E23", // Darker green
+          DEFAULT: "#C1D5A4", // Calm sage green
+          dark: "#98AA7B", // Darker sage green
         },
         accent: {
-          DEFAULT: "#F5F5DC", // Beige
-          light: "#FDFAE4", // Lighter beige
+          DEFAULT: "#F7F4E3", // Soft cream
+          light: "#FDFBF2", // Lighter cream
         },
         surface: {
-          DEFAULT: "rgba(156, 175, 136, 0.8)", // Light green with opacity
-          dark: "rgba(107, 142, 35, 0.05)", // Dark green with opacity
+          DEFAULT: "rgba(193, 213, 164, 0.15)", // Sage green with low opacity
+          dark: "rgba(152, 170, 123, 0.05)", // Darker sage with low opacity
         },
       },
       keyframes: {
@@ -70,7 +70,11 @@ export default {
         "unfold": "unfold 0.5s ease-out forwards",
       },
       backgroundImage: {
-        'gradient-sections': 'linear-gradient(180deg, #F5F5DC 0%, #90EE90 100%)',
+        'gradient-sections': 'linear-gradient(180deg, #F7F4E3 0%, #C1D5A4 100%)',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
       },
     },
   },

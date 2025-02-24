@@ -63,7 +63,7 @@ const Timeline = () => {
                 }}
               >
                 {/* Dot */}
-                <div className="w-4 h-4 bg-primary rounded-full absolute left-1/2 top-0 transform -translate-x-1/2" 
+                <div className="w-3 h-3 bg-primary rounded-full absolute left-1/2 top-0 transform -translate-x-1/2" 
                      style={{ top: milestone.type === "project" ? "-12px" : "12px" }}
                 />
                 
@@ -72,12 +72,12 @@ const Timeline = () => {
                   initial={{ opacity: 0, y: milestone.type === "project" ? -20 : 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`glass-panel p-4 rounded-lg w-40 absolute left-1/2 transform -translate-x-1/2 ${
+                  className={`p-4 rounded-2xl w-40 absolute left-1/2 transform -translate-x-1/2 ${
                     milestone.type === "project" ? "top-4" : "bottom-4"
                   }`}
                 >
-                  <span className="text-primary-dark font-semibold block mb-1">{milestone.year}</span>
-                  <h3 className="font-semibold text-sm mb-1">{milestone.title}</h3>
+                  <span className="text-primary-dark font-medium block mb-1 text-sm">{milestone.year}</span>
+                  <h3 className="font-medium text-sm mb-1">{milestone.title}</h3>
                   <p className="text-xs text-gray-600">{milestone.description}</p>
                 </motion.div>
               </div>
