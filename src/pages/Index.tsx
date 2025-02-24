@@ -1,16 +1,38 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket } from 'lucide-react';
+import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight } from 'lucide-react';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [expandedSkills, setExpandedSkills] = useState<string[]>([]);
+
+  const technicalSkills = {
+    "Machine Learning": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
+    "Deep Learning": ["Neural Networks", "CNN", "RNN", "Transformers"],
+    "Natural Language Processing": ["BERT", "GPT", "Word2Vec", "SpaCy"],
+    "Programming": ["Python", "Java", "C++", "JavaScript"]
+  };
+
+  const softSkills = {
+    "Leadership": ["Team Management", "Project Planning", "Decision Making"],
+    "Communication": ["Technical Writing", "Public Speaking", "Documentation"],
+    "Problem Solving": ["Critical Thinking", "Analytical Skills", "Innovation"],
+    "Collaboration": ["Team Work", "Cross-functional", "Mentoring"]
+  };
+
+  const toggleSkill = (skill: string) => {
+    setExpandedSkills(prev => 
+      prev.includes(skill) 
+        ? prev.filter(s => s !== skill)
+        : [...prev, skill]
+    );
+  };
 
   useEffect(() => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
-          // Only add the active class if the element isn't already animated
           if (!entry.target.classList.contains('active')) {
             entry.target.classList.add('active');
           }
@@ -19,8 +41,8 @@ const Index = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.1, // Lower threshold to trigger earlier
-      rootMargin: '0px' // Adjust this if needed
+      threshold: 0.1,
+      rootMargin: '0px'
     });
 
     document.querySelectorAll('section').forEach((section) => {
@@ -31,7 +53,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-sections">
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative">
         <div className="text-center space-y-6 animate-fade-up">
@@ -62,38 +84,68 @@ const Index = () => {
       {/* Bio Section */}
       <section id="about" className="section-container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-on-scroll">
+          <div className="space-y-6 animate-on-scroll">
             <h2 className="section-heading">Who I Am</h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
+              <img 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+                alt="Professional portrait"
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <p className="text-gray-600 leading-relaxed">
               I'm a dedicated AI/NLP Engineer with a Ph.D. in Computer Science from Stanford University, 
               specializing in natural language processing and machine learning. Over the past 5 years, 
               I've developed innovative solutions for tech giants and startups alike, focusing on making 
               language models more efficient and accessible.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              My work has been published in top-tier conferences including NIPS, ICML, and ACL. I'm passionate 
-              about democratizing AI technology and creating practical applications that solve real-world 
-              problems. Currently, I'm focused on developing more efficient fine-tuning methods for large 
-              language models and creating interpretable AI systems.
-            </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                'Machine Learning',
-                'Natural Language Processing',
-                'Deep Learning',
-                'Python',
-                'TensorFlow',
-                'PyTorch',
-                'BERT/Transformers',
-                'Neural Networks'
-              ].map((skill) => (
-                <div key={skill} className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>{skill}</span>
-                </div>
-              ))}
+          <div className="space-y-8 animate-on-scroll">
+            <div className="glass-panel rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-4 text-primary-dark">Technical Skills</h3>
+              <div className="space-y-4">
+                {Object.entries(technicalSkills).map(([skill, tools]) => (
+                  <div key={skill} className="border-b border-accent pb-2">
+                    <button
+                      onClick={() => toggleSkill(skill)}
+                      className="w-full flex items-center justify-between text-left hover:text-primary transition-colors"
+                    >
+                      <span>{skill}</span>
+                      <ChevronRight 
+                        className={`transition-transform ${expandedSkills.includes(skill) ? 'rotate-90' : ''}`}
+                      />
+                    </button>
+                    {expandedSkills.includes(skill) && (
+                      <div className="mt-2 pl-4 text-sm text-gray-600 animate-unfold overflow-hidden">
+                        {tools.join(" • ")}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="glass-panel rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-4 text-primary-dark">Soft Skills</h3>
+              <div className="space-y-4">
+                {Object.entries(softSkills).map(([skill, abilities]) => (
+                  <div key={skill} className="border-b border-accent pb-2">
+                    <button
+                      onClick={() => toggleSkill(skill)}
+                      className="w-full flex items-center justify-between text-left hover:text-primary transition-colors"
+                    >
+                      <span>{skill}</span>
+                      <ChevronRight 
+                        className={`transition-transform ${expandedSkills.includes(skill) ? 'rotate-90' : ''}`}
+                      />
+                    </button>
+                    {expandedSkills.includes(skill) && (
+                      <div className="mt-2 pl-4 text-sm text-gray-600 animate-unfold overflow-hidden">
+                        {abilities.join(" • ")}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -26,12 +26,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#84A98C",
-          dark: "#354F52",
+          DEFAULT: "#808000", // Olive
+          dark: "#556B2F", // Darker olive
         },
         accent: {
-          DEFAULT: "#B8D8BE",
-          light: "#CAD2C5",
+          DEFAULT: "#F3E5AB", // Light yellow
+          light: "#FAFAD2", // Lighter yellow
         },
         surface: {
           DEFAULT: "rgba(255, 255, 255, 0.8)",
@@ -53,18 +53,18 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "unfold": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        }
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out forwards",
         "fade-in": "fade-in 0.3s ease-out forwards",
+        "unfold": "unfold 0.5s ease-out forwards",
       },
-      borderRadius: {
-        lg: "12px",
-        md: "8px",
-        sm: "4px",
-      },
-      backdropBlur: {
-        xs: "2px",
+      backgroundImage: {
+        'gradient-sections': 'linear-gradient(180deg, #F3E5AB 0%, #808000 100%)',
       },
     },
   },
