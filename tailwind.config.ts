@@ -26,16 +26,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#758467", // Reseda green (darker)
-          dark: "#819171", // Reseda green (lighter)
+          DEFAULT: "#90EE90", // Light green
+          dark: "#6B8E23", // Darker green
         },
         accent: {
-          DEFAULT: "#CBD5C0", // Ash gray
-          light: "#DFE6DA", // Alabaster
+          DEFAULT: "#F5F5DC", // Beige
+          light: "#FDFAE4", // Lighter beige
         },
         surface: {
-          DEFAULT: "rgba(156, 175, 136, 0.8)", // Olivine with opacity
-          dark: "rgba(117, 132, 103, 0.05)", // Reseda green with opacity
+          DEFAULT: "rgba(156, 175, 136, 0.8)", // Light green with opacity
+          dark: "rgba(107, 142, 35, 0.05)", // Dark green with opacity
         },
       },
       keyframes: {
@@ -70,7 +70,7 @@ export default {
         "unfold": "unfold 0.5s ease-out forwards",
       },
       backgroundImage: {
-        'gradient-sections': 'linear-gradient(180deg, #DFE6DA 0%, #758467 100%)',
+        'gradient-sections': 'linear-gradient(180deg, #F5F5DC 0%, #90EE90 100%)',
       },
     },
   },

@@ -4,84 +4,85 @@ import { motion } from 'framer-motion';
 const Timeline = () => {
   const milestones = [
     {
-      year: "2018-2022",
+      year: "2018",
       title: "Stanford University",
       description: "Ph.D. in Computer Science with focus on NLP and ML",
       type: "education"
     },
     {
-      year: "2020-Present",
+      year: "2019",
       title: "AI Research Lead",
       description: "Leading AI research initiatives at Tech Corp",
       type: "work"
     },
-    // Add more milestones as needed
-  ];
-
-  const projects = [
+    {
+      year: "2020",
+      title: "Tech Corp",
+      description: "Senior ML Engineer",
+      type: "work"
+    },
+    {
+      year: "2021",
+      title: "AI Conference Speaker",
+      description: "Keynote speaker at AI Summit",
+      type: "work"
+    },
     {
       year: "2022",
-      title: "LLM Optimization Framework",
-      description: "Developed a framework for optimizing large language models"
+      title: "Research Publication",
+      description: "Published paper on LLM optimization",
+      type: "project"
     },
-    // Add more projects as needed
+    {
+      year: "2023",
+      title: "AI Framework",
+      description: "Released open-source AI framework",
+      type: "project"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-sections">
+      <div className="p-8">
         <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">My Journey</h1>
         
-        <div className="space-y-12">
-          <section>
-            <h2 className="text-2xl font-semibold text-primary-dark mb-6">Education & Career</h2>
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
+        <div className="overflow-x-auto pb-8">
+          <div className="min-w-[1200px] relative p-20">
+            {/* Timeline line */}
+            <div className="absolute left-0 right-0 h-0.5 bg-primary top-1/2 transform -translate-y-1/2" />
+            
+            {/* Timeline dots and content */}
+            {milestones.map((milestone, index) => (
+              <div 
+                key={index}
+                className="absolute"
+                style={{
+                  left: `${(index * 200) + 40}px`,
+                  top: milestone.type === "project" ? "60%" : "40%",
+                  transform: "translateY(-50%)"
+                }}
+              >
+                {/* Dot */}
+                <div className="w-4 h-4 bg-primary rounded-full absolute left-1/2 top-0 transform -translate-x-1/2" 
+                     style={{ top: milestone.type === "project" ? "-12px" : "12px" }}
+                />
+                
+                {/* Content */}
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="glass-panel p-6 rounded-lg"
+                  initial={{ opacity: 0, y: milestone.type === "project" ? -20 : 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`glass-panel p-4 rounded-lg w-40 absolute left-1/2 transform -translate-x-1/2 ${
+                    milestone.type === "project" ? "top-4" : "bottom-4"
+                  }`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-24 flex-shrink-0">
-                      <span className="text-primary-dark font-semibold">{milestone.year}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-xl mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  </div>
+                  <span className="text-primary-dark font-semibold block mb-1">{milestone.year}</span>
+                  <h3 className="font-semibold text-sm mb-1">{milestone.title}</h3>
+                  <p className="text-xs text-gray-600">{milestone.description}</p>
                 </motion.div>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-semibold text-primary-dark mb-6">Notable Projects</h2>
-            <div className="space-y-8">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="glass-panel p-6 rounded-lg"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-24 flex-shrink-0">
-                      <span className="text-primary-dark font-semibold">{project.year}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
-                      <p className="text-gray-600">{project.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </section>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
