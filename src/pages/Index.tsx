@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -95,10 +96,14 @@ const Index = () => {
             </div>
             <p className="text-gray-600 leading-relaxed">
               I'm a dedicated AI/NLP Engineer with a Ph.D. in Computer Science from Stanford University, 
-              specializing in natural language processing and machine learning. Over the past 5 years, 
-              I've developed innovative solutions for tech giants and startups alike, focusing on making 
-              language models more efficient and accessible.
+              specializing in natural language processing and machine learning.
             </p>
+            <Link 
+              to="/timeline"
+              className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+            >
+              More About My Journey
+            </Link>
           </div>
           <div className="space-y-8 animate-on-scroll">
             <div className="glass-panel rounded-lg p-6">
@@ -154,30 +159,45 @@ const Index = () => {
       {/* Expertise Section */}
       <section id="expertise" className="section-container bg-surface-dark">
         <h2 className="section-heading text-center">Areas of Expertise</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+        <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Brain className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
-            <p className="text-gray-600">
-              Expert in developing sophisticated ML models for complex tasks. Specialized in deep learning architectures, 
-              reinforcement learning, and neural network optimization with proven production deployment experience.
+            <p className="text-gray-600 flex-grow">
+              Expert in developing sophisticated ML models for complex tasks.
             </p>
+            <Link 
+              to="/projects/ml"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+            >
+              View ML Projects
+            </Link>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Code className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">NLP Engineering</h3>
-            <p className="text-gray-600">
-              Extensive experience in building NLP pipelines, including sentiment analysis, named entity recognition, 
-              and text classification systems. Proficient in both traditional ML and transformer-based approaches.
+            <p className="text-gray-600 flex-grow">
+              Extensive experience in building NLP pipelines and solutions.
             </p>
+            <Link 
+              to="/projects/nlp"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+            >
+              View NLP Projects
+            </Link>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Database className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Large Language Models</h3>
-            <p className="text-gray-600">
-              Specialized in fine-tuning and optimizing LLMs like GPT and BERT. Experience in prompt engineering, 
-              model compression, and developing efficient inference pipelines for production environments.
+            <p className="text-gray-600 flex-grow">
+              Specialized in fine-tuning and optimizing LLMs.
             </p>
+            <Link 
+              to="/projects/llm"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+            >
+              View LLM Projects
+            </Link>
           </div>
         </div>
       </section>
@@ -185,30 +205,43 @@ const Index = () => {
       {/* Services Section */}
       <section id="services" className="section-container">
         <h2 className="section-heading text-center">How I Can Help</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+        <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">AI Consulting</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 flex-grow">
               Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
               for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <UserCheck className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Custom NLP Solutions</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 flex-grow">
               Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
               I develop scalable solutions that deliver measurable business value.
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Rocket className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Model Optimization</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 flex-grow">
               Improving performance and efficiency of existing AI systems. Specialized in model compression, 
               inference optimization, and reducing computational costs while maintaining accuracy.
             </p>
+          </div>
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
+            <Bot className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Professional Blogging</h3>
+            <p className="text-gray-600 flex-grow">
+              Sharing insights and knowledge through blogs and video content.
+            </p>
+            <Link 
+              to="/blog"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+            >
+              Read Blog
+            </Link>
           </div>
         </div>
       </section>

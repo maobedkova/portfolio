@@ -26,12 +26,12 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#808000", // Olive
-          dark: "#556B2F", // Darker olive
+          DEFAULT: "#90EE90", // Light green
+          dark: "#6B8E23", // Darker green
         },
         accent: {
-          DEFAULT: "#F3E5AB", // Light yellow
-          light: "#FAFAD2", // Lighter yellow
+          DEFAULT: "#F5F5DC", // Beige
+          light: "#FDFAE4", // Lighter beige
         },
         surface: {
           DEFAULT: "rgba(255, 255, 255, 0.8)",
@@ -54,8 +54,14 @@ export default {
           "100%": { opacity: "1" },
         },
         "unfold": {
-          "0%": { width: "0%" },
-          "100%": { width: "100%" },
+          "0%": { 
+            maxHeight: "0",
+            opacity: "0"
+          },
+          "100%": { 
+            maxHeight: "200px",
+            opacity: "1"
+          },
         }
       },
       animation: {
@@ -64,7 +70,7 @@ export default {
         "unfold": "unfold 0.5s ease-out forwards",
       },
       backgroundImage: {
-        'gradient-sections': 'linear-gradient(180deg, #F3E5AB 0%, #808000 100%)',
+        'gradient-sections': 'linear-gradient(180deg, #F5F5DC 0%, #90EE90 100%)',
       },
     },
   },
