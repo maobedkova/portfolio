@@ -7,11 +7,11 @@
 
 @layer base {
   :root {
-    --background: 120 25% 95%;
-    --foreground: 200 20% 20%;
-    --border: 120 10% 85%;
-    --input: 120 10% 85%;
-    --ring: 120 40% 50%;
+    --background: 222 47% 11%;
+    --foreground: 0 0% 95%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 71% 45%;
   }
 
   * {
@@ -42,8 +42,8 @@
 }
 
 .animate-on-scroll {
-  opacity: 1; /* Changed from 0 to 1 to make content visible by default */
-  transform: translateY(0); /* Reset initial transform */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .animate-on-scroll.active {
