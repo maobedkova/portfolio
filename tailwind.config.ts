@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,18 +25,22 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7E69AB", // Deep purple
-          dark: "#6E59A5", // Darker purple
-          light: "#9b87f5", // Lighter purple
+          DEFAULT: "#7E69AB",
+          dark: "#6E59A5",
+          light: "#9b87f5",
         },
         accent: {
-          DEFAULT: "#1A1F2C", // Deep blue-gray
-          light: "#222632", // Lighter blue-gray
+          DEFAULT: "#1A1F2C",
+          light: "#222632",
         },
         surface: {
-          DEFAULT: "rgba(30, 34, 44, 0.8)", // Dark surface with opacity
-          dark: "rgba(20, 23, 31, 0.95)", // Darker surface
+          DEFAULT: "rgba(30, 34, 44, 0.8)",
+          dark: "rgba(20, 23, 31, 0.95)",
         },
+      },
+      backgroundImage: {
+        'gradient-sections': 'linear-gradient(180deg, #1A1F2C 0%, #0F1219 100%)',
+        'gradient-violet': 'linear-gradient(135deg, #7E69AB 0%, #D946EF 100%)',
       },
       keyframes: {
         "fade-up": {
@@ -69,9 +72,6 @@ export default {
         "fade-up": "fade-up 0.5s ease-out forwards",
         "fade-in": "fade-in 0.3s ease-out forwards",
         "unfold": "unfold 0.5s ease-out forwards",
-      },
-      backgroundImage: {
-        'gradient-sections': 'linear-gradient(180deg, #1A1F2C 0%, #0F1219 100%)',
       },
       borderRadius: {
         'xl': '1rem',
