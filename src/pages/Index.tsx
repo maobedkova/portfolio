@@ -8,17 +8,19 @@ const Index = () => {
   const [expandedSkills, setExpandedSkills] = useState<string[]>([]);
 
   const technicalSkills = {
-    "Machine Learning": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
-    "Deep Learning": ["Neural Networks", "CNN", "RNN", "Transformers"],
-    "Natural Language Processing": ["BERT", "GPT", "Word2Vec", "SpaCy"],
-    "Programming": ["Python", "Java", "C++", "JavaScript"]
+    "Programming & Development": ["Python", "Jupyter Notebook", "Git", "Docker"],
+    "Machine Learning & Deep Learning": ["RNN", "CNN", "PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "ONNX"],
+    "Natural Language Processing": ["Sentiment Analysis", "BERT", "GPT", "Word2Vec", "FastText", "GloVe", "TF-IDF", "SpaCy", "NLTK", "Hugging Face Transformers", "StanfordNLP", "SparkNLP", "NLPAug"],
+    "Large Language Models & Fine-Tuning": ["OpenAI API", "Hugging Face Transformers", "LangChain", "LoRA", "PEFT", "DeepSpeed"],
+    "Data Preprocessing & Feature Engineering": ["Pandas", "NumPy", "PySpark"],
+    "Databases & Information Retrieval": ["PostgreSQL", "MySQL", "MongoDB", "FAISS", "Weaviate", "ChromaDB", "Elasticsearch"],
+    "MLOps, Cloud Computing, CI/CD": ["AWS", "Azure AI", "Hugging Face Inference API", "MLflow", "Jenkins", "Grafana"]
   };
 
   const softSkills = {
-    "Leadership": ["Team Management", "Project Planning", "Decision Making"],
-    "Communication": ["Technical Writing", "Public Speaking", "Documentation"],
-    "Problem Solving": ["Critical Thinking", "Analytical Skills", "Innovation"],
-    "Collaboration": ["Team Work", "Cross-functional", "Mentoring"]
+    "Communication & Collaboration": ["Technical Writing", "Presentation Skills", "Team Work", "Mentoring"],
+    "Leadership & Task Management": ["Problem Solving", "Critical Thinking", "Analytical Skills", "Innovation", "Project Planning", "Decision Making", "Accountability"],
+    "Research & Development": ["Experimentation", "Continuous Learning", "Hypothesis Testing", "Evaluation"]
   };
 
   const toggleSkill = (skill: string) => {
@@ -61,21 +63,12 @@ const Index = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary-dark font-medium">
             AI/NLP Engineer
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-dark">
-            Transforming Ideas into Intelligent Solutions
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-dark bg-gradient-violet">
+            Enhancing human-computer interaction through intelligence
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Specializing in building advanced AI systems and NLP solutions with 5+ years of experience in developing 
-            production-ready machine learning models and language understanding systems
+            Specializing in building advanced AI systems and NLP solutions with 5+ years of experience in developing machine learning models and language understanding systems
           </p>
-          <div className="flex gap-4 justify-center">
-            <button className="px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-primary-dark transition-colors">
-              View Projects
-            </button>
-            <button className="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary/5 transition-colors">
-              Contact Me
-            </button>
-          </div>
         </div>
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-6 h-6 text-primary" />
@@ -86,7 +79,7 @@ const Index = () => {
       <section id="about" className="section-container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-on-scroll">
-            <h2 className="section-heading">Who I Am</h2>
+            <h2 className="section-heading bg-gradient-violet">Who I Am</h2>
             <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
               <img 
                 src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
@@ -95,8 +88,9 @@ const Index = () => {
               />
             </div>
             <p className="text-gray-600 leading-relaxed">
-              I'm a dedicated AI/NLP Engineer with a Ph.D. in Computer Science from Stanford University, 
-              specializing in natural language processing and machine learning.
+              I am an NLP/AI Engineer with 5+ years of industry experience, specializing in Machine Learning and Large Language Models, backed by a strong linguistics background. 
+I’ve worked on diverse NLP applications, including Automatic Speech Recognition and Generative AI, always aiming to enhance human-computer interaction and drive real-world impact. 
+Passionate about knowledge sharing and staying at the forefront of AI, I strive to advance the field and develop intelligent systems that make a difference.
             </p>
             <Link 
               to="/timeline"
@@ -107,7 +101,7 @@ const Index = () => {
           </div>
           <div className="space-y-8 animate-on-scroll">
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-primary-dark">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-primary-dark bg-gradient-violet">Technical Skills</h3>
               <div className="space-y-4">
                 {Object.entries(technicalSkills).map(([skill, tools]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -130,7 +124,7 @@ const Index = () => {
               </div>
             </div>
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-primary-dark">Soft Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-primary-dark bg-gradient-violet">Soft Skills</h3>
               <div className="space-y-4">
                 {Object.entries(softSkills).map(([skill, abilities]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -158,17 +152,17 @@ const Index = () => {
 
       {/* Expertise Section */}
       <section id="expertise" className="section-container bg-surface-dark">
-        <h2 className="section-heading text-center">Areas of Expertise</h2>
+        <h2 className="section-heading text-center bg-gradient-violet">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Brain className="w-12 h-12 text-primary mb-4" />
+            <Brain className="w-12 h-12 text-primary bg-gradient-violet mb-4" />
             <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
             <p className="text-gray-600 flex-grow">
-              Expert in developing sophisticated ML models for complex tasks.
+              Experienced in developing various Machine Learning applications
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-violet text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
               View Projects
             </Link>
@@ -177,7 +171,7 @@ const Index = () => {
             <Code className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">NLP Engineering</h3>
             <p className="text-gray-600 flex-grow">
-              Extensive experience in building NLP pipelines and solutions.
+              Extensive experience in building NLP pipelines and solutions
             </p>
             <Link 
               to="/projects"
@@ -187,14 +181,14 @@ const Index = () => {
             </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Database className="w-12 h-12 text-primary mb-4" />
+            <Bot className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Large Language Models</h3>
             <p className="text-gray-600 flex-grow">
-              Specialized in fine-tuning and optimizing LLMs.
+              Specialized in developing custom architectures, fine-tuning and optimizing LLMs
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-violet text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
               View Projects
             </Link>
@@ -204,30 +198,21 @@ const Index = () => {
 
       {/* Services Section */}
       <section id="services" className="section-container">
-        <h2 className="section-heading text-center">How I Can Help</h2>
+        <h2 className="section-heading text-center bg-gradient-violet">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">AI Consulting</h3>
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">AI / NLP Consulting</h3>
             <p className="text-gray-600 flex-grow">
-              Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
+              Providing expert guidance on AI or NLP strategy and implementation. Help organizations identify opportunities 
               for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <UserCheck className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">Custom NLP Solutions</h3>
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">NLP Solutions</h3>
             <p className="text-gray-600 flex-grow">
-              Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
-              I develop scalable solutions that deliver measurable business value.
-            </p>
-          </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Rocket className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">Model Optimization</h3>
-            <p className="text-gray-600 flex-grow">
-              Improving performance and efficiency of existing AI systems. Specialized in model compression, 
-              inference optimization, and reducing computational costs while maintaining accuracy.
+              Building tailored NLP systems for specific business needs, improving existing solutions and define evaluation metrics and criteria.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
@@ -238,7 +223,7 @@ const Index = () => {
             </p>
             <Link 
               to="/blog"
-              className="mt-4 inline-block px-6 py-2 text-white rounded-lg bg-gradient-violet hover:opacity-90 transition-opacity text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-violet text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
               Read Blog
             </Link>
@@ -269,7 +254,7 @@ const Index = () => {
                 rows={4}
                 className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
               />
-              <button className="w-full px-6 py-3 rounded-lg bg-gradient-violet text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <button className="w-full px-6 py-3 bg-gradient-violet text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center">
                 <Send className="w-4 h-4" />
                 Send Message
               </button>
