@@ -155,7 +155,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
         <h2 className="section-heading text-center text-transparent bg-gradient-violet bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Brain className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
+            <Brain className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
             <p className="text-gray-600 flex-grow">
               Experienced in developing various Machine Learning applications
@@ -215,7 +215,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Building tailored NLP systems for specific business needs, improving existing solutions and define evaluation metrics and criteria.
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
             <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-violet bg-clip-text">Professional Blogging</h3>
             <p className="text-gray-600 flex-grow">
