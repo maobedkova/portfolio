@@ -167,10 +167,10 @@ const Index = () => {
               Expert in developing sophisticated ML models for complex tasks.
             </p>
             <Link 
-              to="/projects/ml"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+              to="/projects"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
-              View ML Projects
+              View Projects
             </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -180,10 +180,10 @@ const Index = () => {
               Extensive experience in building NLP pipelines and solutions.
             </p>
             <Link 
-              to="/projects/nlp"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+              to="/projects"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
-              View NLP Projects
+              View Projects
             </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -193,10 +193,10 @@ const Index = () => {
               Specialized in fine-tuning and optimizing LLMs.
             </p>
             <Link 
-              to="/projects/llm"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-center"
+              to="/projects"
+              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
-              View LLM Projects
+              View Projects
             </Link>
           </div>
         </div>
