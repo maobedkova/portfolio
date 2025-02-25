@@ -4,105 +4,132 @@ import { motion } from 'framer-motion';
 const Timeline = () => {
   const milestones = [
     {
-      year: "2018",
-      title: "Stanford University",
-      description: "Ph.D. in Computer Science with focus on NLP and ML",
-      color: "#4299E1" // Blue
+      period: "2018-2020",
+      education: {
+        title: "Stanford University",
+        description: "Ph.D. in Computer Science",
+        details: "Focus on NLP and ML"
+      },
+      work: {
+        title: "AI Research Lead",
+        description: "Tech Corp",
+        details: "Leading research initiatives in NLP"
+      },
+      projects: [
+        {
+          title: "ML Framework",
+          description: "Built optimization framework"
+        },
+        {
+          title: "Research Paper",
+          description: "Published in top conference"
+        }
+      ]
     },
     {
-      year: "2019",
-      title: "AI Research Lead",
-      description: "Leading AI research initiatives at Tech Corp",
-      color: "#4299E1" // Blue
+      period: "2020-2022",
+      work: {
+        title: "Senior ML Engineer",
+        description: "Tech Corp",
+        details: "Leading AI product development"
+      },
+      projects: [
+        {
+          title: "LLM Optimization",
+          description: "Novel training approach"
+        },
+        {
+          title: "Conference Talk",
+          description: "Keynote at AI Summit"
+        }
+      ]
     },
     {
-      year: "2020",
-      title: "Tech Corp",
-      description: "Senior ML Engineer",
-      color: "#9F7AEA" // Purple
-    },
-    {
-      year: "2021",
-      title: "AI Conference Speaker",
-      description: "Keynote speaker at AI Summit",
-      color: "#9F7AEA" // Purple
-    },
-    {
-      year: "2022",
-      title: "Research Publication",
-      description: "Published paper on LLM optimization",
-      color: "#9F7AEA" // Purple
-    },
-    {
-      year: "2023",
-      title: "AI Framework",
-      description: "Released open-source AI framework",
-      color: "#9F7AEA" // Purple
+      period: "2022-Present",
+      work: {
+        title: "AI Research Director",
+        description: "Tech Corp",
+        details: "Leading research department"
+      },
+      projects: [
+        {
+          title: "Open Source Framework",
+          description: "10k+ GitHub stars"
+        }
+      ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections flex items-center justify-center">
-      <div className="w-full p-8">
-        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Timeline</h1>
+    <div className="min-h-screen bg-gradient-sections">
+      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Journey Through Time</h1>
         
-        <div className="overflow-x-auto pb-8">
-          <div className="min-w-[1200px] relative p-12">
-            {/* Timeline line */}
-            <div className="absolute left-0 right-0 h-0.5 bg-primary-dark top-1/2 transform -translate-y-1/2" />
-            
-            {/* Timeline dots and content */}
-            {milestones.map((milestone, index) => (
-              <div 
-                key={index}
-                className="absolute"
-                style={{
-                  left: `${(index * 200) + 40}px`,
-                  top: "50%",
-                  transform: "translateY(-50%)"
-                }}
-              >
-                {/* Vertical line */}
-                <div 
-                  className="absolute left-1/2 w-px bg-primary-dark" 
-                  style={{ 
-                    height: "40px",
-                    top: index % 2 === 0 ? "-60px" : "20px"
-                  }}
-                />
-                
-                {/* Dot */}
-                <div 
-                  className="w-4 h-4 rounded-full absolute left-1/2 transform -translate-x-1/2"
-                  style={{ 
-                    backgroundColor: milestone.color,
-                    border: "2px solid white"
-                  }}
-                />
-                
-                {/* Content */}
-                <motion.div
-                  initial={{ opacity: 0, y: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`absolute left-1/2 transform -translate-x-1/2 w-48 p-4 ${
-                    index % 2 === 0 ? "-top-32" : "top-12"
-                  }`}
-                >
-                  <div className="text-center">
-                    <span 
-                      className="text-2xl font-bold block mb-2"
-                      style={{ color: milestone.color }}
-                    >
-                      {milestone.year}
-                    </span>
-                    <h3 className="font-medium text-sm mb-1">{milestone.title}</h3>
-                    <p className="text-xs text-gray-600">{milestone.description}</p>
-                  </div>
-                </motion.div>
+        <div className="relative">
+          {milestones.map((milestone, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="mb-24 relative"
+            >
+              {/* Period indicator */}
+              <div className="absolute left-0 -top-4 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm">
+                <span className="text-primary-dark font-semibold">{milestone.period}</span>
               </div>
-            ))}
-          </div>
+
+              <div className="ml-8 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                {/* Education & Work Column */}
+                <div className="lg:col-span-5">
+                  {milestone.education && (
+                    <div className="bg-surface rounded-2xl p-6 mb-6 shadow-sm">
+                      <h3 className="text-lg font-semibold text-primary-dark mb-2">
+                        {milestone.education.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-1">{milestone.education.description}</p>
+                      <p className="text-xs text-gray-500">{milestone.education.details}</p>
+                    </div>
+                  )}
+                  
+                  {milestone.work && (
+                    <div className="bg-surface rounded-2xl p-6 shadow-sm">
+                      <h3 className="text-lg font-semibold text-primary-dark mb-2">
+                        {milestone.work.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-1">{milestone.work.description}</p>
+                      <p className="text-xs text-gray-500">{milestone.work.details}</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Projects Column */}
+                <div className="lg:col-span-7">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {milestone.projects.map((project, projectIndex) => (
+                      <motion.div
+                        key={projectIndex}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 + projectIndex * 0.1 }}
+                        className="bg-accent-light rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        <h4 className="text-base font-semibold text-primary-dark mb-2">
+                          {project.title}
+                        </h4>
+                        <p className="text-sm text-gray-600">{project.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Connector Line */}
+              {index < milestones.length - 1 && (
+                <div className="absolute left-24 bottom-0 w-px h-24 bg-primary-dark opacity-20" />
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
