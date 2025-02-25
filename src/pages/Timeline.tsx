@@ -7,49 +7,49 @@ const Timeline = () => {
       year: "2018",
       title: "Stanford University",
       description: "Ph.D. in Computer Science with focus on NLP and ML",
-      type: "education"
+      color: "#4299E1" // Blue
     },
     {
       year: "2019",
       title: "AI Research Lead",
       description: "Leading AI research initiatives at Tech Corp",
-      type: "work"
+      color: "#4299E1" // Blue
     },
     {
       year: "2020",
       title: "Tech Corp",
       description: "Senior ML Engineer",
-      type: "work"
+      color: "#9F7AEA" // Purple
     },
     {
       year: "2021",
       title: "AI Conference Speaker",
       description: "Keynote speaker at AI Summit",
-      type: "work"
+      color: "#9F7AEA" // Purple
     },
     {
       year: "2022",
       title: "Research Publication",
       description: "Published paper on LLM optimization",
-      type: "project"
+      color: "#9F7AEA" // Purple
     },
     {
       year: "2023",
       title: "AI Framework",
       description: "Released open-source AI framework",
-      type: "project"
+      color: "#9F7AEA" // Purple
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections">
-      <div className="p-8">
-        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">My Journey</h1>
+    <div className="min-h-screen bg-gradient-sections flex items-center justify-center">
+      <div className="w-full p-8">
+        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Timeline</h1>
         
         <div className="overflow-x-auto pb-8">
-          <div className="min-w-[1200px] relative p-20">
+          <div className="min-w-[1200px] relative p-12">
             {/* Timeline line */}
-            <div className="absolute left-0 right-0 h-0.5 bg-primary top-1/2 transform -translate-y-1/2" />
+            <div className="absolute left-0 right-0 h-0.5 bg-primary-dark top-1/2 transform -translate-y-1/2" />
             
             {/* Timeline dots and content */}
             {milestones.map((milestone, index) => (
@@ -58,27 +58,47 @@ const Timeline = () => {
                 className="absolute"
                 style={{
                   left: `${(index * 200) + 40}px`,
-                  top: milestone.type === "project" ? "60%" : "40%",
+                  top: "50%",
                   transform: "translateY(-50%)"
                 }}
               >
+                {/* Vertical line */}
+                <div 
+                  className="absolute left-1/2 w-px bg-primary-dark" 
+                  style={{ 
+                    height: "40px",
+                    top: index % 2 === 0 ? "-60px" : "20px"
+                  }}
+                />
+                
                 {/* Dot */}
-                <div className="w-3 h-3 bg-primary rounded-full absolute left-1/2 top-0 transform -translate-x-1/2" 
-                     style={{ top: milestone.type === "project" ? "-12px" : "12px" }}
+                <div 
+                  className="w-4 h-4 rounded-full absolute left-1/2 transform -translate-x-1/2"
+                  style={{ 
+                    backgroundColor: milestone.color,
+                    border: "2px solid white"
+                  }}
                 />
                 
                 {/* Content */}
                 <motion.div
-                  initial={{ opacity: 0, y: milestone.type === "project" ? -20 : 20 }}
+                  initial={{ opacity: 0, y: index % 2 === 0 ? -20 : 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`p-4 rounded-2xl w-40 absolute left-1/2 transform -translate-x-1/2 ${
-                    milestone.type === "project" ? "top-4" : "bottom-4"
+                  className={`absolute left-1/2 transform -translate-x-1/2 w-48 p-4 ${
+                    index % 2 === 0 ? "-top-32" : "top-12"
                   }`}
                 >
-                  <span className="text-primary-dark font-medium block mb-1 text-sm">{milestone.year}</span>
-                  <h3 className="font-medium text-sm mb-1">{milestone.title}</h3>
-                  <p className="text-xs text-gray-600">{milestone.description}</p>
+                  <div className="text-center">
+                    <span 
+                      className="text-2xl font-bold block mb-2"
+                      style={{ color: milestone.color }}
+                    >
+                      {milestone.year}
+                    </span>
+                    <h3 className="font-medium text-sm mb-1">{milestone.title}</h3>
+                    <p className="text-xs text-gray-600">{milestone.description}</p>
+                  </div>
                 </motion.div>
               </div>
             ))}

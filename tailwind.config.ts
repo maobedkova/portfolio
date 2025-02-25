@@ -28,14 +28,15 @@ export default {
         primary: {
           DEFAULT: "#C1D5A4", // Calm sage green
           dark: "#98AA7B", // Darker sage green
+          light: "#EAF0E0", // Lighter sage for widgets
         },
         accent: {
           DEFAULT: "#F7F4E3", // Soft cream
           light: "#FDFBF2", // Lighter cream
         },
         surface: {
-          DEFAULT: "rgba(193, 213, 164, 0.15)", // Sage green with low opacity
-          dark: "rgba(152, 170, 123, 0.05)", // Darker sage with low opacity
+          DEFAULT: "rgba(234, 240, 224, 0.8)", // Light sage with opacity
+          dark: "rgba(193, 213, 164, 0.05)", // Sage with low opacity
         },
       },
       keyframes: {
@@ -75,6 +76,7 @@ export default {
       borderRadius: {
         'xl': '1rem',
         '2xl': '1.5rem',
+        'elliptical': '999px',
       },
     },
   },
