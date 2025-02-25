@@ -63,7 +63,7 @@ const Index = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary-dark font-medium">
             AI/NLP Engineer
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-dark bg-gradient-violet">
+          <h1 className="text-5xl md:text-7xl font-bold text-center text-transparent bg-gradient-violet bg-clip-text">
             Enhancing human-computer interaction through intelligence
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -79,10 +79,10 @@ const Index = () => {
       <section id="about" className="section-container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-on-scroll">
-            <h2 className="section-heading bg-gradient-violet">Who I Am</h2>
+            <h2 className="section-heading text-center text-transparent bg-gradient-violet bg-clip-text">Who I Am</h2>
             <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+                src="IMG_2584.jpeg"
                 alt="Professional portrait"
                 className="object-cover w-full h-full"
               />
@@ -94,14 +94,14 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             </p>
             <Link 
               to="/timeline"
-              className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+              className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-violet hover:bg-primary-dark transition-colors"
             >
               More About My Journey
             </Link>
           </div>
           <div className="space-y-8 animate-on-scroll">
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-primary-dark bg-gradient-violet">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-violet bg-clip-text">Technical Skills</h3>
               <div className="space-y-4">
                 {Object.entries(technicalSkills).map(([skill, tools]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -124,7 +124,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               </div>
             </div>
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-primary-dark bg-gradient-violet">Soft Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-violet bg-clip-text">Soft Skills</h3>
               <div className="space-y-4">
                 {Object.entries(softSkills).map(([skill, abilities]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -152,10 +152,10 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Expertise Section */}
       <section id="expertise" className="section-container bg-surface-dark">
-        <h2 className="section-heading text-center bg-gradient-violet">Areas of Expertise</h2>
+        <h2 className="section-heading text-center text-transparent bg-gradient-violet bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Brain className="w-12 h-12 text-primary bg-gradient-violet mb-4" />
+            <Brain className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
             <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
             <p className="text-gray-600 flex-grow">
               Experienced in developing various Machine Learning applications
@@ -175,7 +175,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-primary text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-violet text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
             >
               View Projects
             </Link>
@@ -198,7 +198,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Services Section */}
       <section id="services" className="section-container">
-        <h2 className="section-heading text-center bg-gradient-violet">How I Can Help</h2>
+        <h2 className="section-heading text-center text-transparent bg-gradient-violet bg-clip-text">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-transparent bg-gradient-violet bg-clip-text mb-4" />
