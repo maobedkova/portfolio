@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,9 +26,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#7E69AB",
-          dark: "#6E59A5",
-          light: "#9b87f5",
+          DEFAULT: "#0EA5E9", // Ocean blue
+          dark: "#0284C7", // Darker blue
+          light: "#38BDF8", // Light blue
         },
         accent: {
           DEFAULT: "#1A1F2C",
@@ -40,7 +41,7 @@ export default {
       },
       backgroundImage: {
         'gradient-sections': 'linear-gradient(180deg, #1A1F2C 0%, #0F1219 100%)',
-        'gradient-violet': 'linear-gradient(135deg, #7E69AB 0%, #D946EF 100%)',
+        'gradient-blue': 'linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%)', // Changed from violet to blue
       },
       keyframes: {
         "fade-up": {
