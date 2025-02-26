@@ -60,13 +60,13 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative">
         <div className="text-center space-y-6 animate-fade-up">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary-dark font-medium">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium">
             AI/NLP Engineer
           </span>
-        <h1 className="text-5xl md:text-7xl font-bold text-center text-transparent bg-gradient-blue bg-clip-text">
-          Enhancing human-computer interaction through intelligence
-        </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold text-center bg-gradient-green bg-clip-text text-transparent">
+            Enhancing human-computer interaction through intelligence
+          </h1>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Specializing in building advanced AI systems and NLP solutions with 5+ years of experience in developing machine learning models and language understanding systems
           </p>
         </div>
@@ -79,7 +79,9 @@ const Index = () => {
       <section id="about" className="section-container">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-on-scroll">
-        <h2 className="section-heading text-center text-transparent bg-gradient-blue bg-clip-text">Who I Am</h2>
+            <h2 className="section-heading text-center bg-gradient-green bg-clip-text text-transparent">
+              Who I Am
+            </h2>
             <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
               <img 
                 src="IMG_2584.jpeg"
@@ -198,36 +200,44 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Services Section */}
       <section id="services" className="section-container">
-        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">How I Can Help</h2>
+        <h2 className="section-heading text-center text-white">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Leaf className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">AI Consulting</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
+              AI Consulting
+            </h3>
+            <p className="text-gray-300 flex-grow">
               Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
               for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Sprout className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Custom NLP Solutions</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
+              Custom NLP Solutions
+            </h3>
+            <p className="text-gray-300 flex-grow">
               Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
               I develop scalable solutions that deliver measurable business value.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Leaf className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Model Optimization</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
+              Model Optimization
+            </h3>
+            <p className="text-gray-300 flex-grow">
               Improving performance and efficiency of existing AI systems. Specialized in model compression, 
               inference optimization, and reducing computational costs while maintaining accuracy.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
             <Sprout className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Professional Blogging</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
+              Professional Blogging
+            </h3>
+            <p className="text-gray-300 flex-grow">
               Sharing insights and knowledge through blogs and video content.
             </p>
             <Link 
@@ -243,7 +253,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       {/* Contact Section */}
       <section id="contact" className="section-container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Get In Touch</h2>
+          <h2 className="section-heading text-center text-white">Get In Touch</h2>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
