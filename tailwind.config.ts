@@ -26,9 +26,9 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0EA5E9", // Ocean blue
-          dark: "#0284C7", // Darker blue
-          light: "#38BDF8", // Light blue
+          DEFAULT: "#10B981", // Emerald green
+          dark: "#059669", // Darker green
+          light: "#34D399", // Light green
         },
         accent: {
           DEFAULT: "#1A1F2C",
@@ -41,7 +41,7 @@ export default {
       },
       backgroundImage: {
         'gradient-sections': 'linear-gradient(180deg, #1A1F2C 0%, #0F1219 100%)',
-        'gradient-blue': 'linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%)', // Changed from violet to blue
+        'gradient-green': 'linear-gradient(135deg, #059669 0%, #34D399 100%)',
       },
       keyframes: {
         "fade-up": {

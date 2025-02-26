@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight } from 'lucide-react';
+import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight, Leaf, Sprout } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -198,32 +198,41 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Services Section */}
       <section id="services" className="section-container">
-        <h2 className="section-heading text-center text-transparent bg-gradient-blue bg-clip-text">How I Can Help</h2>
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Bot className="w-12 h-12 text-transparent bg-gradient-blue bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-blue bg-clip-text">AI / NLP Consulting</h3>
+            <Leaf className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">AI Consulting</h3>
             <p className="text-gray-600 flex-grow">
-              Providing expert guidance on AI or NLP strategy and implementation. Help organizations identify opportunities 
+              Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
               for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <UserCheck className="w-12 h-12 text-transparent bg-gradient-blue bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-blue bg-clip-text">NLP Solutions</h3>
+            <Sprout className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Custom NLP Solutions</h3>
             <p className="text-gray-600 flex-grow">
-              Building tailored NLP systems for specific business needs, improving existing solutions and define evaluation metrics and criteria.
+              Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
+              I develop scalable solutions that deliver measurable business value.
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Bot className="w-12 h-12 text-transparent bg-gradient-blue bg-clip-text mb-4" />
-            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-blue bg-clip-text">Professional Blogging</h3>
+            <Leaf className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Model Optimization</h3>
+            <p className="text-gray-600 flex-grow">
+              Improving performance and efficiency of existing AI systems. Specialized in model compression, 
+              inference optimization, and reducing computational costs while maintaining accuracy.
+            </p>
+          </div>
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
+            <Sprout className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Professional Blogging</h3>
             <p className="text-gray-600 flex-grow">
               Sharing insights and knowledge through blogs and video content.
             </p>
             <Link 
               to="/blog"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-blue text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 text-white rounded-lg bg-gradient-green hover:opacity-90 transition-opacity text-center"
             >
               Read Blog
             </Link>
@@ -234,7 +243,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       {/* Contact Section */}
       <section id="contact" className="section-container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="section-heading text-center text-transparent bg-gradient-blue bg-clip-text">Get In Touch</h2>
+          <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Get In Touch</h2>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -254,20 +263,20 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                 rows={4}
                 className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
               />
-              <button className="w-full px-6 py-3 bg-gradient-blue text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center">
+              <button className="w-full px-6 py-3 rounded-lg bg-gradient-green text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Send className="w-4 h-4" />
                 Send Message
               </button>
             </form>
           </div>
           <div className="flex justify-center gap-6 mt-8">
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-blue hover:bg-clip-text transition-colors">
+            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-blue hover:bg-clip-text transition-colors">
+            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-blue hover:bg-clip-text transition-colors">
+            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
