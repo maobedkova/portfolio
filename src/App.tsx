@@ -1,35 +1,32 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Timeline from "./pages/Timeline";
-import Blog from "./pages/Blog";
-import Projects from "./pages/Projects";
-import Resources from "./pages/Resources";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from "./components/ui/toaster";
+import './App.css';
 
-const queryClient = new QueryClient();
+import Index from './pages/Index';
+import Projects from './pages/Projects';
+import Timeline from './pages/Timeline';
+import Blog from './pages/Blog';
+import Resources from './pages/Resources';
+import NotFound from './pages/NotFound';
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+// Use HashRouter for GitHub Pages to avoid URL path issues
+const Router = import.meta.env.PROD ? HashRouter : BrowserRouter;
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/timeline" element={<Timeline />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </Router>
+  );
+}
 
 export default App;
