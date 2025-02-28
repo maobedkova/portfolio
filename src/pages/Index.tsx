@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight, Leaf, Sprout } from 'lucide-react';
@@ -82,28 +83,28 @@ const Index = () => {
             <h2 className="section-heading text-center bg-gradient-green bg-clip-text text-transparent">
               Who I Am
             </h2>
-            <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden mx-auto mb-6">
               <img 
                 src="IMG_1449.png"
                 alt="Professional portrait"
                 className="object-cover w-full h-full"
               />
             </div>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               I am an NLP/AI Engineer with 5+ years of industry experience, specializing in Machine Learning and Large Language Models, backed by a strong linguistics background. 
-I’ve worked on diverse NLP applications, including Automatic Speech Recognition and Generative AI, always aiming to enhance human-computer interaction and drive real-world impact. 
+I've worked on diverse NLP applications, including Automatic Speech Recognition and Generative AI, always aiming to enhance human-computer interaction and drive real-world impact. 
 Passionate about knowledge sharing and staying at the forefront of AI, I strive to advance the field and develop intelligent systems that make a difference.
             </p>
             <Link 
               to="/timeline"
-              className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-blue hover:bg-primary-dark transition-colors"
+              className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-green hover:bg-primary-dark transition-colors"
             >
               More About My Journey
             </Link>
           </div>
           <div className="space-y-8 animate-on-scroll">
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-blue bg-clip-text">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-green bg-clip-text">Technical Skills</h3>
               <div className="space-y-4">
                 {Object.entries(technicalSkills).map(([skill, tools]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -117,7 +118,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                       />
                     </button>
                     {expandedSkills.includes(skill) && (
-                      <div className="mt-2 pl-4 text-sm text-gray-600 animate-unfold overflow-hidden">
+                      <div className="mt-2 pl-4 text-sm text-gray-300 animate-unfold overflow-hidden">
                         {tools.join(" • ")}
                       </div>
                     )}
@@ -126,7 +127,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               </div>
             </div>
             <div className="glass-panel rounded-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-blue bg-clip-text">Soft Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-gradient-green bg-clip-text">Soft Skills</h3>
               <div className="space-y-4">
                 {Object.entries(softSkills).map(([skill, abilities]) => (
                   <div key={skill} className="border-b border-accent pb-2">
@@ -140,7 +141,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                       />
                     </button>
                     {expandedSkills.includes(skill) && (
-                      <div className="mt-2 pl-4 text-sm text-gray-600 animate-unfold overflow-hidden">
+                      <div className="mt-2 pl-4 text-sm text-gray-300 animate-unfold overflow-hidden">
                         {abilities.join(" • ")}
                       </div>
                     )}
@@ -154,43 +155,43 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Expertise Section */}
       <section id="expertise" className="section-container bg-surface-dark">
-        <h2 className="section-heading text-center text-transparent bg-gradient-blue bg-clip-text">Areas of Expertise</h2>
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Brain className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Machine Learning</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Machine Learning</h3>
+            <p className="text-gray-300 flex-grow">
               Experienced in developing various Machine Learning applications
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-blue text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               View Projects
             </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Code className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3">NLP Engineering</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">NLP Engineering</h3>
+            <p className="text-gray-300 flex-grow">
               Extensive experience in building NLP pipelines and solutions
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-blue text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               View Projects
             </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Large Language Models</h3>
-            <p className="text-gray-600 flex-grow">
+            <h3 className="text-xl font-semibold mb-3 text-transparent bg-gradient-green bg-clip-text">Large Language Models</h3>
+            <p className="text-gray-300 flex-grow">
               Specialized in developing custom architectures, fine-tuning and optimizing LLMs
             </p>
             <Link 
               to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-blue text-white rounded-elliptical hover:bg-primary-dark transition-colors text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               View Projects
             </Link>
@@ -200,7 +201,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
 
       {/* Services Section */}
       <section id="services" className="section-container">
-        <h2 className="section-heading text-center text-white">How I Can Help</h2>
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Leaf className="w-12 h-12 text-primary mb-4" />
@@ -253,7 +254,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       {/* Contact Section */}
       <section id="contact" className="section-container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="section-heading text-center text-white">Get In Touch</h2>
+          <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Get In Touch</h2>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
