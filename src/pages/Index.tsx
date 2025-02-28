@@ -84,7 +84,7 @@ const Index = () => {
             </h2>
             <div className="relative w-full h-[300px] rounded-lg overflow-hidden mb-6">
               <img 
-                src="IMG_2584.jpeg"
+                src="IMG_1449.png"
                 alt="Professional portrait"
                 className="object-cover w-full h-full"
               />
