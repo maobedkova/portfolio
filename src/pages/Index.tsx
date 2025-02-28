@@ -83,7 +83,7 @@ const Index = () => {
             <h2 className="section-heading text-center bg-gradient-green bg-clip-text text-transparent">
               Who I Am
             </h2>
-            <div className="relative w-48 h-48 rounded-full overflow-hidden mx-auto mb-6">
+            <div className="profile-image">
               <img 
                 src="IMG_1449.png"
                 alt="Professional portrait"
@@ -95,12 +95,20 @@ const Index = () => {
 I've worked on diverse NLP applications, including Automatic Speech Recognition and Generative AI, always aiming to enhance human-computer interaction and drive real-world impact. 
 Passionate about knowledge sharing and staying at the forefront of AI, I strive to advance the field and develop intelligent systems that make a difference.
             </p>
-            <Link 
-              to="/timeline"
-              className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-green hover:bg-primary-dark transition-colors"
-            >
-              More About My Journey
-            </Link>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link 
+                to="/timeline"
+                className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-green hover:bg-primary-dark transition-colors"
+              >
+                More About My Journey
+              </Link>
+              <Link 
+                to="/resources"
+                className="inline-block px-6 py-3 border border-primary text-primary rounded-elliptical hover:bg-primary/10 transition-colors"
+              >
+                View Resources
+              </Link>
+            </div>
           </div>
           <div className="space-y-8 animate-on-scroll">
             <div className="glass-panel rounded-lg p-6">

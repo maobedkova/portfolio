@@ -37,11 +37,18 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections">
-      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-sections relative overflow-hidden">
+      {/* Abstract blob backgrounds */}
+      <div className="absolute top-40 -left-64 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary-dark to-primary-light opacity-20 blur-3xl"></div>
+      <div className="absolute top-[40%] -right-80 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-primary to-primary-light opacity-15 blur-3xl"></div>
+      <div className="absolute bottom-20 left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-primary-dark to-primary opacity-10 blur-3xl"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-primary-dark mb-4">Featured Projects</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
+            Featured Projects
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Exploring the intersection of artificial intelligence, natural language processing, and practical applications.
           </p>
         </div>
@@ -86,15 +93,15 @@ const Projects = () => {
                 {/* Content */}
                 <div className={`space-y-6 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <div>
-                    <h3 className="text-2xl font-bold text-primary-dark mb-4">{project.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{project.description}</p>
+                    <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">{project.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span 
                         key={tagIndex}
-                        className="px-3 py-1 bg-surface rounded-elliptical text-sm text-primary-dark"
+                        className="px-3 py-1 bg-surface rounded-elliptical text-sm text-primary-light"
                       >
                         {tag}
                       </span>
@@ -105,7 +112,7 @@ const Projects = () => {
                     {project.links.github && (
                       <a 
                         href={project.links.github}
-                        className="inline-flex items-center gap-2 text-primary-dark hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-2 text-primary-light hover:text-primary transition-colors"
                       >
                         <Github className="w-5 h-5" />
                         <span>View Code</span>
@@ -114,7 +121,7 @@ const Projects = () => {
                     {project.links.demo && (
                       <a 
                         href={project.links.demo}
-                        className="inline-flex items-center gap-2 text-primary-dark hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-2 text-primary-light hover:text-primary transition-colors"
                       >
                         <ExternalLink className="w-5 h-5" />
                         <span>Live Demo</span>
@@ -130,7 +137,7 @@ const Projects = () => {
         <div className="text-center mt-16">
           <Link 
             to="/"
-            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-elliptical hover:bg-primary-dark transition-colors"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-elliptical transition-all duration-300"
           >
             <span>Back to Home</span>
             <ArrowRight className="w-4 h-4" />
