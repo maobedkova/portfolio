@@ -8,7 +8,7 @@ const Resources = () => {
   const [websiteUrl, setWebsiteUrl] = useState('https://example.com');
   
   return (
-    <div className="min-h-screen bg-gradient-sections p-6">
+    <div className="min-h-screen p-6">
       <div className="max-w-5xl mx-auto">
         {/* Header with back button */}
         <div className="mb-10 flex items-center">

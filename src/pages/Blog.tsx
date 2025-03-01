@@ -10,7 +10,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Blog & Videos</h1>
         
