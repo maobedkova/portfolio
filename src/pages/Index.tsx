@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight, Leaf, Sprout } from 'lucide-react';
@@ -57,7 +56,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-sections">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative">
         <div className="text-center space-y-6 animate-fade-up">
