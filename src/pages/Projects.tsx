@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -36,9 +37,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections relative overflow-hidden">
-      {/* Removed duplicate background blobs as they're now in the BackgroundBlobs component */}
-      
+    <div className="min-h-screen relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
@@ -58,13 +57,11 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Background pattern */}
+              {/* Background pattern - now deep blue and more rounded */}
               <div 
-                className="absolute inset-0 bg-primary-light/20 rounded-3xl -rotate-1 transform"
+                className="absolute inset-0 bg-accent/70 rounded-[2.5rem] transform"
                 style={{ 
-                  clipPath: index % 2 === 0 
-                    ? 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)' 
-                    : 'polygon(0 0, 100% 15%, 100% 100%, 0 85%)'
+                  clipPath: 'circle(75% at 50% 50%)'
                 }}
               />
 
