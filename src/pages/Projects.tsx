@@ -57,11 +57,13 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Background pattern - now deep blue and more rounded */}
+              {/* Background pattern - now deep blue with asymmetrical shape */}
               <div 
-                className="absolute inset-0 bg-accent/70 rounded-[2.5rem] transform"
+                className="absolute inset-0 bg-accent/80 rounded-[2.5rem] transform"
                 style={{ 
-                  clipPath: 'circle(75% at 50% 50%)'
+                  clipPath: index % 2 === 0 
+                    ? 'ellipse(80% 70% at 65% 50%)' 
+                    : 'ellipse(80% 70% at 35% 50%)'
                 }}
               />
 
@@ -83,11 +85,11 @@ const Projects = () => {
                   </motion.div>
                 </div>
 
-                {/* Content */}
-                <div className={`space-y-6 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                {/* Content - improved text visibility with bg-surface backing */}
+                <div className={`space-y-6 relative z-10 p-6 rounded-xl bg-surface/30 backdrop-blur-sm ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <div>
                     <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">{project.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                    <p className="text-white leading-relaxed">{project.description}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
