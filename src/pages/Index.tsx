@@ -64,7 +64,7 @@ const Index = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium">
             AI/NLP Engineer
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-center bg-gradient-green bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold text-center bg-gradient-green bg-clip-text text-transparent leading-tight pb-2">
             Enhancing human-computer interaction through intelligence
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
