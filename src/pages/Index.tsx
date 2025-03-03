@@ -204,8 +204,8 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               AI Consulting
             </h3>
             <p className="text-gray-300 flex-grow">
-              Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
-              for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
+              Providing expert guidance on AI or NLP strategy and implementation. Helping identifying opportunities 
+              for AI integration and define roadmaps for successful development of ML/NLP solutions
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -214,18 +214,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Custom NLP Solutions
             </h3>
             <p className="text-gray-300 flex-grow">
-              Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
-              I develop scalable solutions that deliver measurable business value.
-            </p>
-          </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Leaf className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
-              Model Optimization
-            </h3>
-            <p className="text-gray-300 flex-grow">
-              Improving performance and efficiency of existing AI systems. Specialized in model compression, 
-              inference optimization, and reducing computational costs while maintaining accuracy.
+              Building tailored NLP or AI systems for specific business needs
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
@@ -234,7 +223,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Professional Blogging
             </h3>
             <p className="text-gray-300 flex-grow">
-              Sharing insights and knowledge through blogs and video content.
+              Sharing insights and knowledge through blogs and video content
             </p>
             <Link 
               to="/blog"
