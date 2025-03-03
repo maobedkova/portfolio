@@ -75,12 +75,8 @@ const Timeline = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="mb-24 relative"
             >
-              {/* Period indicator - Restored original styling and improved positioning */}
-              <div className="absolute left-0 -top-8 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm">
-                <span className="text-primary-dark font-semibold">{milestone.period}</span>
-              </div>
-
-              <div className="ml-8 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Content grid with adjusted position to make room for the badge */}
+              <div className="ml-8 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Education & Work Column */}
                 <div className="lg:col-span-5">
                   {milestone.education && (
@@ -104,7 +100,7 @@ const Timeline = () => {
                   )}
                 </div>
 
-                {/* Projects Column - Modified with green edges and fixed asymmetrical styling */}
+                {/* Projects Column - Fixed styling to remove vertical lines */}
                 <div className="lg:col-span-7">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {milestone.projects.map((project, projectIndex) => (
@@ -126,6 +122,11 @@ const Timeline = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+
+              {/* Period indicator - Positioned on top with z-index */}
+              <div className="absolute left-0 top-0 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm z-10">
+                <span className="text-primary-dark font-semibold">{milestone.period}</span>
               </div>
 
               {/* Connector Line */}
