@@ -161,7 +161,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       </section>
 
       {/* Expertise Section */}
-      <section id="expertise" className="section-container bg-surface-dark">
+      <section id="expertise" className="section-container">
         <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -170,12 +170,6 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Experienced in developing various Machine Learning applications
             </p>
-            <Link 
-              to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
-            >
-              View Projects
-            </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Code className="w-12 h-12 text-primary mb-4" />
@@ -183,12 +177,6 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Extensive experience in building NLP pipelines and solutions
             </p>
-            <Link 
-              to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
-            >
-              View Projects
-            </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-primary mb-4" />
@@ -196,14 +184,14 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Specialized in developing custom architectures, fine-tuning and optimizing LLMs
             </p>
-            <Link 
+          </div>
+        </div>
+        <Link 
               to="/projects"
               className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               View Projects
-            </Link>
-          </div>
-        </div>
+        </Link>
       </section>
 
       {/* Services Section */}
