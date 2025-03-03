@@ -32,6 +32,15 @@ const Blog = () => {
         </div>
       </div>
     </div>
+    <div className="text-center mt-16">
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-elliptical transition-all duration-300"
+          >
+            <span>Back to Home</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
   );
 };
 
