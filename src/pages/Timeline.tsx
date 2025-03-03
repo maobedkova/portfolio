@@ -1,28 +1,20 @@
 
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 
 const Timeline = () => {
   const milestones = [
     {
-      period: "2018-2020",
-      education: {
-        title: "Stanford University",
-        description: "Ph.D. in Computer Science",
-        details: "Focus on NLP and ML"
-      },
+      period: "2022-Present",
       work: {
-        title: "AI Research Lead",
+        title: "AI Research Director",
         description: "Tech Corp",
-        details: "Leading research initiatives in NLP"
+        details: "Leading research department"
       },
       projects: [
         {
-          title: "ML Framework",
-          description: "Built optimization framework"
-        },
-        {
-          title: "Research Paper",
-          description: "Published in top conference"
+          title: "Open Source Framework",
+          description: "10k+ GitHub stars"
         }
       ]
     },
@@ -45,23 +37,32 @@ const Timeline = () => {
       ]
     },
     {
-      period: "2022-Present",
+      period: "2018-2020",
+      education: {
+        title: "Stanford University",
+        description: "Ph.D. in Computer Science",
+        details: "Focus on NLP and ML"
+      },
       work: {
-        title: "AI Research Director",
+        title: "AI Research Lead",
         description: "Tech Corp",
-        details: "Leading research department"
+        details: "Leading research initiatives in NLP"
       },
       projects: [
         {
-          title: "Open Source Framework",
-          description: "10k+ GitHub stars"
+          title: "ML Framework",
+          description: "Built optimization framework"
+        },
+        {
+          title: "Research Paper",
+          description: "Published in top conference"
         }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Journey Through Time</h1>
         
@@ -74,36 +75,32 @@ const Timeline = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="mb-24 relative"
             >
-              {/* Period indicator */}
-              <div className="absolute left-0 -top-4 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm">
-                <span className="text-primary-dark font-semibold">{milestone.period}</span>
-              </div>
-
-              <div className="ml-8 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Content grid with adjusted position to make room for the badge */}
+              <div className="ml-8 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Education & Work Column */}
                 <div className="lg:col-span-5">
                   {milestone.education && (
-                    <div className="bg-surface rounded-2xl p-6 mb-6 shadow-sm">
+                    <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm">
                       <h3 className="text-lg font-semibold text-primary-dark mb-2">
                         {milestone.education.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-1">{milestone.education.description}</p>
-                      <p className="text-xs text-gray-500">{milestone.education.details}</p>
+                      <p className="text-sm text-white mb-1">{milestone.education.description}</p>
+                      <p className="text-xs text-white/70">{milestone.education.details}</p>
                     </div>
                   )}
                   
                   {milestone.work && (
-                    <div className="bg-surface rounded-2xl p-6 shadow-sm">
+                    <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
                       <h3 className="text-lg font-semibold text-primary-dark mb-2">
                         {milestone.work.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mb-1">{milestone.work.description}</p>
-                      <p className="text-xs text-gray-500">{milestone.work.details}</p>
+                      <p className="text-sm text-white mb-1">{milestone.work.description}</p>
+                      <p className="text-xs text-white/70">{milestone.work.details}</p>
                     </div>
                   )}
                 </div>
 
-                {/* Projects Column */}
+                {/* Projects Column - Restored rounded edges and removed vertical lines */}
                 <div className="lg:col-span-7">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {milestone.projects.map((project, projectIndex) => (
@@ -112,16 +109,21 @@ const Timeline = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 + projectIndex * 0.1 }}
-                        className="bg-accent-light rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                        className="bg-accent/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border-2 border-primary/40"
                       >
-                        <h4 className="text-base font-semibold text-primary-dark mb-2">
+                        <h4 className="text-base font-semibold text-primary-light mb-2">
                           {project.title}
                         </h4>
-                        <p className="text-sm text-gray-600">{project.description}</p>
+                        <p className="text-sm text-white">{project.description}</p>
                       </motion.div>
                     ))}
                   </div>
                 </div>
+              </div>
+
+              {/* Period indicator - Positioned on top with z-index */}
+              <div className="absolute left-0 top-0 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm z-10">
+                <span className="text-primary-dark font-semibold">{milestone.period}</span>
               </div>
 
               {/* Connector Line */}
@@ -130,6 +132,19 @@ const Timeline = () => {
               )}
             </motion.div>
           ))}
+        </div>
+
+        {/* Button to the main page */}
+        <div className="flex justify-center mt-16">
+          <motion.a 
+            href="/"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>Back to Main Page</span>
+            <ExternalLink size={16} />
+          </motion.a>
         </div>
       </div>
     </div>

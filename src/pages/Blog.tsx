@@ -2,15 +2,15 @@
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Understanding LLMs",
-      video: "https://www.youtube.com/embed/your-video-id",
-      description: "Exploring the fundamentals of Large Language Models"
+      title: "ChatGPT Explained for Non-Tech People",
+      video: "https://youtu.be/L9i0_cH-6b0?si=sYvz7HhLmuIi9H46",
+      description: "How ChatGPT works under the hood"
     },
     // Add more blog posts as needed
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections p-8">
+    <div className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Blog & Videos</h1>
         
@@ -32,6 +32,15 @@ const Blog = () => {
         </div>
       </div>
     </div>
+    <div className="text-center mt-16">
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-elliptical transition-all duration-300"
+          >
+            <span>Back to Home</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
   );
 };
 

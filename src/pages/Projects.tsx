@@ -37,12 +37,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-sections relative overflow-hidden">
-      {/* Abstract blob backgrounds */}
-      <div className="absolute top-40 -left-64 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary-dark to-primary-light opacity-20 blur-3xl"></div>
-      <div className="absolute top-[40%] -right-80 w-[600px] h-[600px] rounded-full bg-gradient-to-tl from-primary to-primary-light opacity-15 blur-3xl"></div>
-      <div className="absolute bottom-20 left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-primary-dark to-primary opacity-10 blur-3xl"></div>
-      
+    <div className="min-h-screen relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 z-10">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4 inline-block bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
@@ -62,13 +57,13 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Background pattern */}
+              {/* Background pattern - now deep blue with asymmetrical shape */}
               <div 
-                className="absolute inset-0 bg-primary-light/20 rounded-3xl -rotate-1 transform"
+                className="absolute inset-0 bg-accent/80 rounded-[2.5rem] transform"
                 style={{ 
                   clipPath: index % 2 === 0 
-                    ? 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)' 
-                    : 'polygon(0 0, 100% 15%, 100% 100%, 0 85%)'
+                    ? 'ellipse(80% 70% at 65% 50%)' 
+                    : 'ellipse(80% 70% at 35% 50%)'
                 }}
               />
 
@@ -90,11 +85,11 @@ const Projects = () => {
                   </motion.div>
                 </div>
 
-                {/* Content */}
-                <div className={`space-y-6 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                {/* Content - improved text visibility with bg-surface backing */}
+                <div className={`space-y-6 relative z-10 p-6 rounded-xl bg-surface/30 backdrop-blur-sm ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <div>
                     <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">{project.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
+                    <p className="text-white leading-relaxed">{project.description}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2">

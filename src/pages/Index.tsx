@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Database, Bot, UserCheck, Rocket, ChevronRight, Leaf, Sprout } from 'lucide-react';
@@ -57,14 +56,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-sections">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative">
         <div className="text-center space-y-6 animate-fade-up">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium">
             AI/NLP Engineer
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-center bg-gradient-green bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold text-center bg-gradient-green bg-clip-text text-transparent leading-tight pb-2">
             Enhancing human-computer interaction through intelligence
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -162,7 +161,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       </section>
 
       {/* Expertise Section */}
-      <section id="expertise" className="section-container bg-surface-dark">
+      <section id="expertise" className="section-container">
         <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -171,12 +170,6 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Experienced in developing various Machine Learning applications
             </p>
-            <Link 
-              to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
-            >
-              View Projects
-            </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Code className="w-12 h-12 text-primary mb-4" />
@@ -184,12 +177,6 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Extensive experience in building NLP pipelines and solutions
             </p>
-            <Link 
-              to="/projects"
-              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
-            >
-              View Projects
-            </Link>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Bot className="w-12 h-12 text-primary mb-4" />
@@ -197,14 +184,14 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Specialized in developing custom architectures, fine-tuning and optimizing LLMs
             </p>
-            <Link 
+          </div>
+        </div>
+        <Link 
               to="/projects"
               className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               View Projects
-            </Link>
-          </div>
-        </div>
+        </Link>
       </section>
 
       {/* Services Section */}
@@ -217,8 +204,8 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               AI Consulting
             </h3>
             <p className="text-gray-300 flex-grow">
-              Providing expert guidance on AI strategy and implementation. Help organizations identify opportunities 
-              for AI integration and develop roadmaps for successful deployment of ML/NLP solutions.
+              Providing expert guidance on AI or NLP strategy and implementation or identifying opportunities 
+              for AI integration
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -227,31 +214,20 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Custom NLP Solutions
             </h3>
             <p className="text-gray-300 flex-grow">
-              Building tailored NLP systems for specific business needs. From chatbots to document analysis systems, 
-              I develop scalable solutions that deliver measurable business value.
+              Building tailored NLP or AI systems for specific business needs
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <Leaf className="w-12 h-12 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
-              Model Optimization
-            </h3>
-            <p className="text-gray-300 flex-grow">
-              Improving performance and efficiency of existing AI systems. Specialized in model compression, 
-              inference optimization, and reducing computational costs while maintaining accuracy.
-            </p>
-          </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
             <Sprout className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
               Professional Blogging
             </h3>
             <p className="text-gray-300 flex-grow">
-              Sharing insights and knowledge through blogs and video content.
+              Sharing insights and knowledge through blogs and video content
             </p>
             <Link 
               to="/blog"
-              className="mt-4 inline-block px-6 py-2 text-white rounded-lg bg-gradient-green hover:opacity-90 transition-opacity text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               Read Blog
             </Link>

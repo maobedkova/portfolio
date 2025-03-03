@@ -1,6 +1,7 @@
 
 import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from "./components/ui/toaster";
+import BackgroundBlobs from './components/BackgroundBlobs';
 import './App.css';
 
 import Index from './pages/Index';
@@ -16,6 +17,7 @@ const Router = import.meta.env.PROD ? HashRouter : BrowserRouter;
 function App() {
   return (
     <Router>
+      <BackgroundBlobs />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
