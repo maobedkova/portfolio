@@ -100,7 +100,7 @@ const Timeline = () => {
                   )}
                 </div>
 
-                {/* Projects Column - Fixed styling to remove vertical lines */}
+                {/* Projects Column - Restored rounded edges and removed vertical lines */}
                 <div className="lg:col-span-7">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {milestone.projects.map((project, projectIndex) => (
@@ -109,10 +109,7 @@ const Timeline = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 + projectIndex * 0.1 }}
-                        className={`bg-accent/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border-2
-                          ${projectIndex % 2 === 0 
-                            ? 'border-primary/40 rounded-tr-3xl' 
-                            : 'border-primary/40 rounded-br-3xl'}`}
+                        className="bg-accent/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border-2 border-primary/40"
                       >
                         <h4 className="text-base font-semibold text-primary-light mb-2">
                           {project.title}
