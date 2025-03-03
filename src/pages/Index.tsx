@@ -204,8 +204,8 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               AI Consulting
             </h3>
             <p className="text-gray-300 flex-grow">
-              Providing expert guidance on AI or NLP strategy and implementation. Helping identifying opportunities 
-              for AI integration and define roadmaps for successful development of ML/NLP solutions
+              Providing expert guidance on AI or NLP strategy and implementation or identifying opportunities 
+              for AI integration
             </p>
           </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
@@ -217,7 +217,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Building tailored NLP or AI systems for specific business needs
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col col-start-2">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
             <Sprout className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-3 bg-gradient-green bg-clip-text text-transparent">
               Professional Blogging
@@ -227,7 +227,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             </p>
             <Link 
               to="/blog"
-              className="mt-4 inline-block px-6 py-2 text-white rounded-lg bg-gradient-green hover:opacity-90 transition-opacity text-center"
+              className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               Read Blog
             </Link>
