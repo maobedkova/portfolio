@@ -33,7 +33,7 @@ const Resources = () => {
                 : 'text-gray-400 hover:text-primary'
             }`}
           >
-            PDF Viewer
+            One-Page Resume
           </button>
           <button
             onClick={() => setActiveTab('website')}
@@ -43,7 +43,7 @@ const Resources = () => {
                 : 'text-gray-400 hover:text-primary'
             }`}
           >
-            Website Preview
+            Full Resume
           </button>
         </div>
 
@@ -63,7 +63,7 @@ const Resources = () => {
                 {/* Sample PDF Embed */}
                 <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4] bg-surface-dark">
                   <embed 
-                    src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" 
+                    src="https://maobedkova.github.io/" 
                     type="application/pdf"
                     className="w-full h-full"
                   />
