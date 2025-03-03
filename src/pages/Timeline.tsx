@@ -75,16 +75,16 @@ const Timeline = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="mb-24 relative"
             >
-              {/* Period indicator - Now less visually intrusive */}
-              <div className="absolute left-0 -top-4 bg-primary-light/20 backdrop-blur-sm rounded-elliptical px-4 py-1 shadow-sm">
-                <span className="text-primary-dark font-medium text-sm">{milestone.period}</span>
+              {/* Period indicator - Restored original styling and improved positioning */}
+              <div className="absolute left-0 -top-8 bg-primary-light rounded-elliptical px-6 py-2 shadow-sm">
+                <span className="text-primary-dark font-semibold">{milestone.period}</span>
               </div>
 
               <div className="ml-8 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Education & Work Column */}
                 <div className="lg:col-span-5">
                   {milestone.education && (
-                    <div className="bg-surface/30 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm">
+                    <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 mb-6 shadow-sm">
                       <h3 className="text-lg font-semibold text-primary-dark mb-2">
                         {milestone.education.title}
                       </h3>
@@ -94,7 +94,7 @@ const Timeline = () => {
                   )}
                   
                   {milestone.work && (
-                    <div className="bg-surface/30 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
+                    <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
                       <h3 className="text-lg font-semibold text-primary-dark mb-2">
                         {milestone.work.title}
                       </h3>
@@ -104,7 +104,7 @@ const Timeline = () => {
                   )}
                 </div>
 
-                {/* Projects Column - Modified for greater visual variation */}
+                {/* Projects Column - Modified with green edges and fixed asymmetrical styling */}
                 <div className="lg:col-span-7">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {milestone.projects.map((project, projectIndex) => (
@@ -113,13 +113,15 @@ const Timeline = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.2 + projectIndex * 0.1 }}
-                        className={`bg-accent/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow 
-                          ${projectIndex % 2 === 0 ? 'rounded-tr-3xl rounded-bl-3xl' : 'rounded-tl-3xl rounded-br-3xl'}`}
+                        className={`bg-accent/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border-2
+                          ${projectIndex % 2 === 0 
+                            ? 'border-primary/40 rounded-tr-3xl' 
+                            : 'border-primary/40 rounded-br-3xl'}`}
                       >
                         <h4 className="text-base font-semibold text-primary-light mb-2">
                           {project.title}
                         </h4>
-                        <p className="text-sm text-white/90">{project.description}</p>
+                        <p className="text-sm text-white">{project.description}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -134,7 +136,7 @@ const Timeline = () => {
           ))}
         </div>
 
-        {/* Added button to the main page */}
+        {/* Button to the main page */}
         <div className="flex justify-center mt-16">
           <motion.a 
             href="/"
