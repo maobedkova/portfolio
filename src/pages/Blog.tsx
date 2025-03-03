@@ -2,9 +2,9 @@
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Understanding LLMs",
-      video: "https://www.youtube.com/embed/your-video-id",
-      description: "Exploring the fundamentals of Large Language Models"
+      title: "ChatGPT Explained for Non-Tech People",
+      video: "https://youtu.be/L9i0_cH-6b0?si=sYvz7HhLmuIi9H46",
+      description: "How ChatGPT works under the hood"
     },
     // Add more blog posts as needed
   ];
