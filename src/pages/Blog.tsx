@@ -1,12 +1,15 @@
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
     {
       title: "ChatGPT Explained for Non-Tech People",
-      video: "https://youtu.be/L9i0_cH-6b0?si=sYvz7HhLmuIi9H46",
+      type: "video",
+      // Convert YouTube watch URL to embed URL format
+      video: "https://www.youtube.com/embed/L9i0_cH-6b0",
+      thumbnail: "https://img.youtube.com/vi/L9i0_cH-6b0/maxresdefault.jpg",
       description: "How ChatGPT works under the hood"
     },
     {
@@ -38,15 +41,34 @@ const Blog = () => {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white font-medium">Read on Medium →</span>
+                      <span className="text-white font-medium flex items-center">
+                        Read on Medium <ExternalLink className="ml-1 w-4 h-4" />
+                      </span>
                     </div>
                   </div>
                 </a>
-              ) : (
-                <div className="aspect-video mb-4">
+              ) : post.type === 'video' && (
+                <div className="aspect-video mb-4 relative">
+                  <a 
+                    href={`https://youtu.be/L9i0_cH-6b0`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block relative"
+                  >
+                    <img 
+                      src={post.thumbnail} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black/70 rounded-full p-4 hover:bg-primary transition-colors duration-300">
+                        <Play className="w-8 h-8 text-white" fill="white" />
+                      </div>
+                    </div>
+                  </a>
                   <iframe
                     src={post.video}
-                    className="w-full h-full rounded-lg"
+                    className="w-full h-full rounded-lg hidden"
                     allowFullScreen
                     title={post.title}
                   />
