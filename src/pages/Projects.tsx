@@ -57,15 +57,9 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Background pattern - now with rounded edges */}
+              {/* Background with consistent rounded rectangle */}
               <div 
-                className="absolute inset-0 bg-accent/80 rounded-[2.5rem] transform"
-                style={{ 
-                  clipPath: index % 2 === 0 
-                    ? 'ellipse(80% 70% at 65% 50%)' 
-                    : 'ellipse(80% 70% at 35% 50%)',
-                  borderRadius: '3rem'
-                }}
+                className="absolute inset-0 bg-accent/80 rounded-[2.5rem]"
               />
 
               <div className={`grid md:grid-cols-2 gap-8 items-center p-8 ${
