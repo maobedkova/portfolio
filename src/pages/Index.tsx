@@ -103,7 +103,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                 to="/resources"
                 className="inline-block px-6 py-3 border border-primary text-primary rounded-elliptical hover:bg-primary/10 transition-colors"
               >
-                View Resources
+                View Resume
               </Link>
             </div>
           </div>
@@ -267,7 +267,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                 rows={4}
                 className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
               />
-              <button className="w-full px-6 py-3 rounded-lg bg-gradient-green text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              <button className="w-full px-6 py-3 rounded-elliptical bg-gradient-green text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Send className="w-4 h-4" />
                 Send Message
               </button>
