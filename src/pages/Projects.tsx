@@ -57,24 +57,19 @@ const Projects = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              {/* Background pattern - now deep blue with asymmetrical shape */}
+              {/* Background with consistent rounded rectangle */}
               <div 
-                className="absolute inset-0 bg-accent/80 rounded-[2.5rem] transform"
-                style={{ 
-                  clipPath: index % 2 === 0 
-                    ? 'ellipse(80% 70% at 65% 50%)' 
-                    : 'ellipse(80% 70% at 35% 50%)'
-                }}
+                className="absolute inset-0 bg-accent/80 rounded-[2.5rem]"
               />
 
               <div className={`grid md:grid-cols-2 gap-8 items-center p-8 ${
                 index % 2 === 0 ? 'md:grid-flow-row' : 'md:grid-flow-row-dense'
               }`}>
-                {/* Image */}
+                {/* Image with soft rounded corners */}
                 <div className={`relative ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="relative rounded-2xl overflow-hidden shadow-xl aspect-video"
+                    className="relative rounded-[2rem] overflow-hidden shadow-xl aspect-video"
                   >
                     <img 
                       src={project.image} 
@@ -85,18 +80,19 @@ const Projects = () => {
                   </motion.div>
                 </div>
 
-                {/* Content - improved text visibility with bg-surface backing */}
-                <div className={`space-y-6 relative z-10 p-6 rounded-xl bg-surface/30 backdrop-blur-sm ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                {/* Content with soft rounded corners */}
+                <div className={`space-y-6 relative z-10 p-6 rounded-[2rem] bg-surface/30 backdrop-blur-sm ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <div>
                     <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">{project.title}</h3>
                     <p className="text-white leading-relaxed">{project.description}</p>
                   </div>
 
+                  {/* Technology tags with different background */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span 
                         key={tagIndex}
-                        className="px-3 py-1 bg-surface rounded-elliptical text-sm text-primary-light"
+                        className="px-3 py-1 bg-primary-dark/20 backdrop-blur-sm border border-primary-light/20 rounded-[1rem] text-sm text-primary-light"
                       >
                         {tag}
                       </span>
@@ -132,7 +128,7 @@ const Projects = () => {
         <div className="text-center mt-16">
           <Link 
             to="/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-elliptical transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
           >
             <span>Back to Home</span>
             <ArrowRight className="w-4 h-4" />
