@@ -271,13 +271,13 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             </form>
           </div>
           <div className="flex justify-center gap-6 mt-8">
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
+            <a href="https://maobedkova.github.io/" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
+            <a href="https://www.linkedin.com/in/mobedkova/" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
+            <a href="mailto:maryobedkova@gmail.com" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Mail className="w-6 h-6" />
             </a>
           </div>
