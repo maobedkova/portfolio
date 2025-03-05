@@ -75,12 +75,9 @@ const Index = () => {
       </section>
 
       <section id="about" className="section-container">
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <UserCheck className="w-8 h-8 text-primary" />
-          <h2 className="section-heading text-center bg-gradient-green bg-clip-text text-transparent m-0">
-            Who I Am
-          </h2>
-        </div>
+        <h2 className="section-heading text-center bg-gradient-green bg-clip-text text-transparent">
+          Who I Am
+        </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-on-scroll">
             <div className="profile-image">
@@ -162,33 +159,30 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       </section>
 
       <section id="expertise" className="section-container">
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <Brain className="w-8 h-8 text-primary" />
-          <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text m-0">Areas of Expertise</h2>
-        </div>
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Areas of Expertise</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Rocket className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text m-0">Machine Learning</h3>
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <Rocket className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text">Machine Learning</h3>
             </div>
             <p className="text-gray-300 flex-grow">
               Experienced in developing various Machine Learning applications
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Code className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text m-0">NLP Engineering</h3>
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <Code className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text">NLP Engineering</h3>
             </div>
             <p className="text-gray-300 flex-grow">
               Extensive experience in building NLP pipelines and solutions
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Bot className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text m-0">Large Language Models</h3>
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <Bot className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text">Large Language Models</h3>
             </div>
             <p className="text-gray-300 flex-grow">
               Specialized in developing custom architectures, fine-tuning and optimizing LLMs
@@ -206,15 +200,12 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       </section>
 
       <section id="services" className="section-container">
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <Briefcase className="w-8 h-8 text-primary" />
-          <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text m-0">How I Can Help</h2>
-        </div>
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">How I Can Help</h2>
         <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Lightbulb className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent m-0">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <Lightbulb className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent">
                 AI Consulting
               </h3>
             </div>
@@ -223,10 +214,10 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               for AI integration
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <Globe className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent m-0">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <Globe className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent">
                 Custom NLP Solutions
               </h3>
             </div>
@@ -234,10 +225,10 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               Building tailored NLP or AI systems for specific business needs
             </p>
           </div>
-          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <BookOpen className="w-6 h-6 text-primary" />
-              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent m-0">
+          <div className="glass-panel rounded-lg p-8 animate-on-scroll flex flex-col items-center text-center">
+            <div className="flex flex-col items-center mb-4">
+              <BookOpen className="w-8 h-8 text-primary mb-2" />
+              <h3 className="text-xl font-semibold bg-gradient-green bg-clip-text text-transparent">
                 Professional Blogging
               </h3>
             </div>
@@ -255,11 +246,8 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
       </section>
 
       <section id="contact" className="section-container">
+        <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Get In Touch</h2>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <Mail className="w-8 h-8 text-primary" />
-            <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text m-0">Get In Touch</h2>
-          </div>
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
