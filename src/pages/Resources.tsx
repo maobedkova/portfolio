@@ -13,7 +13,7 @@ const Resources = () => {
       <div className="max-w-5xl mx-auto">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-8 text-transparent bg-gradient-green bg-clip-text">
-          Resume & Publications
+          Resume
         </h1>
 
         {/* Resources Cards */}
@@ -48,7 +48,7 @@ const Resources = () => {
             </div>
             <h2 className="text-xl font-semibold mb-2">Full Resume</h2>
             <p className="text-gray-400 text-center text-sm">
-              Explore my detailed resume website with projects and publications
+              Explore my detailed resume website with an extensive list on work places and projects
             </p>
           </div>
         </div>
@@ -135,7 +135,7 @@ const Resources = () => {
         <div className="mt-12 flex justify-center">
           <Link 
             to="/" 
-            className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors"
+            className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-elliptical transition-colors"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
