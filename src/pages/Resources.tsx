@@ -53,7 +53,7 @@ const Resources = () => {
           </div>
         </div>
 
-        {/* Content Area - Removed dark rectangular container */}
+        {/* Content Area - Without dark background */}
         {activeTab === 'pdf' && (
           <div className="space-y-6">
             <div className="border-b border-accent p-4 flex justify-between items-center">
@@ -72,7 +72,7 @@ const Resources = () => {
             </div>
             
             <div className="p-4">
-              <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4] bg-surface-dark">
+              <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4]">
                 <embed 
                   src="/CV_NLP_AI_MariaObedkova.pdf" 
                   type="application/pdf"
@@ -115,7 +115,7 @@ const Resources = () => {
             </div>
             
             <div className="p-4">
-              <div className="border border-accent rounded-lg overflow-hidden aspect-video bg-surface-dark">
+              <div className="border border-accent rounded-lg overflow-hidden aspect-video">
                 <iframe
                   src={websiteUrl}
                   className="w-full h-full"
@@ -131,11 +131,14 @@ const Resources = () => {
           </div>
         )}
         
-        {/* Back button moved to the bottom */}
+        {/* Back button with green styling to match other pages */}
         <div className="mt-12 flex justify-center">
-          <Link to="/" className="group inline-flex items-center text-primary hover:text-primary-light transition-colors">
-            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            <span>Back to Home</span>
+          <Link 
+            to="/" 
+            className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Home
           </Link>
         </div>
       </div>
