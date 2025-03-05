@@ -57,20 +57,20 @@ const Resources = () => {
               
               <div className="bg-accent rounded-lg p-4 mb-6">
                 <p className="text-gray-300 mb-4">
-                  Below you can view my resume and published research papers.
+                  Below you can view my resume with my work experience and skills.
                 </p>
                 
-                {/* Sample PDF Embed */}
+                {/* PDF Embed */}
                 <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4] bg-surface-dark">
                   <embed 
-                    src="https://maobedkova.github.io/" 
+                    src="/CV_NLP_AI_MariaObedkova.pdf" 
                     type="application/pdf"
                     className="w-full h-full"
                   />
                 </div>
                 
                 <p className="text-sm text-gray-400 mt-2">
-                  Note: You can upload and link to your own PDF files to replace this example.
+                  You can download my resume by clicking on the PDF and using the download button from the PDF viewer.
                 </p>
               </div>
             </div>
