@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Bot, UserCheck, Rocket, ChevronRight, Lightbulb, Briefcase, Globe, BookOpen } from 'lucide-react';
+import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Bot, UserCheck, Rocket, ChevronRight, Lightbulb, Briefcase, Globe, BookOpen, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -251,22 +252,29 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
-                />
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="w-full px-4 py-3 rounded-md bg-white/10 border border-accent"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full px-4 py-3 rounded-md bg-white/10 border border-accent"
+                  />
+                </div>
               </div>
-              <textarea
-                placeholder="Message"
-                rows={4}
-                className="w-full px-4 py-3 rounded-md bg-white/50 border border-accent"
-              />
+              <div>
+                <textarea
+                  placeholder="Message"
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-md bg-white/10 border border-accent"
+                />
+                <p className="text-xs text-gray-400 mt-1">Share your thoughts or questions and I'll get back to you soon</p>
+              </div>
               <button className="w-full px-6 py-3 rounded-elliptical bg-gradient-green text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Send className="w-4 h-4" />
                 Send Message
@@ -279,6 +287,9 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             </a>
             <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
+              <ExternalLink className="w-6 h-6" />
             </a>
             <a href="#" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Mail className="w-6 h-6" />
