@@ -18,8 +18,42 @@ const Blog = () => {
       link: "https://medium.com/@maobedkova/how-i-stay-up-to-date-with-ai-and-nlp-656de9e284d9",
       image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3vNKhz6K-oGQ9M_RpW6-0A.png",
       description: "A curated list of resources to stay current with AI and NLP developments"
+    },
+    {
+      title: "Lessons Learned from Working as an NLP Engineer",
+      type: "article",
+      link: "https://medium.com/@maobedkova/lessons-learned-from-working-as-an-nlp-engineer-60d6ff0c77f",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*R-oovBfAGNt3TxgM0dr5og.jpeg",
+      description: "Key insights and experiences from my career as an NLP Engineer"
+    },
+    {
+      title: "Cross-Lingual Transfer for ABSA",
+      type: "article",
+      link: "https://medium.com/trustyou-engineering/cross-lingual-transfer-for-absa-6e9ae08a428a",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JcYViNESm-xrQu1iYzlD2w.png",
+      description: "Exploring transfer learning techniques for Aspect-Based Sentiment Analysis across languages"
+    },
+    {
+      title: "Data Augmentation for ABSA",
+      type: "article",
+      link: "https://medium.com/trustyou-engineering/data-augmentation-for-absa-bb61540673e3",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QZ7LyRXRxH3jVIBykgnG4Q.jpeg",
+      description: "Techniques to enhance training data for Aspect-Based Sentiment Analysis"
+    },
+    {
+      title: "Topic Modelling with PySPark and Spark NLP",
+      type: "article",
+      link: "https://medium.com/trustyou-engineering/topic-modelling-with-pyspark-and-spark-nlp-a99d063f1a6e",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xJRLnT5FXnVbXzIyoBdoiQ.jpeg",
+      description: "Using distributed computing for efficient topic modeling on large text corpora"
+    },
+    {
+      title: "Acoustic Word Embeddings",
+      type: "article",
+      link: "https://medium.com/@maobedkova/acoustic-word-embeddings-fc3f1a8f0519",
+      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zRrYLGrKRBl2tpv_CLGHFA.jpeg",
+      description: "Exploring vector representations of spoken words for speech processing tasks"
     }
-    // Add more blog posts as needed
   ];
 
   return (
@@ -75,7 +109,7 @@ const Blog = () => {
                 </div>
               )}
               
-              <p className="text-gray-600">{post.description}</p>
+              <p className="text-gray-400">{post.description}</p>
             </div>
           ))}
         </div>
