@@ -58,10 +58,10 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Blog & Videos</h1>
         
-        <div className="grid gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
             <div key={index} className="glass-panel p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-4">{post.title}</h2>
@@ -73,6 +73,10 @@ const Blog = () => {
                       src={post.image} 
                       alt={post.title} 
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://placehold.co/600x400/10B981/FFFFFF?text=Article+Preview";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <span className="text-white font-medium flex items-center">
@@ -93,6 +97,10 @@ const Blog = () => {
                       src={post.thumbnail} 
                       alt={post.title} 
                       className="w-full h-full object-cover rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://placehold.co/600x400/10B981/FFFFFF?text=Video+Preview";
+                      }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="bg-black/70 rounded-full p-4 hover:bg-primary transition-colors duration-300">
@@ -100,12 +108,6 @@ const Blog = () => {
                       </div>
                     </div>
                   </a>
-                  <iframe
-                    src={post.video}
-                    className="w-full h-full rounded-lg hidden"
-                    allowFullScreen
-                    title={post.title}
-                  />
                 </div>
               )}
               
