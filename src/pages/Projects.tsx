@@ -22,8 +22,8 @@ const Projects = () => {
     }));
   };
 
-  // Function to generate abstract AI image URLs
-  const getAbstractImageUrl = (index: number) => {
+  // Function to generate abstract AI image URLs with a better uniqueness strategy
+  const getAbstractImageUrl = (sectionIndex: number, projectIndex: number) => {
     // Collection of abstract AI-generated images
     const imageUrls = [
       "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop",
@@ -36,9 +36,21 @@ const Projects = () => {
       "https://images.unsplash.com/photo-1579546929662-711aa81148cf?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1614850523459-c2f4c699c52a?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1552083375-1447ce886485?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620064916958-605375619af8?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1562907550-096d3bf9b25c?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop",
     ];
     
-    return imageUrls[index % imageUrls.length];
+    // Combine sectionIndex and projectIndex to ensure uniqueness
+    const uniqueIndex = (sectionIndex * 10 + projectIndex) % imageUrls.length;
+    return imageUrls[uniqueIndex];
   };
 
   // Work projects
@@ -166,19 +178,19 @@ const Projects = () => {
   ];
 
   // Function to render project card
-  const renderProjectCard = (project: any, index: number) => (
+  const renderProjectCard = (project: any, sectionIndex: number, projectIndex: number) => (
     <motion.div
-      key={index}
+      key={projectIndex}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: projectIndex * 0.1 }}
       viewport={{ once: true }}
       className="glass-panel rounded-[1.5rem] overflow-hidden shadow-lg h-full flex flex-col"
     >
       <div className="relative overflow-hidden">
         <AspectRatio ratio={16/9}>
           <img 
-            src={getAbstractImageUrl(index)} 
+            src={getAbstractImageUrl(sectionIndex, projectIndex)} 
             alt="Abstract background"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
@@ -187,8 +199,8 @@ const Projects = () => {
         <h3 className="absolute bottom-0 left-0 p-4 text-xl font-bold text-white">{project.title}</h3>
       </div>
       
-      <div className="p-5 flex-grow flex flex-col">
-        <p className="text-white/80 mb-6 flex-grow">{project.description}</p>
+      <div className="p-5 flex-grow flex flex-col justify-between">
+        <p className="text-white/80 mb-6">{project.description}</p>
         
         <div className="mt-auto">
           <div className="flex flex-wrap gap-2 mb-4">
@@ -234,7 +246,7 @@ const Projects = () => {
   );
 
   // Function to render project section with show more/less toggle
-  const renderProjectSection = (projects: any[], icon: JSX.Element, title: string, sectionKey: string) => {
+  const renderProjectSection = (projects: any[], icon: JSX.Element, title: string, sectionKey: string, sectionIndex: number) => {
     const isExpanded = expandedSections[sectionKey];
     const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
     const hasMoreProjects = projects.length > 4;
@@ -249,7 +261,7 @@ const Projects = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {visibleProjects.map((project, index) => renderProjectCard(project, index))}
+          {visibleProjects.map((project, index) => renderProjectCard(project, sectionIndex, index))}
         </div>
         
         {hasMoreProjects && (
@@ -279,10 +291,37 @@ const Projects = () => {
           </p>
         </div>
 
-        {renderProjectSection(workProjects, <Briefcase className="w-7 h-7 text-primary-light" />, "Work Projects", "work")}
-        {renderProjectSection(openSourceProjects, <Code className="w-7 h-7 text-primary-light" />, "Open-Source Projects", "openSource")}
-        {renderProjectSection(hackathonProjects, <Award className="w-7 h-7 text-primary-light" />, "Hackathon Projects", "hackathon")}
-        {renderProjectSection(universityProjects, <GraduationCap className="w-7 h-7 text-primary-light" />, "University Projects", "university")}
+        {renderProjectSection(
+          workProjects, 
+          <Briefcase className="w-7 h-7 text-white" />, 
+          "Work Projects", 
+          "work",
+          0
+        )}
+        
+        {renderProjectSection(
+          openSourceProjects, 
+          <Code className="w-7 h-7 text-[#F97316]" />, 
+          "Open-Source Projects", 
+          "openSource",
+          1
+        )}
+        
+        {renderProjectSection(
+          hackathonProjects, 
+          <Award className="w-7 h-7 text-[#0EA5E9]" />, 
+          "Hackathon Projects", 
+          "hackathon",
+          2
+        )}
+        
+        {renderProjectSection(
+          universityProjects, 
+          <GraduationCap className="w-7 h-7 text-[#8B5CF6]" />, 
+          "University Projects", 
+          "university",
+          3
+        )}
 
         <div className="text-center mt-16">
           <Link 
