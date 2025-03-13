@@ -48,7 +48,8 @@ const Projects = () => {
       "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop",
     ];
     
-    // Combine sectionIndex and projectIndex to ensure uniqueness
+    // Use a combination of sectionIndex and projectIndex to create a unique index
+    // Multiply sectionIndex by a large enough number to ensure no overlap
     const uniqueIndex = (sectionIndex * 10 + projectIndex) % imageUrls.length;
     return imageUrls[uniqueIndex];
   };
@@ -93,7 +94,7 @@ const Projects = () => {
   const openSourceProjects = [
     {
       title: "HuggingFace Robust Speech Challenge",
-      description: "Developed a speech recognition model for Russian and open-sourced it on the HuggingFace hub. Took part in Feb 2022.",
+      description: "Developed a speech recognition model for Russian and open-sourced it on the HuggingFace hub.",
       tags: ["ASR", "Russian", "HuggingFace"],
       links: {
         github: "https://huggingface.co/models?other=robust-speech-event"
@@ -101,7 +102,7 @@ const Projects = () => {
     },
     {
       title: "NL-Augmenter",
-      description: "Contributed with a sentiment filter to the NL-Augmenter project that helps with augmentation for sentiment analysis tasks. Took part in Sep 2021.",
+      description: "Contributed with a sentiment filter to the NL-Augmenter project that helps with augmentation for sentiment analysis tasks.",
       tags: ["NLP", "Data Augmentation", "Sentiment Analysis"],
       links: {
         github: "https://github.com/GEM-benchmark/NL-Augmenter"
@@ -112,7 +113,7 @@ const Projects = () => {
   // Hackathon projects
   const hackathonProjects = [
     {
-      title: "Junction 2019: SunCatcher",
+      title: "Junction: SunCatcher",
       description: "Project aimed at encouraging sustainability for retail. Done in collaboration with K Group.",
       tags: ["Hackathon", "Sustainability", "Retail"],
       links: {
@@ -120,7 +121,7 @@ const Projects = () => {
       }
     },
     {
-      title: "Junction 2018: Sustage",
+      title: "Junction: Sustage",
       description: "Project aimed at preventing the SAD condition due to lack of vitamin D for people living in northern countries.",
       tags: ["Hackathon", "Health", "Wellness"],
       links: {
@@ -133,25 +134,25 @@ const Projects = () => {
   const universityProjects = [
     {
       title: "Pronunciation Generation for ASR",
-      description: "Developed a pronunciation generation method for ASR based on AWEs. MA thesis in 2019.",
+      description: "Developed a pronunciation generation method for ASR based on AWEs. MA thesis.",
       tags: ["ASR", "Pronunciation", "Thesis"],
       links: {}
     },
     {
       title: "Unsupervised Machine Translation",
-      description: "Investigated Cross-Lingual Word Embeddings for Unsupervised Neural Machine Translation for a rus-eng pair. Course project in 2018.",
+      description: "Investigated Cross-Lingual Word Embeddings for Unsupervised Neural Machine Translation for a rus-eng pair. Course project.",
       tags: ["NMT", "Word Embeddings", "Unsupervised Learning"],
       links: {}
     },
     {
       title: "Russian Sketches",
-      description: "Developed the collocation extraction method on the basis of syntactical structure for Russian. BA thesis in 2017.",
+      description: "Developed the collocation extraction method on the basis of syntactical structure for Russian. BA thesis.",
       tags: ["Collocation", "Russian", "Thesis"],
       links: {}
     },
     {
       title: "Amharic Corpus",
-      description: "Developed the Amharic corpus with Part-of-Speech Tagging using a Machine Learning approach. Presented at the \"ConCort\" conference on Digital Humanities in 2016.",
+      description: "Developed the Amharic corpus with Part-of-Speech Tagging using a Machine Learning approach. Presented at the \"ConCort\" conference on Digital Humanities.",
       tags: ["Corpus Linguistics", "POS Tagging", "Amharic"],
       links: {
         demo: "http://www.web-corpora.net/AmharicCorpus/search/"
@@ -159,19 +160,19 @@ const Projects = () => {
     },
     {
       title: "Tokenizer and Splitter for Russian Web Texts",
-      description: "Developed the advanced tokenizer and splitter for Geekrya corpora. Developed in 2016.",
+      description: "Developed the advanced tokenizer and splitter for Geekrya corpora.",
       tags: ["Tokenization", "Russian", "Web Corpus"],
       links: {}
     },
     {
       title: "Database of Comparative Constructions",
-      description: "Developed the database of constructions 'Verb like Noun' and studied some semantic patterns using this database within a research group. Developed in 2016.",
+      description: "Developed the database of constructions 'Verb like Noun' and studied some semantic patterns using this database within a research group.",
       tags: ["Database", "Linguistics", "Semantics"],
       links: {}
     },
     {
       title: "Automatic Authorship Attribution",
-      description: "Investigated different approaches of authorship determination and their statistical evaluation. Presented at the \"Digital Humanities\" conference in Tartu in 2015.",
+      description: "Investigated different approaches of authorship determination and their statistical evaluation. Presented at the \"Digital Humanities\" conference in Tartu.",
       tags: ["Authorship", "NLP", "Statistics"],
       links: {}
     }
@@ -293,7 +294,7 @@ const Projects = () => {
 
         {renderProjectSection(
           workProjects, 
-          <Briefcase className="w-7 h-7 text-white" />, 
+          <Briefcase className="w-7 h-7 text-primary-dark" />, 
           "Work Projects", 
           "work",
           0
@@ -301,7 +302,7 @@ const Projects = () => {
         
         {renderProjectSection(
           openSourceProjects, 
-          <Code className="w-7 h-7 text-[#F97316]" />, 
+          <Code className="w-7 h-7 text-primary-dark" />, 
           "Open-Source Projects", 
           "openSource",
           1
@@ -309,7 +310,7 @@ const Projects = () => {
         
         {renderProjectSection(
           hackathonProjects, 
-          <Award className="w-7 h-7 text-[#0EA5E9]" />, 
+          <Award className="w-7 h-7 text-primary-dark" />, 
           "Hackathon Projects", 
           "hackathon",
           2
@@ -317,7 +318,7 @@ const Projects = () => {
         
         {renderProjectSection(
           universityProjects, 
-          <GraduationCap className="w-7 h-7 text-[#8B5CF6]" />, 
+          <GraduationCap className="w-7 h-7 text-primary-dark" />, 
           "University Projects", 
           "university",
           3
