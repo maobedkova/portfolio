@@ -1,21 +1,44 @@
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, ExternalLink, Briefcase, Code, Award, GraduationCap } from 'lucide-react';
+import { ArrowRight, Github, ExternalLink, Briefcase, Code, Award, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Projects = () => {
-  // Function to generate abstract gradient backgrounds
-  const getAbstractBackground = (index) => {
-    const gradients = [
-      'linear-gradient(135deg, #059669 0%, #34D399 100%)',
-      'linear-gradient(135deg, #10B981 30%, #059669 100%)',
-      'linear-gradient(135deg, #34D399 0%, #10B981 100%)',
-      'linear-gradient(135deg, #047857 0%, #10B981 100%)',
-      'linear-gradient(135deg, #065F46 0%, #059669 100%)',
-      'linear-gradient(135deg, #059669 0%, #047857 100%)',
+  // States to track expanded sections
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
+    work: false,
+    openSource: false,
+    hackathon: false,
+    university: false
+  });
+
+  // Function to toggle section expansion
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  // Function to generate abstract AI image URLs
+  const getAbstractImageUrl = (index: number) => {
+    // Collection of abstract AI-generated images
+    const imageUrls = [
+      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620121684840-edffcfc4b878?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1633354931133-17d8f014b5b4?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1579546929662-711aa81148cf?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop",
     ];
     
-    return gradients[index % gradients.length];
+    return imageUrls[index % imageUrls.length];
   };
 
   // Work projects
@@ -143,7 +166,7 @@ const Projects = () => {
   ];
 
   // Function to render project card
-  const renderProjectCard = (project, index) => (
+  const renderProjectCard = (project: any, index: number) => (
     <motion.div
       key={index}
       initial={{ opacity: 0, y: 30 }}
@@ -152,12 +175,15 @@ const Projects = () => {
       viewport={{ once: true }}
       className="glass-panel rounded-[1.5rem] overflow-hidden shadow-lg h-full flex flex-col"
     >
-      <div className="relative h-40 overflow-hidden">
-        <div 
-          className="w-full h-full" 
-          style={{ background: getAbstractBackground(index) }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+      <div className="relative overflow-hidden">
+        <AspectRatio ratio={16/9}>
+          <img 
+            src={getAbstractImageUrl(index)} 
+            alt="Abstract background"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </AspectRatio>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
         <h3 className="absolute bottom-0 left-0 p-4 text-xl font-bold text-white">{project.title}</h3>
       </div>
       
@@ -166,7 +192,7 @@ const Projects = () => {
         
         <div className="mt-auto">
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.map((tag, tagIndex) => (
+            {project.tags.map((tag: string, tagIndex: number) => (
               <span 
                 key={tagIndex}
                 className="px-3 py-1 bg-primary-dark/20 backdrop-blur-sm border border-primary-light/20 rounded-full text-sm text-primary-light"
@@ -207,21 +233,39 @@ const Projects = () => {
     </motion.div>
   );
 
-  // Function to render project section
-  const renderProjectSection = (projects, icon, title) => (
-    <div className="mb-24">
-      <div className="flex items-center gap-3 mb-8">
-        {icon}
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
-          {title}
-        </h2>
+  // Function to render project section with show more/less toggle
+  const renderProjectSection = (projects: any[], icon: JSX.Element, title: string, sectionKey: string) => {
+    const isExpanded = expandedSections[sectionKey];
+    const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
+    const hasMoreProjects = projects.length > 4;
+    
+    return (
+      <div className="mb-24">
+        <div className="flex items-center gap-3 mb-8">
+          {icon}
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
+            {title}
+          </h2>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          {visibleProjects.map((project, index) => renderProjectCard(project, index))}
+        </div>
+        
+        {hasMoreProjects && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => toggleSection(sectionKey)}
+              className="inline-flex items-center gap-2 bg-primary-dark/30 hover:bg-primary-dark/50 text-white px-4 py-2 rounded-full transition-colors"
+            >
+              <span>{isExpanded ? 'Show Less' : 'Show More'}</span>
+              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </button>
+          </div>
+        )}
       </div>
-      
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, index) => renderProjectCard(project, index))}
-      </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -235,10 +279,10 @@ const Projects = () => {
           </p>
         </div>
 
-        {renderProjectSection(workProjects, <Briefcase className="w-7 h-7 text-primary-light" />, "Work Projects")}
-        {renderProjectSection(openSourceProjects, <Code className="w-7 h-7 text-primary-light" />, "Open-Source Projects")}
-        {renderProjectSection(hackathonProjects, <Award className="w-7 h-7 text-primary-light" />, "Hackathon Projects")}
-        {renderProjectSection(universityProjects, <GraduationCap className="w-7 h-7 text-primary-light" />, "University Projects")}
+        {renderProjectSection(workProjects, <Briefcase className="w-7 h-7 text-primary-light" />, "Work Projects", "work")}
+        {renderProjectSection(openSourceProjects, <Code className="w-7 h-7 text-primary-light" />, "Open-Source Projects", "openSource")}
+        {renderProjectSection(hackathonProjects, <Award className="w-7 h-7 text-primary-light" />, "Hackathon Projects", "hackathon")}
+        {renderProjectSection(universityProjects, <GraduationCap className="w-7 h-7 text-primary-light" />, "University Projects", "university")}
 
         <div className="text-center mt-16">
           <Link 
