@@ -1,12 +1,12 @@
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Briefcase, GraduationCap, Calendar, MapPin } from 'lucide-react';
+import { ExternalLink, Briefcase, GraduationCap, Calendar } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 const Timeline = () => {
   const experiences = [
     {
       period: "Sep 2022 - present",
-      location: "remote and Munich, Germany",
       work: {
         title: "Senior NLP Engineer",
         company: "TrustYou",
@@ -20,7 +20,6 @@ const Timeline = () => {
     },
     {
       period: "Apr 2020 - Aug 2022",
-      location: "remote and Munich, Germany",
       work: {
         title: "NLP Engineer",
         company: "TrustYou",
@@ -34,7 +33,6 @@ const Timeline = () => {
     },
     {
       period: "Feb 2019 - Jul 2019",
-      location: "Stuttgart, Germany",
       work: {
         title: "ASR Research Intern",
         company: "Sony's European Technology Center",
@@ -47,7 +45,6 @@ const Timeline = () => {
     },
     {
       period: "Oct 2016 - Dec 2018",
-      location: "remote",
       work: {
         title: "NLP Engineer",
         company: "Fact Read",
@@ -60,7 +57,6 @@ const Timeline = () => {
     },
     {
       period: "Jan 2017 - Sep 2017",
-      location: "Moscow, Russia",
       work: {
         title: "Computational Linguist",
         company: "ABBYY",
@@ -73,11 +69,10 @@ const Timeline = () => {
     },
     {
       period: "Jan 2016 - Jun 2016",
-      location: "Moscow, Russia",
       work: {
         title: "Computational Linguistics Intern",
         company: "ABBYY Labs",
-        companyUrl: "https://www.abbyy.com/flexicapture-sdk/",
+        companyUrl: "https://www.abbyy.flexicapture-sdk/",
         details: "Developed the advanced tokenizer for Russian corpora in the Geekrya project."
       },
       skills: [
@@ -126,7 +121,7 @@ const Timeline = () => {
         
         <div className="relative">
           {/* Experience Section */}
-          <h2 className="text-3xl font-semibold text-primary-light mb-8">Experience</h2>
+          <h2 className="text-3xl font-semibold text-primary-dark mb-8">Experience</h2>
           {experiences.map((exp, index) => (
             <motion.div
               key={`exp-${index}`}
@@ -135,22 +130,16 @@ const Timeline = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="mb-16 relative pl-8 border-l-2 border-primary/30"
             >
-              {/* Date badge */}
-              <div className="absolute -left-4 top-0 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
+              {/* Date badge - Now aligned with the card */}
+              <div className="absolute -left-4 top-6 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
                 <div className="flex items-center gap-2">
-                  <Calendar size={16} className="text-primary-light" />
+                  <Calendar size={16} className="text-primary-dark" />
                   <span className="text-white font-medium">{exp.period}</span>
                 </div>
               </div>
 
-              {/* Location */}
-              <div className="flex items-center gap-2 ml-2 mt-12 mb-4 text-white/70">
-                <MapPin size={16} className="text-primary-light" />
-                <span>{exp.location}</span>
-              </div>
-
               {/* Work content */}
-              <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
+              <Card className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm mt-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
                   <h3 className="text-xl font-semibold text-primary-light">
                     {exp.work.title}
@@ -173,26 +162,29 @@ const Timeline = () => {
                 
                 <p className="text-white/80 mb-6">{exp.work.details}</p>
                 
-                {/* Skills */}
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, skillIndex) => (
-                    <span 
-                      key={`skill-${index}-${skillIndex}`}
-                      className="bg-accent/80 px-3 py-1 rounded-elliptical text-xs text-primary-light"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                {/* Skills - Centered in a widget */}
+                <div className="bg-accent/70 rounded-xl p-4">
+                  <p className="text-primary-dark font-medium text-sm mb-3 text-center">Tools & Technologies</p>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <span 
+                        key={`skill-${index}-${skillIndex}`}
+                        className="bg-surface/70 px-3 py-1 rounded-elliptical text-xs text-primary-light"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Card>
 
               {/* Connector dot */}
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-light" />
+              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-primary-dark" />
             </motion.div>
           ))}
 
           {/* Education Section */}
-          <h2 className="text-3xl font-semibold text-primary-light mb-8">Education</h2>
+          <h2 className="text-3xl font-semibold text-primary-dark mb-8">Education</h2>
           {education.map((edu, index) => (
             <motion.div
               key={`edu-${index}`}
@@ -201,21 +193,30 @@ const Timeline = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="mb-16 relative pl-8 border-l-2 border-primary/30"
             >
-              {/* Date badge */}
-              <div className="absolute -left-4 top-0 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
+              {/* Date badge - Now aligned with the card */}
+              <div className="absolute -left-4 top-6 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
                 <div className="flex items-center gap-2">
-                  <Calendar size={16} className="text-primary-light" />
+                  <Calendar size={16} className="text-primary-dark" />
                   <span className="text-white font-medium">{edu.period}</span>
                 </div>
               </div>
 
               {/* Education content */}
-              <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm mt-12">
+              <Card className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm mt-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <GraduationCap size={20} className="text-primary-light" />
+                  <GraduationCap size={20} className="text-primary-dark" />
                   <h3 className="text-xl font-semibold text-primary-light">
                     {edu.degree}
                   </h3>
+                </div>
+
+                {/* Institutions - Without locations */}
+                <div className="space-y-2 mb-4">
+                  {edu.institutions.map((inst, instIndex) => (
+                    <div key={`inst-${index}-${instIndex}`} className="flex flex-col">
+                      <span className="text-white font-medium">{inst.name}</span>
+                    </div>
+                  ))}
                 </div>
 
                 {edu.link && (
@@ -233,24 +234,11 @@ const Timeline = () => {
                 {!edu.link && edu.details && (
                   <p className="text-white/80 mb-4">{edu.details}</p>
                 )}
-                
-                {/* Institutions */}
-                <div className="space-y-2 mb-4">
-                  {edu.institutions.map((inst, instIndex) => (
-                    <div key={`inst-${index}-${instIndex}`} className="flex flex-col">
-                      <span className="text-white font-medium">{inst.name}</span>
-                      <div className="flex items-center gap-2 text-white/70 text-sm">
-                        <MapPin size={14} className="text-primary-light" />
-                        <span>{inst.location}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
 
                 {/* Awards */}
                 {edu.awards && edu.awards.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="text-white/90 font-medium mb-2">Awards & Achievements</h4>
+                  <div className="mt-4 bg-accent/70 rounded-xl p-4">
+                    <h4 className="text-primary-dark font-medium text-sm mb-3 text-center">Awards & Achievements</h4>
                     <ul className="list-disc list-inside space-y-1 text-white/80">
                       {edu.awards.map((award, awardIndex) => (
                         <li key={`award-${index}-${awardIndex}`}>{award}</li>
@@ -258,10 +246,10 @@ const Timeline = () => {
                     </ul>
                   </div>
                 )}
-              </div>
+              </Card>
 
               {/* Connector dot */}
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary-light" />
+              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-primary-dark" />
             </motion.div>
           ))}
         </div>
