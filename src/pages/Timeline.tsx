@@ -133,7 +133,10 @@ const Timeline = () => {
             <h2 className="text-3xl font-semibold text-primary-dark">Experience</h2>
           </div>
           
-          <div className="relative pl-6 border-l-2 border-primary-dark">
+          <div className="relative">
+            {/* Timeline line - centered*/}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary-dark"></div>
+            
             {experiences.map((exp, index) => (
               <motion.div
                 key={`exp-${index}`}
@@ -143,61 +146,62 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="mb-12 relative"
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-[13px] top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                {/* Timeline dot - centered on line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge - moved to left of timeline */}
-                <div className="absolute -left-[160px] top-6">
+                {/* Date badge - moved above card, aligned with left side */}
+                <div className="absolute left-[calc(50%-8rem)] top-0 -translate-y-full pb-2">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{exp.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card */}
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10 ml-6">
-                  <div className="space-y-4">
-                    {/* Header */}
-                    <div>
-                      <h3 className="text-xl font-semibold text-primary-light">
-                        {exp.work.title}
-                      </h3>
-                      <div className="flex items-center mt-1">
-                        <span className="text-white/80">at</span>
-                        {exp.work.companyUrl ? (
-                          <a 
-                            href={exp.work.companyUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="ml-2 text-white font-medium hover:text-primary-light transition-colors flex items-center gap-1"
+                {/* Content card - pushed to the right of the timeline */}
+                <div className="ml-[calc(50%+1rem)] w-[calc(50%-1rem)]">
+                  <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                    <div className="space-y-4">
+                      {/* Header */}
+                      <div className="text-center">
+                        <h3 className="text-xl font-semibold text-primary-light">
+                          {exp.work.title}
+                        </h3>
+                        <div className="mt-1 text-center">
+                          {exp.work.companyUrl ? (
+                            <a 
+                              href={exp.work.companyUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-white font-medium hover:text-primary-light transition-colors flex items-center justify-center gap-1"
+                            >
+                              {exp.work.company}
+                              <ExternalLink size={14} />
+                            </a>
+                          ) : (
+                            <span className="text-white font-medium">{exp.work.company}</span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-white/90">{exp.work.details}</p>
+                      
+                      {/* Skills as standalone bubbles */}
+                      <div className="flex flex-wrap justify-center gap-2 mt-4">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <span 
+                            key={`skill-${index}-${skillIndex}`}
+                            className="bg-surface/90 px-3 py-1 rounded-full text-xs text-primary-light border border-white/10"
                           >
-                            {exp.work.company}
-                            <ExternalLink size={14} />
-                          </a>
-                        ) : (
-                          <span className="ml-2 text-white font-medium">{exp.work.company}</span>
-                        )}
+                            {skill}
+                          </span>
+                        ))}
                       </div>
                     </div>
-
-                    {/* Description */}
-                    <p className="text-white/90">{exp.work.details}</p>
-                    
-                    {/* Skills as standalone bubbles */}
-                    <div className="flex flex-wrap justify-center gap-2 mt-4">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={`skill-${index}-${skillIndex}`}
-                          className="bg-surface/90 px-3 py-1 rounded-full text-xs text-primary-light border border-white/10"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -210,7 +214,10 @@ const Timeline = () => {
             <h2 className="text-3xl font-semibold text-primary-dark">Education</h2>
           </div>
           
-          <div className="relative pl-6 border-l-2 border-primary-dark">
+          <div className="relative">
+            {/* Timeline line - centered */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary-dark"></div>
+            
             {education.map((edu, index) => (
               <motion.div
                 key={`edu-${index}`}
@@ -220,73 +227,75 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="mb-12 relative"
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-[13px] top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                {/* Timeline dot - centered on line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge - moved to left of timeline */}
-                <div className="absolute -left-[160px] top-6">
+                {/* Date badge - moved above card, aligned with left side */}
+                <div className="absolute left-[calc(50%-8rem)] top-0 -translate-y-full pb-2">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{edu.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card */}
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10 ml-6">
-                  <div className="space-y-4">
-                    {/* Header */}
-                    <div className="flex items-center gap-2">
-                      <GraduationCap size={18} className="text-primary-light" />
-                      <h3 className="text-xl font-semibold text-primary-light">
-                        {edu.degree}
-                      </h3>
-                    </div>
-
-                    {/* Institutions */}
-                    <div className="space-y-1">
-                      {edu.institutions.map((inst, instIndex) => (
-                        <p key={`inst-${index}-${instIndex}`} className="text-white/90">
-                          {inst.name}
-                        </p>
-                      ))}
-                    </div>
-
-                    {/* Details with link if available */}
-                    {edu.link ? (
-                      <a 
-                        href={edu.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-white/90 hover:text-primary-light transition-colors inline-flex items-center gap-1"
-                      >
-                        {edu.details}
-                        <ExternalLink size={14} />
-                      </a>
-                    ) : (
-                      <p className="text-white/90">{edu.details}</p>
-                    )}
-
-                    {/* Awards */}
-                    {edu.awards && edu.awards.length > 0 && (
-                      <div className="mt-4">
-                        <p className="text-primary-light font-medium text-sm mb-3">Awards & Achievements</p>
-                        <ul className="space-y-2">
-                          {edu.awards.map((award, awardIndex) => (
-                            <li 
-                              key={`award-${index}-${awardIndex}`}
-                              className="text-white/90 text-sm flex items-start"
-                            >
-                              <span className="text-primary-light mr-2">•</span>
-                              <span>{award}</span>
-                            </li>
-                          ))}
-                        </ul>
+                {/* Content card - pushed to the right of the timeline */}
+                <div className="ml-[calc(50%+1rem)] w-[calc(50%-1rem)]">
+                  <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                    <div className="space-y-4">
+                      {/* Header */}
+                      <div className="flex items-center justify-center gap-2">
+                        <GraduationCap size={18} className="text-primary-light" />
+                        <h3 className="text-xl font-semibold text-primary-light">
+                          {edu.degree}
+                        </h3>
                       </div>
-                    )}
-                  </div>
-                </Card>
+
+                      {/* Institutions */}
+                      <div className="space-y-1 text-center">
+                        {edu.institutions.map((inst, instIndex) => (
+                          <p key={`inst-${index}-${instIndex}`} className="text-white/90">
+                            {inst.name}
+                          </p>
+                        ))}
+                      </div>
+
+                      {/* Details with link if available */}
+                      {edu.link ? (
+                        <a 
+                          href={edu.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block text-center text-white/90 hover:text-primary-light transition-colors inline-flex items-center justify-center gap-1"
+                        >
+                          {edu.details}
+                          <ExternalLink size={14} />
+                        </a>
+                      ) : (
+                        <p className="text-center text-white/90">{edu.details}</p>
+                      )}
+
+                      {/* Awards */}
+                      {edu.awards && edu.awards.length > 0 && (
+                        <div className="mt-4">
+                          <p className="text-primary-light font-medium text-sm mb-3 text-center">Awards & Achievements</p>
+                          <ul className="space-y-2">
+                            {edu.awards.map((award, awardIndex) => (
+                              <li 
+                                key={`award-${index}-${awardIndex}`}
+                                className="text-white/90 text-sm flex items-start"
+                              >
+                                <span className="text-primary-light mr-2">•</span>
+                                <span>{award}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  </Card>
+                </div>
               </motion.div>
             ))}
           </div>
