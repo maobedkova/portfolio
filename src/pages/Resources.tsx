@@ -62,7 +62,7 @@ const Resources = () => {
                 Resume PDF
               </h2>
               <a 
-                href="/CV_NLP_AI_MariaObedkova.pdf" 
+                href="CV_NLP_AI_MariaObedkova.pdf" 
                 download 
                 className="inline-flex items-center px-3 py-1.5 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm transition-colors"
               >
@@ -74,7 +74,7 @@ const Resources = () => {
             <div className="p-4">
               <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4]">
                 <embed 
-                  src="/CV_NLP_AI_MariaObedkova.pdf" 
+                  src="CV_NLP_AI_MariaObedkova.pdf" 
                   type="application/pdf"
                   className="w-full h-full"
                 />
