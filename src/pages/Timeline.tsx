@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Briefcase, GraduationCap, Calendar } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 const Timeline = () => {
   const experiences = [
@@ -115,155 +116,190 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Professional Journey</h1>
+    <div className="min-h-screen bg-accent/30 pb-16">
+      <div className="max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        {/* Page Title with decorative line */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-primary-dark mb-4">Professional Journey</h1>
+          <div className="flex items-center justify-center">
+            <Separator className="w-16 bg-primary-dark h-0.5" />
+          </div>
+        </div>
         
-        <div className="relative">
-          {/* Experience Section */}
-          <h2 className="text-3xl font-semibold text-primary-dark mb-8">Experience</h2>
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={`exp-${index}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-16 relative pl-8 border-l-2 border-primary/30"
-            >
-              {/* Date badge - Now aligned with the card */}
-              <div className="absolute -left-4 top-6 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar size={16} className="text-primary-dark" />
-                  <span className="text-white font-medium">{exp.period}</span>
-                </div>
-              </div>
-
-              {/* Work content */}
-              <Card className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm mt-6">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
-                  <h3 className="text-xl font-semibold text-primary-light">
-                    {exp.work.title}
-                  </h3>
-                  <span className="text-white/60">at</span>
-                  {exp.work.companyUrl ? (
-                    <a 
-                      href={exp.work.companyUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white font-medium hover:text-primary-light transition-colors flex items-center gap-1"
-                    >
-                      {exp.work.company}
-                      <ExternalLink size={14} />
-                    </a>
-                  ) : (
-                    <span className="text-white font-medium">{exp.work.company}</span>
-                  )}
+        {/* Experience Section */}
+        <div className="mb-16">
+          <div className="flex items-center mb-8 gap-3">
+            <Briefcase className="text-primary-dark h-6 w-6" />
+            <h2 className="text-3xl font-semibold text-primary-dark">Experience</h2>
+          </div>
+          
+          <div className="relative pl-6 border-l-2 border-primary-dark">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={`exp-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="mb-12 relative"
+              >
+                {/* Timeline dot */}
+                <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                <p className="text-white/80 mb-6">{exp.work.details}</p>
+                {/* Date badge */}
+                <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full mb-3 shadow-sm">
+                  <Calendar size={14} className="mr-2" />
+                  <span className="text-sm font-medium">{exp.period}</span>
+                </div>
                 
-                {/* Skills - Centered in a widget */}
-                <div className="bg-accent/70 rounded-xl p-4">
-                  <p className="text-primary-dark font-medium text-sm mb-3 text-center">Tools & Technologies</p>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <span 
-                        key={`skill-${index}-${skillIndex}`}
-                        className="bg-surface/70 px-3 py-1 rounded-elliptical text-xs text-primary-light"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-
-              {/* Connector dot */}
-              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-primary-dark" />
-            </motion.div>
-          ))}
-
-          {/* Education Section */}
-          <h2 className="text-3xl font-semibold text-primary-dark mb-8">Education</h2>
-          {education.map((edu, index) => (
-            <motion.div
-              key={`edu-${index}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-16 relative pl-8 border-l-2 border-primary/30"
-            >
-              {/* Date badge - Now aligned with the card */}
-              <div className="absolute -left-4 top-6 bg-accent/80 backdrop-blur-sm border border-primary/20 rounded-elliptical px-4 py-2 shadow-sm">
-                <div className="flex items-center gap-2">
-                  <Calendar size={16} className="text-primary-dark" />
-                  <span className="text-white font-medium">{edu.period}</span>
-                </div>
-              </div>
-
-              {/* Education content */}
-              <Card className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm mt-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <GraduationCap size={20} className="text-primary-dark" />
-                  <h3 className="text-xl font-semibold text-primary-light">
-                    {edu.degree}
-                  </h3>
-                </div>
-
-                {/* Institutions - Without locations */}
-                <div className="space-y-2 mb-4">
-                  {edu.institutions.map((inst, instIndex) => (
-                    <div key={`inst-${index}-${instIndex}`} className="flex flex-col">
-                      <span className="text-white font-medium">{inst.name}</span>
+                {/* Content card */}
+                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                  <div className="space-y-4">
+                    {/* Header */}
+                    <div>
+                      <h3 className="text-xl font-semibold text-primary-light">
+                        {exp.work.title}
+                      </h3>
+                      <div className="flex items-center mt-1">
+                        <span className="text-white/80">at</span>
+                        {exp.work.companyUrl ? (
+                          <a 
+                            href={exp.work.companyUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="ml-2 text-white font-medium hover:text-primary-light transition-colors flex items-center gap-1"
+                          >
+                            {exp.work.company}
+                            <ExternalLink size={14} />
+                          </a>
+                        ) : (
+                          <span className="ml-2 text-white font-medium">{exp.work.company}</span>
+                        )}
+                      </div>
                     </div>
-                  ))}
-                </div>
 
-                {edu.link && (
-                  <a 
-                    href={edu.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-primary-light transition-colors mb-4 flex items-center gap-1"
-                  >
-                    <span>{edu.details}</span>
-                    <ExternalLink size={14} />
-                  </a>
-                )}
-
-                {!edu.link && edu.details && (
-                  <p className="text-white/80 mb-4">{edu.details}</p>
-                )}
-
-                {/* Awards */}
-                {edu.awards && edu.awards.length > 0 && (
-                  <div className="mt-4 bg-accent/70 rounded-xl p-4">
-                    <h4 className="text-primary-dark font-medium text-sm mb-3 text-center">Awards & Achievements</h4>
-                    <ul className="list-disc list-inside space-y-1 text-white/80">
-                      {edu.awards.map((award, awardIndex) => (
-                        <li key={`award-${index}-${awardIndex}`}>{award}</li>
-                      ))}
-                    </ul>
+                    {/* Description */}
+                    <p className="text-white/90">{exp.work.details}</p>
+                    
+                    {/* Skills */}
+                    <div className="bg-accent/80 rounded-lg p-4">
+                      <p className="text-primary-dark font-medium text-sm mb-3 text-center">Tools & Technologies</p>
+                      <div className="flex flex-wrap justify-center gap-2">
+                        {exp.skills.map((skill, skillIndex) => (
+                          <span 
+                            key={`skill-${index}-${skillIndex}`}
+                            className="bg-surface/90 px-3 py-1 rounded-md text-xs text-primary-light"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                )}
-              </Card>
-
-              {/* Connector dot */}
-              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-primary-dark" />
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Button to the main page */}
-        <div className="flex justify-center mt-16">
+        {/* Education Section */}
+        <div>
+          <div className="flex items-center mb-8 gap-3">
+            <GraduationCap className="text-primary-dark h-6 w-6" />
+            <h2 className="text-3xl font-semibold text-primary-dark">Education</h2>
+          </div>
+          
+          <div className="relative pl-6 border-l-2 border-primary-dark">
+            {education.map((edu, index) => (
+              <motion.div
+                key={`edu-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="mb-12 relative"
+              >
+                {/* Timeline dot */}
+                <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-white" />
+                </div>
+                
+                {/* Date badge */}
+                <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full mb-3 shadow-sm">
+                  <Calendar size={14} className="mr-2" />
+                  <span className="text-sm font-medium">{edu.period}</span>
+                </div>
+                
+                {/* Content card */}
+                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                  <div className="space-y-4">
+                    {/* Header */}
+                    <div className="flex items-center gap-2">
+                      <GraduationCap size={18} className="text-primary-light" />
+                      <h3 className="text-xl font-semibold text-primary-light">
+                        {edu.degree}
+                      </h3>
+                    </div>
+
+                    {/* Institutions */}
+                    <div className="space-y-1">
+                      {edu.institutions.map((inst, instIndex) => (
+                        <p key={`inst-${index}-${instIndex}`} className="text-white/90">
+                          {inst.name}
+                        </p>
+                      ))}
+                    </div>
+
+                    {/* Details with link if available */}
+                    {edu.link ? (
+                      <a 
+                        href={edu.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-white/90 hover:text-primary-light transition-colors inline-flex items-center gap-1"
+                      >
+                        {edu.details}
+                        <ExternalLink size={14} />
+                      </a>
+                    ) : (
+                      <p className="text-white/90">{edu.details}</p>
+                    )}
+
+                    {/* Awards */}
+                    {edu.awards && edu.awards.length > 0 && (
+                      <div className="bg-accent/80 rounded-lg p-4">
+                        <p className="text-primary-dark font-medium text-sm mb-3 text-center">Awards & Achievements</p>
+                        <ul className="space-y-2">
+                          {edu.awards.map((award, awardIndex) => (
+                            <li 
+                              key={`award-${index}-${awardIndex}`}
+                              className="text-white/90 text-sm flex items-start"
+                            >
+                              <span className="text-primary-light mr-2">•</span>
+                              <span>{award}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Back to main page button */}
+        <div className="mt-16 text-center">
           <motion.a 
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-green text-white rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span>Back to Main Page</span>
-            <ExternalLink size={16} />
           </motion.a>
         </div>
       </div>
