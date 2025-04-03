@@ -144,18 +144,20 @@ const Timeline = () => {
                 className="mb-12 relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                <div className="absolute -left-[13px] top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge */}
-                <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full mb-3 shadow-sm">
-                  <Calendar size={14} className="mr-2" />
-                  <span className="text-sm font-medium">{exp.period}</span>
+                {/* Date badge - moved to left of timeline */}
+                <div className="absolute -left-[160px] top-6">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
+                    <Calendar size={14} className="mr-2" />
+                    <span className="text-sm font-medium">{exp.period}</span>
+                  </div>
                 </div>
                 
                 {/* Content card */}
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10 ml-6">
                   <div className="space-y-4">
                     {/* Header */}
                     <div>
@@ -183,19 +185,16 @@ const Timeline = () => {
                     {/* Description */}
                     <p className="text-white/90">{exp.work.details}</p>
                     
-                    {/* Skills */}
-                    <div className="bg-accent/80 rounded-lg p-4">
-                      <p className="text-primary-dark font-medium text-sm mb-3 text-center">Tools & Technologies</p>
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {exp.skills.map((skill, skillIndex) => (
-                          <span 
-                            key={`skill-${index}-${skillIndex}`}
-                            className="bg-surface/90 px-3 py-1 rounded-md text-xs text-primary-light"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
+                    {/* Skills as standalone bubbles */}
+                    <div className="flex flex-wrap justify-center gap-2 mt-4">
+                      {exp.skills.map((skill, skillIndex) => (
+                        <span 
+                          key={`skill-${index}-${skillIndex}`}
+                          className="bg-surface/90 px-3 py-1 rounded-full text-xs text-primary-light border border-white/10"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </Card>
@@ -222,18 +221,20 @@ const Timeline = () => {
                 className="mb-12 relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-[13px] top-0 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                <div className="absolute -left-[13px] top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge */}
-                <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full mb-3 shadow-sm">
-                  <Calendar size={14} className="mr-2" />
-                  <span className="text-sm font-medium">{edu.period}</span>
+                {/* Date badge - moved to left of timeline */}
+                <div className="absolute -left-[160px] top-6">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
+                    <Calendar size={14} className="mr-2" />
+                    <span className="text-sm font-medium">{edu.period}</span>
+                  </div>
                 </div>
                 
                 {/* Content card */}
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10 ml-6">
                   <div className="space-y-4">
                     {/* Header */}
                     <div className="flex items-center gap-2">
@@ -269,8 +270,8 @@ const Timeline = () => {
 
                     {/* Awards */}
                     {edu.awards && edu.awards.length > 0 && (
-                      <div className="bg-accent/80 rounded-lg p-4">
-                        <p className="text-primary-dark font-medium text-sm mb-3 text-center">Awards & Achievements</p>
+                      <div className="mt-4">
+                        <p className="text-primary-light font-medium text-sm mb-3">Awards & Achievements</p>
                         <ul className="space-y-2">
                           {edu.awards.map((award, awardIndex) => (
                             <li 
