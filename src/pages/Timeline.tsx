@@ -133,9 +133,9 @@ const Timeline = () => {
             <h2 className="text-3xl font-semibold text-primary-dark">Experience</h2>
           </div>
           
-          <div className="relative">
-            {/* Timeline line - centered*/}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary-dark"></div>
+          <div className="relative pl-6">
+            {/* Timeline line - moved to left side */}
+            <div className="absolute left-0 h-full w-0.5 bg-primary-dark"></div>
             
             {experiences.map((exp, index) => (
               <motion.div
@@ -146,21 +146,21 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="mb-12 relative"
               >
-                {/* Timeline dot - centered on line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                {/* Timeline dot - on left line */}
+                <div className="absolute left-0 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge - moved above card, aligned with left side */}
-                <div className="absolute left-[calc(50%-8rem)] top-0 -translate-y-full pb-2">
+                {/* Date badge - above box, aligned with its left side */}
+                <div className="absolute left-6 top-0 -translate-y-full pb-2">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{exp.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card - pushed to the right of the timeline */}
-                <div className="ml-[calc(50%+1rem)] w-[calc(50%-1rem)]">
+                {/* Content card - to the right of timeline, with left margin */}
+                <div className="ml-6">
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
                       {/* Header */}
@@ -189,7 +189,7 @@ const Timeline = () => {
                       <p className="text-white/90">{exp.work.details}</p>
                       
                       {/* Skills as standalone bubbles */}
-                      <div className="flex flex-wrap justify-center gap-2 mt-4">
+                      <div className="flex flex-wrap gap-2 mt-4">
                         {exp.skills.map((skill, skillIndex) => (
                           <span 
                             key={`skill-${index}-${skillIndex}`}
@@ -214,9 +214,9 @@ const Timeline = () => {
             <h2 className="text-3xl font-semibold text-primary-dark">Education</h2>
           </div>
           
-          <div className="relative">
-            {/* Timeline line - centered */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary-dark"></div>
+          <div className="relative pl-6">
+            {/* Timeline line - moved to left side */}
+            <div className="absolute left-0 h-full w-0.5 bg-primary-dark"></div>
             
             {education.map((edu, index) => (
               <motion.div
@@ -227,21 +227,21 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="mb-12 relative"
               >
-                {/* Timeline dot - centered on line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
+                {/* Timeline dot - on left line */}
+                <div className="absolute left-0 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
                   <div className="w-3 h-3 rounded-full bg-white" />
                 </div>
                 
-                {/* Date badge - moved above card, aligned with left side */}
-                <div className="absolute left-[calc(50%-8rem)] top-0 -translate-y-full pb-2">
+                {/* Date badge - above box, aligned with its left side */}
+                <div className="absolute left-6 top-0 -translate-y-full pb-2">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{edu.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card - pushed to the right of the timeline */}
-                <div className="ml-[calc(50%+1rem)] w-[calc(50%-1rem)]">
+                {/* Content card - to the right of timeline */}
+                <div className="ml-6">
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
                       {/* Header */}
