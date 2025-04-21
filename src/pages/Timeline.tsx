@@ -174,7 +174,7 @@ const Timeline = () => {
                       </div>
                       <p className="text-white/90">{exp.work.details}</p>
                       
-                      <div className="flex flex-wrap gap-2 mt-4">
+                      <div className="flex flex-wrap gap-2 mt-4 justify-center">
                         {exp.skills.map((skill, skillIndex) => (
                           <span 
                             key={`skill-${index}-${skillIndex}`}
@@ -252,7 +252,7 @@ const Timeline = () => {
                       {edu.awards && edu.awards.length > 0 && (
                         <div className="mt-4">
                           <p className="text-primary-light font-medium text-sm mb-3 text-center">Awards & Achievements</p>
-                          <ul className="space-y-2">
+                          <ul className="space-y-2 flex flex-wrap justify-center gap-2">
                             {edu.awards.map((award, awardIndex) => (
                               <li 
                                 key={`award-${index}-${awardIndex}`}
