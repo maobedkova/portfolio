@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ExternalLink, Briefcase, GraduationCap, Calendar } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -118,7 +117,6 @@ const Timeline = () => {
   return (
     <div className="min-h-screen bg-accent/30 pb-16">
       <div className="max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        {/* Page Title with decorative line */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-primary-dark mb-4">Professional Journey</h1>
           <div className="flex items-center justify-center">
@@ -126,7 +124,6 @@ const Timeline = () => {
           </div>
         </div>
         
-        {/* Experience Section */}
         <div className="mb-16">
           <div className="flex items-center mb-8 gap-3">
             <Briefcase className="text-primary-dark h-6 w-6" />
@@ -134,7 +131,6 @@ const Timeline = () => {
           </div>
           
           <div className="relative pl-6">
-            {/* Timeline line - on left side */}
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-dark"></div>
             
             {experiences.map((exp, index) => (
@@ -144,24 +140,18 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-16 relative" /* Increased spacing between items */
+                className="mb-16 relative"
               >
-                {/* Timeline dot - centered on the left line */}
-                <div className="absolute -left-[5.5px] top-7 w-[11px] h-[11px] rounded-full bg-primary-dark border-2 border-white"></div>
-                
-                {/* Date badge - above content box, aligned with dot */}
-                <div className="absolute left-6 top-0 -translate-y-[calc(100%+8px)]">
+                <div className="absolute -left-[60px] top-0">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{exp.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card - to the right of timeline, with left margin */}
-                <div className="ml-6 pt-8"> {/* Added padding top to make space for the date badge */}
+                <div className="ml-6">
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
-                      {/* Header */}
                       <div className="text-center">
                         <h3 className="text-xl font-semibold text-primary-light">
                           {exp.work.title}
@@ -182,11 +172,8 @@ const Timeline = () => {
                           )}
                         </div>
                       </div>
-
-                      {/* Description */}
                       <p className="text-white/90">{exp.work.details}</p>
                       
-                      {/* Skills as standalone bubbles */}
                       <div className="flex flex-wrap gap-2 mt-4">
                         {exp.skills.map((skill, skillIndex) => (
                           <span 
@@ -205,7 +192,6 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* Education Section */}
         <div>
           <div className="flex items-center mb-8 gap-3">
             <GraduationCap className="text-primary-dark h-6 w-6" />
@@ -213,7 +199,6 @@ const Timeline = () => {
           </div>
           
           <div className="relative pl-6">
-            {/* Timeline line - on left side */}
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-dark"></div>
             
             {education.map((edu, index) => (
@@ -223,24 +208,18 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-16 relative" /* Increased spacing between items */
+                className="mb-16 relative"
               >
-                {/* Timeline dot - centered on the left line */}
-                <div className="absolute -left-[5.5px] top-7 w-[11px] h-[11px] rounded-full bg-primary-dark border-2 border-white"></div>
-                
-                {/* Date badge - above box, aligned with dot */}
-                <div className="absolute left-6 top-0 -translate-y-[calc(100%+8px)]">
+                <div className="absolute -left-[60px] top-0">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{edu.period}</span>
                   </div>
                 </div>
                 
-                {/* Content card - to the right of timeline */}
-                <div className="ml-6 pt-8"> {/* Added padding top to make space for the date badge */}
+                <div className="ml-6">
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
-                      {/* Header */}
                       <div className="flex items-center justify-center gap-2">
                         <GraduationCap size={18} className="text-primary-light" />
                         <h3 className="text-xl font-semibold text-primary-light">
@@ -248,7 +227,6 @@ const Timeline = () => {
                         </h3>
                       </div>
 
-                      {/* Institutions */}
                       <div className="space-y-1 text-center">
                         {edu.institutions.map((inst, instIndex) => (
                           <p key={`inst-${index}-${instIndex}`} className="text-white/90">
@@ -257,7 +235,6 @@ const Timeline = () => {
                         ))}
                       </div>
 
-                      {/* Details with link if available */}
                       {edu.link ? (
                         <a 
                           href={edu.link} 
@@ -272,7 +249,6 @@ const Timeline = () => {
                         <p className="text-center text-white/90">{edu.details}</p>
                       )}
 
-                      {/* Awards */}
                       {edu.awards && edu.awards.length > 0 && (
                         <div className="mt-4">
                           <p className="text-primary-light font-medium text-sm mb-3 text-center">Awards & Achievements</p>
@@ -297,7 +273,6 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* Back to main page button */}
         <div className="mt-16 text-center">
           <motion.a 
             href="/"
