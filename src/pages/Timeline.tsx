@@ -140,10 +140,10 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-16 relative"
+                className="mb-24 relative"
               >
-                <div className="absolute -left-[60px] top-0">
-                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
+                <div className="absolute -left-[2px] -top-8 z-10">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-md">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{exp.period}</span>
                   </div>
@@ -208,10 +208,10 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-16 relative"
+                className="mb-24 relative"
               >
-                <div className="absolute -left-[60px] top-0">
-                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
+                <div className="absolute -left-[2px] -top-8 z-10">
+                  <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-md">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{edu.period}</span>
                   </div>
