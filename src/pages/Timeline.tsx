@@ -134,8 +134,8 @@ const Timeline = () => {
           </div>
           
           <div className="relative pl-6">
-            {/* Timeline line - moved to left side */}
-            <div className="absolute left-0 h-full w-0.5 bg-primary-dark"></div>
+            {/* Timeline line - on left side */}
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-dark"></div>
             
             {experiences.map((exp, index) => (
               <motion.div
@@ -144,15 +144,13 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-12 relative"
+                className="mb-16 relative" /* Increased spacing between items */
               >
-                {/* Timeline dot - on left line */}
-                <div className="absolute left-0 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white" />
-                </div>
+                {/* Timeline dot - centered on the left line */}
+                <div className="absolute -left-[5.5px] top-7 w-[11px] h-[11px] rounded-full bg-primary-dark border-2 border-white"></div>
                 
-                {/* Date badge - above box, aligned with its left side */}
-                <div className="absolute left-6 top-0 -translate-y-full pb-2">
+                {/* Date badge - above content box, aligned with dot */}
+                <div className="absolute left-6 top-0 -translate-y-[calc(100%+8px)]">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{exp.period}</span>
@@ -160,7 +158,7 @@ const Timeline = () => {
                 </div>
                 
                 {/* Content card - to the right of timeline, with left margin */}
-                <div className="ml-6">
+                <div className="ml-6 pt-8"> {/* Added padding top to make space for the date badge */}
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
                       {/* Header */}
@@ -215,8 +213,8 @@ const Timeline = () => {
           </div>
           
           <div className="relative pl-6">
-            {/* Timeline line - moved to left side */}
-            <div className="absolute left-0 h-full w-0.5 bg-primary-dark"></div>
+            {/* Timeline line - on left side */}
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary-dark"></div>
             
             {education.map((edu, index) => (
               <motion.div
@@ -225,15 +223,13 @@ const Timeline = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="mb-12 relative"
+                className="mb-16 relative" /* Increased spacing between items */
               >
-                {/* Timeline dot - on left line */}
-                <div className="absolute left-0 transform -translate-x-1/2 top-7 w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-white" />
-                </div>
+                {/* Timeline dot - centered on the left line */}
+                <div className="absolute -left-[5.5px] top-7 w-[11px] h-[11px] rounded-full bg-primary-dark border-2 border-white"></div>
                 
-                {/* Date badge - above box, aligned with its left side */}
-                <div className="absolute left-6 top-0 -translate-y-full pb-2">
+                {/* Date badge - above box, aligned with dot */}
+                <div className="absolute left-6 top-0 -translate-y-[calc(100%+8px)]">
                   <div className="inline-flex items-center px-4 py-1.5 bg-primary-dark text-white rounded-full shadow-sm">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm font-medium">{edu.period}</span>
@@ -241,7 +237,7 @@ const Timeline = () => {
                 </div>
                 
                 {/* Content card - to the right of timeline */}
-                <div className="ml-6">
+                <div className="ml-6 pt-8"> {/* Added padding top to make space for the date badge */}
                   <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
                     <div className="space-y-4">
                       {/* Header */}
