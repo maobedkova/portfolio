@@ -140,8 +140,8 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="flex justify-end mb-3">
-                  <div className="inline-flex items-center px-4 py-2 bg-primary-dark backdrop-blur-sm text-white rounded-lg shadow-lg border border-white/10 font-semibold tracking-wide">
+                <div className="flex justify-start mb-3">
+                  <div className="inline-flex items-center px-4 py-2 bg-primary-dark/80 backdrop-blur-sm text-white rounded-full shadow-lg border border-white/10 font-semibold tracking-wide">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm">{exp.period}</span>
                   </div>
@@ -204,8 +204,8 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="flex justify-end mb-3">
-                  <div className="inline-flex items-center px-4 py-2 bg-primary-dark backdrop-blur-sm text-white rounded-lg shadow-lg border border-white/10 font-semibold tracking-wide">
+                <div className="flex justify-start mb-3">
+                  <div className="inline-flex items-center px-4 py-2 bg-primary-dark/80 backdrop-blur-sm text-white rounded-full shadow-lg border border-white/10 font-semibold tracking-wide">
                     <Calendar size={14} className="mr-2" />
                     <span className="text-sm">{edu.period}</span>
                   </div>
