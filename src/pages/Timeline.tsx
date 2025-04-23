@@ -140,49 +140,52 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="mb-4">
-                  <div className="inline-flex items-center px-4 py-1.5 bg-surface/70 backdrop-blur-sm text-primary-light rounded-lg shadow-md border border-white/10">
-                    <Calendar size={14} className="mr-2" />
-                    <span className="text-sm font-medium">{exp.period}</span>
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  <div className="flex-1">
+                    <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                      <div className="space-y-4">
+                        <div className="text-center">
+                          <h3 className="text-xl font-semibold text-primary-light">
+                            {exp.work.title}
+                          </h3>
+                          <div className="mt-1 text-center">
+                            {exp.work.companyUrl ? (
+                              <a 
+                                href={exp.work.companyUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-white font-medium hover:text-primary-light transition-colors flex items-center justify-center gap-1"
+                              >
+                                {exp.work.company}
+                                <ExternalLink size={14} />
+                              </a>
+                            ) : (
+                              <span className="text-white font-medium">{exp.work.company}</span>
+                            )}
+                          </div>
+                        </div>
+                        <p className="text-white/90">{exp.work.details}</p>
+                        
+                        <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                          {exp.skills.map((skill, skillIndex) => (
+                            <span 
+                              key={`skill-${index}-${skillIndex}`}
+                              className="bg-surface/90 px-3 py-1 rounded-full text-xs text-primary-light border border-white/10"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                  <div className="sm:w-32 sm:text-right">
+                    <div className="inline-flex items-center px-4 py-2 bg-primary-dark/90 backdrop-blur-sm text-white rounded-lg shadow-lg border border-white/10 font-semibold tracking-wide">
+                      <Calendar size={14} className="mr-2 sm:hidden" />
+                      <span className="text-sm">{exp.period}</span>
+                    </div>
                   </div>
                 </div>
-                
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
-                  <div className="space-y-4">
-                    <div className="text-center">
-                      <h3 className="text-xl font-semibold text-primary-light">
-                        {exp.work.title}
-                      </h3>
-                      <div className="mt-1 text-center">
-                        {exp.work.companyUrl ? (
-                          <a 
-                            href={exp.work.companyUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-white font-medium hover:text-primary-light transition-colors flex items-center justify-center gap-1"
-                          >
-                            {exp.work.company}
-                            <ExternalLink size={14} />
-                          </a>
-                        ) : (
-                          <span className="text-white font-medium">{exp.work.company}</span>
-                        )}
-                      </div>
-                    </div>
-                    <p className="text-white/90">{exp.work.details}</p>
-                    
-                    <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                      {exp.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={`skill-${index}-${skillIndex}`}
-                          className="bg-surface/90 px-3 py-1 rounded-full text-xs text-primary-light border border-white/10"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
               </motion.div>
             ))}
           </div>
@@ -204,62 +207,65 @@ const Timeline = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="mb-4">
-                  <div className="inline-flex items-center px-4 py-1.5 bg-surface/70 backdrop-blur-sm text-primary-light rounded-lg shadow-md border border-white/10">
-                    <Calendar size={14} className="mr-2" />
-                    <span className="text-sm font-medium">{edu.period}</span>
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  <div className="flex-1">
+                    <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-center gap-2">
+                          <GraduationCap size={18} className="text-primary-light" />
+                          <h3 className="text-xl font-semibold text-primary-light">
+                            {edu.degree}
+                          </h3>
+                        </div>
+
+                        <div className="space-y-1 text-center">
+                          {edu.institutions.map((inst, instIndex) => (
+                            <p key={`inst-${index}-${instIndex}`} className="text-white/90">
+                              {inst.name}
+                            </p>
+                          ))}
+                        </div>
+
+                        {edu.link ? (
+                          <a 
+                            href={edu.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="block text-center text-white/90 hover:text-primary-light transition-colors inline-flex items-center justify-center gap-1"
+                          >
+                            {edu.details}
+                            <ExternalLink size={14} />
+                          </a>
+                        ) : (
+                          <p className="text-center text-white/90">{edu.details}</p>
+                        )}
+
+                        {edu.awards && edu.awards.length > 0 && (
+                          <div className="mt-4">
+                            <p className="text-primary-light font-medium text-sm mb-3 text-center">Awards & Achievements</p>
+                            <ul className="space-y-2 flex flex-wrap justify-center gap-2">
+                              {edu.awards.map((award, awardIndex) => (
+                                <li 
+                                  key={`award-${index}-${awardIndex}`}
+                                  className="text-white/90 text-sm flex items-start"
+                                >
+                                  <span className="text-primary-light mr-2">•</span>
+                                  <span>{award}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    </Card>
+                  </div>
+                  <div className="sm:w-32 sm:text-right">
+                    <div className="inline-flex items-center px-4 py-2 bg-primary-dark/90 backdrop-blur-sm text-white rounded-lg shadow-lg border border-white/10 font-semibold tracking-wide">
+                      <Calendar size={14} className="mr-2 sm:hidden" />
+                      <span className="text-sm">{edu.period}</span>
+                    </div>
                   </div>
                 </div>
-                
-                <Card className="bg-surface/70 backdrop-blur-sm rounded-xl p-6 shadow-md border border-white/10">
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-center gap-2">
-                      <GraduationCap size={18} className="text-primary-light" />
-                      <h3 className="text-xl font-semibold text-primary-light">
-                        {edu.degree}
-                      </h3>
-                    </div>
-
-                    <div className="space-y-1 text-center">
-                      {edu.institutions.map((inst, instIndex) => (
-                        <p key={`inst-${index}-${instIndex}`} className="text-white/90">
-                          {inst.name}
-                        </p>
-                      ))}
-                    </div>
-
-                    {edu.link ? (
-                      <a 
-                        href={edu.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block text-center text-white/90 hover:text-primary-light transition-colors inline-flex items-center justify-center gap-1"
-                      >
-                        {edu.details}
-                        <ExternalLink size={14} />
-                      </a>
-                    ) : (
-                      <p className="text-center text-white/90">{edu.details}</p>
-                    )}
-
-                    {edu.awards && edu.awards.length > 0 && (
-                      <div className="mt-4">
-                        <p className="text-primary-light font-medium text-sm mb-3 text-center">Awards & Achievements</p>
-                        <ul className="space-y-2 flex flex-wrap justify-center gap-2">
-                          {edu.awards.map((award, awardIndex) => (
-                            <li 
-                              key={`award-${index}-${awardIndex}`}
-                              className="text-white/90 text-sm flex items-start"
-                            >
-                              <span className="text-primary-light mr-2">•</span>
-                              <span>{award}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </Card>
               </motion.div>
             ))}
           </div>
