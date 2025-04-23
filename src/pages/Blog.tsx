@@ -1,4 +1,5 @@
-import { ArrowRight, Play, ExternalLink } from 'lucide-react';
+
+import { ArrowRight, Play, ExternalLink, BookOpen, FileText, Image } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -14,42 +15,42 @@ const Blog = () => {
       title: "How I Stay Up-To-Date with AI and NLP",
       type: "article",
       link: "https://medium.com/@maobedkova/how-i-stay-up-to-date-with-ai-and-nlp-656de9e284d9",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*3vNKhz6K-oGQ9M_RpW6-0A.png",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "A curated list of resources to stay current with AI and NLP developments"
     },
     {
       title: "Lessons Learned from Working as an NLP Engineer",
       type: "article",
       link: "https://medium.com/@maobedkova/lessons-learned-from-working-as-an-nlp-engineer-60d6ff0c77f",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*R-oovBfAGNt3TxgM0dr5og.jpeg",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Key insights and experiences from my career as an NLP Engineer"
     },
     {
       title: "Cross-Lingual Transfer for ABSA",
       type: "article",
       link: "https://medium.com/trustyou-engineering/cross-lingual-transfer-for-absa-6e9ae08a428a",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JcYViNESm-xrQu1iYzlD2w.png",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Exploring transfer learning techniques for Aspect-Based Sentiment Analysis across languages"
     },
     {
       title: "Data Augmentation for ABSA",
       type: "article",
       link: "https://medium.com/trustyou-engineering/data-augmentation-for-absa-bb61540673e3",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QZ7LyRXRxH3jVIBykgnG4Q.jpeg",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Techniques to enhance training data for Aspect-Based Sentiment Analysis"
     },
     {
       title: "Topic Modelling with PySPark and Spark NLP",
       type: "article",
       link: "https://medium.com/trustyou-engineering/topic-modelling-with-pyspark-and-spark-nlp-a99d063f1a6e",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xJRLnT5FXnVbXzIyoBdoiQ.jpeg",
+      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Using distributed computing for efficient topic modeling on large text corpora"
     },
     {
       title: "Acoustic Word Embeddings",
       type: "article",
       link: "https://medium.com/@maobedkova/acoustic-word-embeddings-fc3f1a8f0519",
-      image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zRrYLGrKRBl2tpv_CLGHFA.jpeg",
+      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       description: "Exploring vector representations of spoken words for speech processing tasks"
     }
   ];
