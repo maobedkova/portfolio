@@ -1,4 +1,3 @@
-
 import { ArrowRight, Play, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ const Blog = () => {
     {
       title: "ChatGPT Explained for Non-Tech People",
       type: "video",
-      // Convert YouTube watch URL to embed URL format
       video: "https://www.youtube.com/embed/L9i0_cH-6b0",
       thumbnail: "https://img.youtube.com/vi/L9i0_cH-6b0/maxresdefault.jpg",
       description: "How ChatGPT works under the hood"
@@ -121,8 +119,7 @@ const Blog = () => {
             to="/"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
           >
-            <span>Back to Home</span>
-            <ArrowRight className="w-4 h-4" />
+            Back to Home
           </Link>
         </div>
       </div>

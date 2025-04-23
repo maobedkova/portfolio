@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowLeft, FileText, Globe, Download, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -135,9 +134,8 @@ const Resources = () => {
         <div className="mt-12 flex justify-center">
           <Link 
             to="/" 
-            className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-elliptical transition-colors"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
           </Link>
         </div>

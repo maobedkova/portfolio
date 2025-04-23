@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Briefcase, GraduationCap, Calendar } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Link } from 'react-router-dom';
 
 const Timeline = () => {
   const experiences = [
@@ -266,14 +267,12 @@ const Timeline = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <motion.a 
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-green text-white rounded-full hover:opacity-90 transition-all shadow-md hover:shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <Link 
+            to="/"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
           >
-            <span>Back to Main Page</span>
-          </motion.a>
+            Back to Home
+          </Link>
         </div>
       </div>
     </div>

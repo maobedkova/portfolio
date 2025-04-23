@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, ExternalLink, Briefcase, Code, Award, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
@@ -319,7 +318,6 @@ const Projects = () => {
         {renderProjectSection(
           universityProjects, 
           <GraduationCap className="w-7 h-7 text-primary-dark" />, 
-          "University Projects", 
           "university",
           3
         )}
@@ -329,8 +327,7 @@ const Projects = () => {
             to="/"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
           >
-            <span>Back to Home</span>
-            <ArrowRight className="w-4 h-4" />
+            Back to Home
           </Link>
         </div>
       </div>
