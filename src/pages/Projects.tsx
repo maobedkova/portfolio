@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, ExternalLink, Briefcase, Code, Award, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ExternalLink, Briefcase, Code, Award, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -318,6 +318,7 @@ const Projects = () => {
         {renderProjectSection(
           universityProjects, 
           <GraduationCap className="w-7 h-7 text-primary-dark" />, 
+          "University Projects", 
           "university",
           3
         )}
