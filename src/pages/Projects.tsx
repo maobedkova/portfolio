@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Briefcase, Code, Award, GraduationCap, ChevronDown, ChevronUp } from 'lucide-react';
@@ -203,7 +204,7 @@ const Projects = () => {
         <p className="text-white/80 mb-6">{project.description}</p>
         
         <div className="mt-auto">
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 justify-center">
             {project.tags.map((tag: string, tagIndex: number) => (
               <span 
                 key={tagIndex}
