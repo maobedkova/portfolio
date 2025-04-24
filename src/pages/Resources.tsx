@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ArrowLeft, FileText, Globe, Download, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -21,7 +20,7 @@ const Resources = () => {
           {/* PDF Card */}
           <div 
             className={cn(
-              "glass-panel rounded-xl p-6 flex flex-col items-center cursor-pointer transition-all duration-300",
+              "glass-panel bg-surface/50 rounded-2xl p-6 flex flex-col items-center cursor-pointer transition-all duration-300",
               activeTab === 'pdf' ? "ring-2 ring-primary shadow-lg" : "hover:shadow-md"
             )}
             onClick={() => setActiveTab('pdf')}
@@ -38,7 +37,7 @@ const Resources = () => {
           {/* Website Card */}
           <div 
             className={cn(
-              "glass-panel rounded-xl p-6 flex flex-col items-center cursor-pointer transition-all duration-300",
+              "glass-panel bg-surface/50 rounded-2xl p-6 flex flex-col items-center cursor-pointer transition-all duration-300",
               activeTab === 'website' ? "ring-2 ring-primary shadow-lg" : "hover:shadow-md"
             )}
             onClick={() => setActiveTab('website')}
@@ -56,7 +55,7 @@ const Resources = () => {
         {/* Content Area */}
         {activeTab === 'pdf' && (
           <div className="space-y-6">
-            <div className="border-b border-accent p-4 flex justify-between items-center glass-panel rounded-xl">
+            <div className="border-b border-accent p-4 flex justify-between items-center glass-panel bg-surface/50 rounded-2xl">
               <h2 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text flex items-center">
                 <FileText className="w-5 h-5 mr-2 text-primary" />
                 Resume PDF
@@ -71,7 +70,7 @@ const Resources = () => {
               </a>
             </div>
             
-            <div className="p-4 glass-panel rounded-xl">
+            <div className="p-4 glass-panel bg-surface/50 rounded-2xl">
               <div className="border border-accent rounded-lg overflow-hidden aspect-[3/4]">
                 <embed 
                   src="/CV_NLP_AI_MariaObedkova.pdf" 
@@ -85,7 +84,7 @@ const Resources = () => {
 
         {activeTab === 'website' && (
           <div className="space-y-6">
-            <div className="border-b border-accent p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 glass-panel rounded-xl">
+            <div className="border-b border-accent p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 glass-panel bg-surface/50 rounded-2xl">
               <h2 className="text-xl font-semibold text-transparent bg-gradient-green bg-clip-text flex items-center">
                 <Globe className="w-5 h-5 mr-2 text-primary" />
                 Resume Website
@@ -114,7 +113,7 @@ const Resources = () => {
               </div>
             </div>
             
-            <div className="p-4 glass-panel rounded-xl">
+            <div className="p-4 glass-panel bg-surface/50 rounded-2xl">
               <div className="border border-accent rounded-lg overflow-hidden aspect-video">
                 <iframe
                   src={websiteUrl}
@@ -131,7 +130,7 @@ const Resources = () => {
           </div>
         )}
         
-        {/* Back button with green styling to match other pages */}
+        {/* Back button */}
         <div className="mt-12 flex justify-center">
           <Link 
             to="/" 
@@ -146,4 +145,3 @@ const Resources = () => {
 };
 
 export default Resources;
-
