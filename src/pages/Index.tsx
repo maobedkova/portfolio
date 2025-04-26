@@ -94,14 +94,12 @@ I've worked on diverse NLP applications, including Automatic Speech Recognition 
 Passionate about knowledge sharing and staying at the forefront of AI, I strive to advance the field and develop intelligent systems that make a difference.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              {/*
               <Link 
                 to="/timeline"
                 className="inline-block px-6 py-3 bg-primary text-white rounded-elliptical bg-gradient-green hover:bg-primary-dark transition-colors"
               >
                 More About My Journey
               </Link> 
-              */}
               <Link 
                 to="/resources"
                 className="inline-block px-6 py-3 border border-primary text-primary rounded-elliptical hover:bg-primary/10 transition-colors"
@@ -193,14 +191,12 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
           </div>
         </div>
         <div className="flex justify-center mt-8">
-          {/*
           <Link 
                 to="/projects"
                 className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
               >
                 View Projects
           </Link>
-          */}
         </div>
       </section>
 
@@ -240,14 +236,12 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
             <p className="text-gray-300 flex-grow">
               Sharing insights and knowledge through blogs and video content
             </p>
-            {/*
             <Link 
               to="/blog"
               className="mt-4 inline-block px-6 py-2 bg-gradient-green text-white rounded-elliptical hover:opacity-90 transition-colors text-center"
             >
               Read Blog
             </Link>
-            */}
           </div>
         </div>
       </section>
