@@ -32,15 +32,9 @@ const Projects = () => {
       "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop", // Gradient mesh
       "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1000&auto=format&fit=crop", // Fluid art
       "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1000&auto=format&fit=crop", // Abstract blue and pink
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop", // Abstract digital
       "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=1000&auto=format&fit=crop", // Colorful abstract
       "https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=1000&auto=format&fit=crop", // Abstract light
-      "https://images.unsplash.com/photo-1608501078713-8e445a709b39?q=80&w=1000&auto=format&fit=crop", // Abstract waves
-      "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop", // Geometric neon
-      "https://images.unsplash.com/photo-1646040381928-9b7fce6e0b34?q=80&w=1000&auto=format&fit=crop", // Vibrant pattern
-      "https://images.unsplash.com/photo-1638570695201-cf7bc9fb7ec5?q=80&w=1000&auto=format&fit=crop", // Abstract fluid colors
       "https://images.unsplash.com/photo-1603665301175-57ba46f392bf?q=80&w=1000&auto=format&fit=crop", // Abstract noise
-      "https://images.unsplash.com/photo-1623944607658-0bf4bd0ae3f5?q=80&w=1000&auto=format&fit=crop", // Abstract lights
       "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop", // Colorful shape
       "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?q=80&w=1000&auto=format&fit=crop", // Flowing liquid
       "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1000&auto=format&fit=crop", // Abstract light trail
