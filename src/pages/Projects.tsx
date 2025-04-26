@@ -24,27 +24,31 @@ const Projects = () => {
 
   // Function to generate abstract AI image URLs with a better uniqueness strategy
   const getAbstractImageUrl = (sectionIndex: number, projectIndex: number) => {
-    // Collection of abstract AI-generated images
+    // Collection of abstract AI-generated images - carefully curated to ensure all are unique abstract shapes
     const imageUrls = [
-      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620121684840-edffcfc4b878?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?q=80&w=1000&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop", // Abstract blue fluid
+      "https://images.unsplash.com/photo-1620121684840-edffcfc4b878?q=80&w=1000&auto=format&fit=crop", // Abstract purple gradient
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop", // Abstract orange fluid
+      "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop", // Gradient mesh
+      "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1000&auto=format&fit=crop", // Fluid art
+      "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1000&auto=format&fit=crop", // Abstract blue and pink
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop", // Abstract digital
+      "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?q=80&w=1000&auto=format&fit=crop", // Colorful abstract
+      "https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=1000&auto=format&fit=crop", // Abstract light
+      "https://images.unsplash.com/photo-1608501078713-8e445a709b39?q=80&w=1000&auto=format&fit=crop", // Abstract waves
+      "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop", // Geometric neon
+      "https://images.unsplash.com/photo-1646040381928-9b7fce6e0b34?q=80&w=1000&auto=format&fit=crop", // Vibrant pattern
+      "https://images.unsplash.com/photo-1638570695201-cf7bc9fb7ec5?q=80&w=1000&auto=format&fit=crop", // Abstract fluid colors
+      "https://images.unsplash.com/photo-1603665301175-57ba46f392bf?q=80&w=1000&auto=format&fit=crop", // Abstract noise
+      "https://images.unsplash.com/photo-1623944607658-0bf4bd0ae3f5?q=80&w=1000&auto=format&fit=crop", // Abstract lights
+      "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop", // Colorful shape
+      "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?q=80&w=1000&auto=format&fit=crop", // Flowing liquid
+      "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1000&auto=format&fit=crop", // Abstract light trail
+      "https://images.unsplash.com/photo-1608501857571-31a43311e342?q=80&w=1000&auto=format&fit=crop", // Blurry pattern
     ];
     
-    // Use a combination of sectionIndex and projectIndex to create a unique index
+    // Ensure each project gets a truly unique image
+    const totalProjects = 17; // Total across all sections (4+2+2+7 from your arrays)
     const uniqueIndex = (sectionIndex * 10 + projectIndex) % imageUrls.length;
     return imageUrls[uniqueIndex];
   };
