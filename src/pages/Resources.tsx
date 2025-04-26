@@ -8,14 +8,14 @@ const Resources = () => {
   const [websiteUrl, setWebsiteUrl] = useState('https://maobedkova.github.io/');
   
   return (
-    <div className="min-h-screen overflow-hidden p-6">
+    <div className="min-h-screen rounded-2xl p-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-8 text-transparent bg-gradient-green bg-clip-text">
           Resume
         </h1>
 
         {/* Resources Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 bg-gradient-sections gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {/* PDF Card */}
           <div 
             className={cn(

@@ -116,7 +116,7 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-accent/30 pb-16">
+    <div className="min-h-screen overflow-hidden bg-accent/30 pb-16">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-primary-dark mb-4">Professional Journey</h1>
           <div className="flex items-center justify-center">
@@ -124,7 +124,7 @@ const Timeline = () => {
           </div>
         </div>
         
-        <div className="mb-16 overflow-hidden">
+        <div className="overflow-hidden mb-16">
           <div className="flex items-center mb-8 gap-3">
             <Briefcase className="text-primary-dark h-6 w-6" />
             <h2 className="text-3xl font-semibold text-primary-dark">Experience</h2>
