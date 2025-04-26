@@ -11,11 +11,11 @@ const Index = () => {
   const technicalSkills = {
     "Programming & Development": ["Python", "Jupyter Notebook", "Git", "Docker"],
     "Machine Learning & Deep Learning": ["RNN", "CNN", "PyTorch", "TensorFlow", "Scikit-learn", "XGBoost", "ONNX"],
-    "Natural Language Processing": ["Sentiment Analysis", "BERT", "GPT", "Word2Vec", "FastText", "GloVe", "TF-IDF", "SpaCy", "NLTK", "Hugging Face Transformers", "StanfordNLP", "SparkNLP", "NLPAug"],
+    "Natural Language Processing": ["BERT", "GPT", "Word2Vec", "FastText", "GloVe", "TF-IDF", "SpaCy", "NLTK", "Hugging Face Transformers", "StanfordNLP", "SparkNLP", "NLPAug"],
     "Large Language Models & Fine-Tuning": ["OpenAI API", "Hugging Face Transformers", "LangChain", "LoRA", "PEFT", "DeepSpeed"],
     "Data Preprocessing & Feature Engineering": ["Pandas", "NumPy", "PySpark"],
     "Databases & Information Retrieval": ["PostgreSQL", "MySQL", "MongoDB", "FAISS", "Weaviate", "ChromaDB", "Elasticsearch"],
-    "MLOps, Cloud Computing, CI/CD": ["AWS", "Azure AI", "Hugging Face Inference API", "MLflow", "Jenkins", "Grafana"]
+    "MLOps, Cloud Computing, CI/CD": ["AWS", "Azure AI", "Hugging Face Inference API", "MLflow", "Jenkins", "Grafana", "Kibana"]
   };
 
   const softSkills = {
@@ -273,7 +273,6 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
                   rows={4}
                   className="w-full px-4 py-3 rounded-md bg-white/10 border border-accent"
                 />
-                <p className="text-xs text-gray-400 mt-1">Share your thoughts or questions and I'll get back to you soon</p>
               </div>
               <button className="w-full px-6 py-3 rounded-elliptical bg-gradient-green text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                 <Send className="w-4 h-4" />

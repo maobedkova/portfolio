@@ -9,7 +9,6 @@ const Resources = () => {
   
   return (
     <div className="min-h-screen bg-gradient-sections p-6">
-      <div className="max-w-5xl mx-auto">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-8 text-transparent bg-gradient-green bg-clip-text">
           Resume
@@ -139,7 +138,6 @@ const Resources = () => {
             Back to Home
           </Link>
         </div>
-      </div>
     </div>
   );
 };

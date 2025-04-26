@@ -28,23 +28,11 @@ const Projects = () => {
     const imageUrls = [
       "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1620121684840-edffcfc4b878?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1633354931133-17d8f014b5b4?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1579546929662-711aa81148cf?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1614850523459-c2f4c699c52a?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1552083375-1447ce886485?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620064916958-605375619af8?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1626544827763-d516dce335e2?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1562907550-096d3bf9b25c?q=80&w=1000&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1617791160505-6f00504e3519?q=80&w=1000&auto=format&fit=crop",
     ];
     

@@ -117,7 +117,6 @@ const Timeline = () => {
 
   return (
     <div className="min-h-screen bg-accent/30 pb-16">
-      <div className="max-w-5xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-primary-dark mb-4">Professional Journey</h1>
           <div className="flex items-center justify-center">
@@ -274,7 +273,6 @@ const Timeline = () => {
             Back to Home
           </Link>
         </div>
-      </div>
     </div>
   );
 };
