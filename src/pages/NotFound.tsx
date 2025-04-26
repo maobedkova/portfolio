@@ -9,11 +9,11 @@ const NotFound = () => {
         <p className="text-lg text-gray-600 mb-6">
           Oops! The page you're looking for doesn't exist yet.
         </p>
-        <Link
+        <Link 
           to="/"
-          className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light text-white px-6 py-3 rounded-[1.5rem] transition-all duration-300"
         >
-          Go Back Home
+          Back to Home
         </Link>
       </div>
     </div>
