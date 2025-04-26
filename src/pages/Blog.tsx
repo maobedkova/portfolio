@@ -1,6 +1,7 @@
 
-import { ArrowRight, Play, ExternalLink, BookOpen, FileText, Image } from 'lucide-react';
+import { ArrowRight, Play, ExternalLink, BookOpen, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Blog = () => {
   const blogPosts = [
@@ -56,61 +57,88 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-primary-dark mb-12 text-center">Blog & Videos</h1>
+    <div className="min-h-screen relative overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 z-10">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-dark to-primary-light bg-clip-text text-transparent">
+            Blog & Videos
+          </h1>
+          <p className="text-gray-300 max-w-2xl mx-auto mt-4">
+            Sharing knowledge and insights about AI, NLP, and speech processing
+          </p>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <div key={index} className="glass-panel p-6 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">{post.title}</h2>
-              
-              {post.type === 'article' ? (
-                <a href={post.link} target="_blank" rel="noopener noreferrer" className="block mb-4">
-                  <div className="aspect-video relative overflow-hidden rounded-lg">
-                    <img 
-                      src={post.image} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://placehold.co/600x400/10B981/FFFFFF?text=Article+Preview";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <span className="text-white font-medium flex items-center">
-                        Read on Medium <ExternalLink className="ml-1 w-4 h-4" />
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              ) : post.type === 'video' && (
-                <div className="aspect-video mb-4 relative">
-                  <a 
-                    href={`https://youtu.be/L9i0_cH-6b0`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block relative"
-                  >
-                    <img 
-                      src={post.thumbnail} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover rounded-lg"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://placehold.co/600x400/10B981/FFFFFF?text=Video+Preview";
-                      }}
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-black/70 rounded-full p-4 hover:bg-primary transition-colors duration-300">
-                        <Play className="w-8 h-8 text-white" fill="white" />
+            <div
+              key={index}
+              className="glass-panel rounded-[1.5rem] overflow-hidden shadow-lg h-full flex flex-col"
+            >
+              <div className="relative overflow-hidden">
+                <AspectRatio ratio={16/9}>
+                  {post.type === 'video' ? (
+                    <a 
+                      href={`https://youtu.be/L9i0_cH-6b0`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block relative w-full h-full"
+                    >
+                      <img 
+                        src={post.thumbnail}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-black/70 rounded-full p-4 hover:bg-primary transition-colors duration-300">
+                          <Play className="w-8 h-8 text-white" fill="white" />
+                        </div>
                       </div>
-                    </div>
+                    </a>
+                  ) : (
+                    <a 
+                      href={post.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img 
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </a>
+                  )}
+                </AspectRatio>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <h2 className="absolute bottom-0 left-0 p-4 text-xl font-bold text-white">
+                  {post.title}
+                </h2>
+              </div>
+              
+              <div className="p-5 flex-grow flex flex-col justify-between">
+                <p className="text-white/80 mb-6">{post.description}</p>
+                
+                <div className="mt-auto flex items-center justify-end">
+                  <a 
+                    href={post.type === 'video' ? `https://youtu.be/L9i0_cH-6b0` : post.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-light hover:text-primary transition-colors"
+                  >
+                    {post.type === 'video' ? (
+                      <>
+                        <Play className="w-5 h-5" />
+                        <span>Watch on YouTube</span>
+                      </>
+                    ) : (
+                      <>
+                        <ExternalLink className="w-5 h-5" />
+                        <span>Read on Medium</span>
+                      </>
+                    )}
                   </a>
                 </div>
-              )}
-              
-              <p className="text-gray-400">{post.description}</p>
+              </div>
             </div>
           ))}
         </div>
