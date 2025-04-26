@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Send, Github, Linkedin, Mail, Brain, Code, Bot, UserCheck, Rocket, ChevronRight, Lightbulb, Briefcase, Globe, BookOpen, ExternalLink } from 'lucide-react';
+import { ChevronDown, Send, Github, Linkedin, Mail, Twitter, Brain, Code, Bot, UserCheck, Rocket, ChevronRight, Lightbulb, Briefcase, Globe, BookOpen, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -250,7 +250,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
         <h2 className="section-heading text-center text-transparent bg-gradient-green bg-clip-text">Get In Touch</h2>
         <div className="max-w-3xl mx-auto">
           <div className="glass-panel rounded-lg p-8 animate-on-scroll">
-            <form className="space-y-6">
+          <form action="mailto:maryobedkova@gmail.com" method="POST" enctype="text/plain" className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <input
@@ -288,7 +288,7 @@ Passionate about knowledge sharing and staying at the forefront of AI, I strive 
               <Linkedin className="w-6 h-6" />
             </a>
             <a href="https://mobile.twitter.com/maobedkova" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
-              <ExternalLink className="w-6 h-6" />
+              <Twitter className="w-6 h-6" />
             </a>
             <a href="mailto:maryobedkova@gmail.com" className="text-gray-600 hover:text-transparent hover:bg-gradient-green hover:bg-clip-text transition-colors">
               <Mail className="w-6 h-6" />

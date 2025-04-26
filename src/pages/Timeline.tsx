@@ -124,7 +124,7 @@ const Timeline = () => {
           </div>
         </div>
         
-        <div className="mb-16">
+        <div className="bg-gradient-sections mb-16">
           <div className="flex items-center mb-8 gap-3">
             <Briefcase className="text-primary-dark h-6 w-6" />
             <h2 className="text-3xl font-semibold text-primary-dark">Experience</h2>
