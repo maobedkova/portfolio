@@ -15,42 +15,42 @@ const Blog = () => {
       title: "How I Stay Up-To-Date with AI and NLP",
       type: "article",
       link: "https://medium.com/@maobedkova/how-i-stay-up-to-date-with-ai-and-nlp-656de9e284d9",
-      image: "/1.webp",
+      image: "1.webp",
       description: "A curated list of resources to stay current with AI and NLP developments"
     },
     {
       title: "Lessons Learned from Working as an NLP Engineer",
       type: "article",
       link: "https://medium.com/@maobedkova/lessons-learned-from-working-as-an-nlp-engineer-60d6ff0c77f",
-      image: "/2.webp",
+      image: "2.webp",
       description: "Key insights and experiences from my career as an NLP Engineer"
     },
     {
       title: "Cross-Lingual Transfer for ABSA",
       type: "article",
       link: "https://medium.com/trustyou-engineering/cross-lingual-transfer-for-absa-6e9ae08a428a",
-      image: "/3.webp",
+      image: "3.webp",
       description: "Exploring transfer learning techniques for Aspect-Based Sentiment Analysis across languages"
     },
     {
       title: "Data Augmentation for ABSA",
       type: "article",
       link: "https://medium.com/trustyou-engineering/data-augmentation-for-absa-bb61540673e3",
-      image: "/4.webp",
+      image: "4.webp",
       description: "Techniques to enhance training data for Aspect-Based Sentiment Analysis"
     },
     {
       title: "Topic Modelling with PySPark and Spark NLP",
       type: "article",
       link: "https://medium.com/trustyou-engineering/topic-modelling-with-pyspark-and-spark-nlp-a99d063f1a6e",
-      image: "/5.webp",
+      image: "5.webp",
       description: "Using distributed computing for efficient topic modeling on large text corpora"
     },
     {
       title: "Acoustic Word Embeddings",
       type: "article",
       link: "https://medium.com/@maobedkova/acoustic-word-embeddings-fc3f1a8f0519",
-      image: "/6.webp",
+      image: "6.webp",
       description: "Exploring vector representations of spoken words for speech processing tasks"
     }
   ];
