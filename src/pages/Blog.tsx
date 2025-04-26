@@ -1,5 +1,4 @@
-
-import { ArrowRight, Play, ExternalLink, BookOpen, FileText } from 'lucide-react';
+import { Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -70,43 +69,34 @@ const Blog = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post, index) => (
-            <div
+            <a
               key={index}
-              className="glass-panel rounded-[1.5rem] overflow-hidden shadow-lg h-full flex flex-col"
+              href={post.type === 'video' ? `https://youtu.be/L9i0_cH-6b0` : post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block glass-panel rounded-[1.5rem] overflow-hidden shadow-lg h-full transition-transform duration-300 hover:scale-[1.02]"
             >
               <div className="relative overflow-hidden">
                 <AspectRatio ratio={16/9}>
                   {post.type === 'video' ? (
-                    <a 
-                      href={`https://youtu.be/L9i0_cH-6b0`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block relative w-full h-full"
-                    >
+                    <div className="relative w-full h-full">
                       <img 
                         src={post.thumbnail}
                         alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="bg-black/70 rounded-full p-4 hover:bg-primary transition-colors duration-300">
+                        <div className="bg-black/70 rounded-full p-4 transition-colors duration-300 group-hover:bg-primary">
                           <Play className="w-8 h-8 text-white" fill="white" />
                         </div>
                       </div>
-                    </a>
+                    </div>
                   ) : (
-                    <a 
-                      href={post.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full h-full"
-                    >
-                      <img 
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    </a>
+                    <img 
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover"
+                    />
                   )}
                 </AspectRatio>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -115,31 +105,10 @@ const Blog = () => {
                 </h2>
               </div>
               
-              <div className="p-5 flex-grow flex flex-col justify-between">
-                <p className="text-white/80 mb-6">{post.description}</p>
-                
-                <div className="mt-auto flex items-center justify-end">
-                  <a 
-                    href={post.type === 'video' ? `https://youtu.be/L9i0_cH-6b0` : post.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary-light hover:text-primary transition-colors"
-                  >
-                    {post.type === 'video' ? (
-                      <>
-                        <Play className="w-5 h-5" />
-                        <span>Watch on YouTube</span>
-                      </>
-                    ) : (
-                      <>
-                        <ExternalLink className="w-5 h-5" />
-                        <span>Read on Medium</span>
-                      </>
-                    )}
-                  </a>
-                </div>
+              <div className="p-5">
+                <p className="text-white/80">{post.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
