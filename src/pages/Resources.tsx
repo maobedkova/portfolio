@@ -8,7 +8,7 @@ const Resources = () => {
   const [websiteUrl, setWebsiteUrl] = useState('https://maobedkova.github.io/');
   
   return (
-    <div className="min-h-screen bg-gradient-sections p-6">
+    <div className="min-h-screen overflow-hidden p-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-8 text-transparent bg-gradient-green bg-clip-text">
           Resume
